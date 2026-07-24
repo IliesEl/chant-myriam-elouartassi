@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Myriam El Ouartassi — Cours de chant & coaching vocal à Alençon (61)</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='15' fill='%23C75E39'/><g fill='%23FBF5EA'><rect x='30' y='15' width='5' height='27' rx='2.5'/><circle cx='24' cy='43' r='8.5'/><path d='M30 15 c10 1 14 6 14 13 c-3 -6 -8 -8 -14 -8 z'/></g></svg>">
+<meta name="description" content="Cours de chant, coaching vocal et scénique et accompagnement à la création à Alençon (61). Auteure-compositrice-interprète formée au Conservatoire de Lille, je vous accompagne dans la découverte de votre voix et de votre personnalité artistique.">
+<!-- Open Graph / partage de lien (aperçu réseaux sociaux). NB : og:image en chemin relatif — mettre une URL absolue au moment de la vraie mise en prod. -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Myriam El Ouartassi — Cours de chant &amp; coaching vocal à Alençon (61)">
+<meta property="og:description" content="Cours de chant, coaching vocal et scénique et accompagnement à la création à Alençon (61). Je vous accompagne dans la découverte de votre voix et de votre personnalité artistique.">
+<meta property="og:image" content="images/photo-myriam.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Canonical provisoire = URL de prévisualisation en ligne ; à remplacer par le vrai domaine une fois choisi (voir docs/etat-projet.md §7.3). -->
+<link rel="canonical" href="https://iliesel.github.io/chant-myriam-elouartassi/version-z/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Caveat:wght@500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Caveat:wght@500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet"></noscript>
+
+<style>
+:root {
+  /* Base chaude — écru / crème (aucun gris, cf. préférences Myriam) */
+  --ecru:      #FBF5EA;
+  --ecru-2:    #F5EAD8;
+  --blanc:     #FFFCF7;
+  /* Accents affirmés : terracotta, orange, brique, bordeaux, prune */
+  --terracotta:#C75E39;
+  --orange:    #E2893C;
+  --brique:    #A83A2C;
+  --bordeaux:  #7C2438;
+  --bordeaux-d:#5B1826;
+  --prune:     #6E4A7E;
+  --hero-ink:  #7C2438;
+  /* Textes : bruns chauds (jamais de gris) */
+  --brun:      #2E1B12;
+  --brun-2:    #6E5344;
+  --display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --sans:  'DM Sans', system-ui, sans-serif;
+  --script: 'Caveat', cursive;
+  /* Variantes plus lisibles pour le TEXTE (les couleurs de base restent pour les à-plats décoratifs) : */
+  --terracotta-text: #A83A2C; /* = brique, contraste AA suffisant sur ecru/ecru-2/blanc */
+  --orange-text-onDark: #F0AD66; /* orange éclairci, contraste AA suffisant sur bordeaux/bordeaux-d */
+  --r-sm: 6px;
+  --r-md: 14px;
+  --r-lg: 24px;
+  --footer-ink: #22120C;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--ecru);
+  color: var(--brun);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+section { position: relative; }
+a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-visible {
+  outline: 2.5px solid var(--terracotta); outline-offset: 3px; border-radius: 4px;
+}
+.skip-link {
+  position: absolute; top: -100px; left: 1rem; z-index: 1000;
+  background: var(--brun); color: var(--ecru); font-weight: 600; font-size: 0.9rem;
+  padding: 0.7rem 1.2rem; border-radius: var(--r-sm); transition: top 0.2s;
+}
+.skip-link:focus { top: 1rem; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 2rem; }
+
+/* ---------- Réveils au défilement (animations douces) ---------- */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+.reveal.in { opacity: 1; transform: none; }
+.reveal.d1 { transition-delay: .08s; }
+.reveal.d2 { transition-delay: .16s; }
+.reveal.d3 { transition-delay: .24s; }
+
+/* ---------- Typo utilitaires ---------- */
+.eyebrow { font-family: var(--sans); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; }
+.script { font-family: var(--script); font-weight: 600; }
+
+/* ---------- Nav ---------- */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(251, 245, 234, 0.86);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(46, 27, 18, 0.08);
+  height: 68px; display: flex; align-items: center;
+}
+nav .wrap { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+.nav-logo { font-family: var(--display); font-size: 1.12rem; font-weight: 700; letter-spacing: -0.01em; color: var(--brun); line-height: 1; }
+.nav-logo b { color: var(--terracotta-text); font-weight: 700; }
+.nav-links { display: flex; gap: 1.9rem; list-style: none; }
+.nav-links a { font-size: 0.82rem; font-weight: 500; color: var(--brun-2); transition: color 0.2s; }
+.nav-links a:hover { color: var(--terracotta-text); }
+.nav-cta {
+  font-size: 0.8rem; font-weight: 600; color: var(--blanc); background: var(--brique);
+  padding: 0.55rem 1.15rem; border-radius: 100px; transition: background 0.2s, transform 0.15s;
+}
+.nav-cta:hover { background: var(--bordeaux); transform: translateY(-1px); }
+.nav-burger { display: none; align-items: center; justify-content: center; width: 44px; height: 44px; background: none; border: none; cursor: pointer; margin-left: 0.3rem; }
+.nav-burger span { display: block; width: 22px; height: 2px; background: var(--brun); margin: 5px 0; transition: transform 0.2s, opacity 0.2s; }
+.nav-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu { display: none; position: fixed; top: 68px; left: 0; right: 0; background: var(--ecru); border-bottom: 1px solid rgba(46,27,18,0.08); z-index: 99; }
+.mobile-menu ul { min-height: 0; list-style: none; display: flex; flex-direction: column; padding: 0.6rem 2rem 1.4rem; }
+.mobile-menu li { border-bottom: 1px solid rgba(46,27,18,0.06); }
+.mobile-menu a { display: block; padding: 0.85rem 0; font-size: 0.98rem; font-weight: 500; color: var(--brun); }
+.mobile-menu a:hover { color: var(--terracotta-text); }
+
+/* ---------- Hero graphique / coloré (pas de grande photo) ---------- */
+.hero { position: relative; padding: 4.5rem 0 5.5rem; overflow: hidden; min-height: calc(100vh - 68px); min-height: calc(100svh - 68px); }
+.hero .wrap { position: relative; z-index: 2; }
+.hero-eyebrow { color: var(--terracotta-text); margin-bottom: 1.6rem; display: inline-flex; align-items: center; gap: 0.6rem; }
+.hero-eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--terracotta); display: inline-block; }
+.hero h1 {
+  font-family: var(--display); font-weight: 800;
+  font-size: clamp(2.6rem, 6.2vw, 4.9rem); line-height: 1.02; letter-spacing: -0.02em;
+  color: var(--brun); max-width: 15ch; margin-bottom: 1.8rem;
+}
+.hero h1 .accent { color: var(--terracotta); }
+.hero h1 .art { font-family: var(--script); font-weight: 700; color: var(--prune); letter-spacing: 0; }
+.hero-desc { font-size: 1.12rem; font-weight: 300; line-height: 1.7; color: var(--brun-2); max-width: 46ch; margin-bottom: 2.4rem; }
+.hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.92rem; font-weight: 600;
+  padding: 0.95rem 1.7rem; border-radius: 100px; cursor: pointer; transition: transform 0.15s, background 0.2s, border-color 0.2s, color 0.2s;
+  border: 1.5px solid transparent;
+}
+.btn-primary { background: var(--brique); color: var(--blanc); }
+.btn-primary:hover { background: var(--bordeaux); transform: translateY(-2px); }
+.btn-ghost { border-color: rgba(46,27,18,0.22); color: var(--brun); }
+.btn-ghost:hover { border-color: var(--terracotta-text); color: var(--terracotta-text); }
+/* Décor SVG du hero */
+.hero-decor { position: absolute; top: -40px; right: -150px; width: 580px; max-width: 56vw; z-index: 1; pointer-events: none; opacity: 0.92; }
+
+/* ---------- Section générique ---------- */
+.section { padding: 6rem 0; }
+.section-head { max-width: 640px; margin-bottom: 3.2rem; }
+.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.section-label { color: var(--terracotta-text); margin-bottom: 0.9rem; }
+.section-title { font-family: var(--display); font-weight: 700; font-size: clamp(1.9rem, 3.6vw, 2.9rem); line-height: 1.1; letter-spacing: -0.015em; color: var(--brun); }
+.section-title em { font-style: normal; color: var(--terracotta); }
+.section-intro { font-size: 1.05rem; font-weight: 300; line-height: 1.7; color: var(--brun-2); margin-top: 1.1rem; }
+
+/* ---------- À propos ---------- */
+.about { background: var(--ecru); }
+.about-grid { display: grid; grid-template-columns: 1fr 0.85fr; gap: 4rem; align-items: center; }
+.about-body p { font-size: 1.02rem; font-weight: 300; line-height: 1.8; color: var(--brun-2); margin-bottom: 1.15rem; }
+.about-body p strong { color: var(--brun); font-weight: 500; }
+.about-sign { font-family: var(--script); font-size: 2rem; color: var(--prune); margin-top: 0.4rem; }
+/* Encart "déclic" — placeholder visible pour inspirer Myriam (à remplacer par son texte) */
+.about-teaser { margin: 0.4rem 0 1.15rem; padding: 1rem 1.2rem; border: 1px dashed rgba(199,94,57,0.5); border-radius: var(--r-md); background: var(--ecru-2); }
+.about-teaser .teaser-label { display: inline-block; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--terracotta-text); margin-bottom: 0.35rem; }
+.about-teaser p { font-family: var(--script); font-size: 1.4rem; line-height: 1.3; color: var(--brun-2); font-weight: 400; margin: 0; }
+.about-photo { position: relative; }
+.about-photo img { width: 100%; height: auto; border-radius: var(--r-lg); box-shadow: 0 30px 60px rgba(46,27,18,0.22); }
+
+/* ---------- Ce qu'on travaille (chips) ---------- */
+.work { background: var(--bordeaux); color: var(--ecru); }
+.work .section-label { color: var(--orange-text-onDark); }
+.work .section-title { color: var(--ecru); }
+.work .section-title em { color: var(--orange); }
+.chips { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 0.5rem; }
+.chip { font-size: 0.95rem; font-weight: 400; color: var(--ecru); border: 1.5px solid rgba(251,245,234,0.28); padding: 0.6rem 1.15rem; border-radius: 100px; transition: background 0.2s, border-color 0.2s; }
+.chip:hover { background: rgba(251,245,234,0.1); border-color: var(--orange); }
+
+/* ---------- Les 3 parcours ---------- */
+.parcours { background: var(--ecru); }
+.parcours-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+.pcard { background: var(--blanc); border-radius: var(--r-lg); padding: 2.2rem 2rem 2.4rem; border: 1px solid rgba(46,27,18,0.07); position: relative; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; display: flex; flex-direction: column; }
+.pcard:hover { transform: translateY(-6px); box-shadow: 0 26px 50px rgba(46,27,18,0.13); }
+.pcard::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px; }
+.pcard.c1::before { background: var(--terracotta); }
+.pcard.c2::before { background: var(--bordeaux); }
+.pcard.c3::before { background: var(--prune); }
+.pcard-num { font-family: var(--display); font-weight: 800; font-size: 1rem; letter-spacing: 0.05em; margin-bottom: 1rem; }
+.pcard.c1 .pcard-num { color: var(--terracotta-text); }
+.pcard.c2 .pcard-num { color: var(--bordeaux); }
+.pcard.c3 .pcard-num { color: var(--prune); }
+.pcard h3 { font-family: var(--display); font-weight: 700; font-size: 1.42rem; line-height: 1.15; color: var(--brun); margin-bottom: 0.5rem; }
+.pcard .hook { font-size: 0.92rem; font-weight: 500; color: var(--brun); margin-bottom: 0.9rem; font-style: italic; }
+.pcard p { font-size: 0.92rem; font-weight: 300; line-height: 1.68; color: var(--brun-2); }
+.parcours-foot { margin-top: 2.2rem; text-align: center; font-size: 1.05rem; font-weight: 300; color: var(--brun-2); }
+.parcours-foot b { color: var(--brun); font-weight: 500; }
+
+/* ---------- Pour qui ---------- */
+.pourqui { background: var(--ecru-2); }
+.pourqui-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+.qcard { background: var(--blanc); border-radius: var(--r-md); padding: 2rem 1.9rem; border: 1px solid rgba(46,27,18,0.07); }
+.qcard .tag { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracotta-text); margin-bottom: 0.8rem; }
+.qcard h3 { font-family: var(--display); font-weight: 700; font-size: 1.28rem; color: var(--brun); margin-bottom: 0.6rem; }
+.qcard p { font-size: 0.92rem; font-weight: 300; line-height: 1.7; color: var(--brun-2); }
+.pourqui-note { text-align: center; margin-top: 2rem; font-size: 0.95rem; color: var(--brun-2); font-weight: 300; }
+
+/* ---------- Tarifs ---------- */
+.tarifs { background: var(--ecru); }
+.tarifs-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.4rem; align-items: stretch; }
+.tcard { background: var(--blanc); border: 1px solid rgba(46,27,18,0.08); border-radius: var(--r-lg); padding: 2rem; }
+.tcard h3 { font-family: var(--display); font-weight: 700; font-size: 1.05rem; color: var(--brun); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.6rem; }
+.tcard h3 .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--terracotta); }
+.trow { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.85rem 0; border-bottom: 1px dashed rgba(46,27,18,0.14); }
+.trow:last-child { border-bottom: none; }
+.trow .lbl { font-size: 0.92rem; color: var(--brun-2); font-weight: 300; }
+.trow .lbl b { color: var(--brun); font-weight: 600; font-family: var(--display); }
+.trow .price { font-family: var(--display); font-weight: 700; font-size: 1.15rem; color: var(--brun); white-space: nowrap; }
+.tcard.forfait { background: var(--bordeaux); border-color: var(--bordeaux); color: var(--ecru); }
+.tcard.forfait h3 { color: var(--ecru); }
+.tcard.forfait h3 .dot { background: var(--orange); }
+.tcard.forfait .trow { border-color: rgba(251,245,234,0.2); }
+.tcard.forfait .trow .lbl { color: rgba(251,245,234,0.85); }
+.tcard.forfait .trow .lbl b { color: var(--ecru); }
+.tcard.forfait .trow .price { color: var(--orange-text-onDark); }
+.tcard.forfait .note { font-size: 0.8rem; color: rgba(251,245,234,0.7); margin-top: 1rem; font-weight: 300; }
+.essai { display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 1.6rem; background: var(--ecru-2); border: 1px solid rgba(199,94,57,0.3); color: var(--brun); font-weight: 500; font-size: 0.95rem; padding: 0.75rem 1.3rem; border-radius: 100px; }
+.essai .star { color: var(--terracotta-text); }
+
+/* ---------- FAQ ---------- */
+.faq { background: var(--ecru-2); }
+.faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.8rem; }
+.faq-item { background: var(--blanc); border: 1px solid rgba(46,27,18,0.08); border-radius: var(--r-md); overflow: hidden; }
+.faq-q { width: 100%; text-align: left; background: none; border: none; cursor: pointer; font-family: var(--display); font-weight: 600; font-size: 1.08rem; color: var(--brun); padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.faq-q .ic { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--ecru-2); color: var(--terracotta-text); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: transform 0.25s, background 0.2s, color 0.2s; }
+.faq-item[open] .faq-q .ic { transform: rotate(45deg); background: var(--terracotta); color: var(--blanc); }
+.faq-a { padding: 0 1.5rem 1.35rem; font-size: 0.95rem; font-weight: 300; line-height: 1.72; color: var(--brun-2); }
+details.faq-item summary { list-style: none; }
+details.faq-item summary::-webkit-details-marker { display: none; }
+
+/* ---------- Contact ---------- */
+.contact { background: var(--bordeaux-d); color: var(--ecru); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.contact h2 { font-family: var(--display); font-weight: 700; font-size: clamp(1.9rem, 3.4vw, 2.8rem); line-height: 1.1; color: var(--ecru); margin-bottom: 1.1rem; }
+.contact h2 em { font-style: normal; color: var(--orange); }
+.contact-lead { font-size: 1.02rem; font-weight: 300; line-height: 1.7; color: rgba(251,245,234,0.82); margin-bottom: 2.2rem; }
+.contact-methods { display: flex; flex-direction: column; gap: 1rem; }
+.cmethod { display: flex; align-items: center; gap: 1rem; background: rgba(251,245,234,0.06); border: 1px solid rgba(251,245,234,0.16); border-radius: var(--r-md); padding: 1.05rem 1.3rem; }
+.cmethod .ic { flex: none; width: 42px; height: 42px; border-radius: 50%; background: var(--terracotta); color: var(--blanc); display: flex; align-items: center; justify-content: center; }
+.cmethod .k { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); font-weight: 600; }
+.cmethod .v { font-size: 1rem; color: var(--ecru); font-weight: 500; }
+.cmethod-copy { margin-left: auto; flex: none; min-height: 44px; display: inline-flex; align-items: center; font-size: 0.78rem; font-weight: 600; color: var(--ecru); background: rgba(251,245,234,0.1); border: 1.5px solid rgba(251,245,234,0.3); border-radius: 100px; padding: 0 1.1rem; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+.cmethod-copy:hover { background: rgba(251,245,234,0.18); border-color: var(--orange); }
+.cmethod-copy.copied { background: var(--orange); border-color: var(--orange); color: var(--bordeaux-d); }
+.contact-info { margin-top: 1.8rem; display: flex; flex-direction: column; gap: 0.55rem; }
+.contact-info .line { font-size: 0.9rem; color: rgba(251,245,234,0.78); font-weight: 300; }
+.contact-info .line b { color: var(--ecru); font-weight: 500; }
+
+/* ---------- Footer ---------- */
+footer { background: var(--footer-ink); color: rgba(251,245,234,0.65); padding: 2.6rem 0; }
+footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.footer-logo { font-family: var(--display); font-weight: 700; font-size: 1.05rem; color: var(--ecru); }
+.footer-logo b { color: var(--orange); }
+.footer-legal { font-size: 0.74rem; margin-top: 0.3rem; color: rgba(251,245,234,0.45); }
+.footer-links { display: flex; gap: 1.4rem; list-style: none; }
+.footer-links a { font-size: 0.78rem; color: rgba(251,245,234,0.6); transition: color 0.2s; }
+.footer-links a:hover { color: var(--orange); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-burger { display: flex; flex-direction: column; }
+  .mobile-menu { display: grid; grid-template-rows: 0fr; overflow: hidden; transition: grid-template-rows 0.25s ease; }
+  .mobile-menu.open { grid-template-rows: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 2.6rem; }
+  .about-photo { max-width: 420px; }
+  .parcours-grid { grid-template-columns: 1fr; }
+  .pourqui-grid { grid-template-columns: 1fr; }
+  .tarifs-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.6rem; }
+  .hero-decor { opacity: 0.4; right: -140px; }
+}
+@media (max-width: 560px) {
+  .wrap { padding: 0 1.3rem; }
+  .section { padding: 4.2rem 0; }
+  .hero { padding: 3rem 0 3.5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Aller au contenu</a>
+
+<nav>
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:.9rem;"><a href="../" title="Retour au choix des versions" style="font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.32rem .7rem;border:1.5px solid currentColor;border-radius:100px;opacity:.7;">&#8646; Versions</a><a href="#" class="nav-logo">Myriam <b>El Ouartassi</b></a></div>
+    <ul class="nav-links">
+      <li><a href="#apropos">Qui je suis&nbsp;?</a></li>
+      <li><a href="#parcours">Ce que je propose</a></li>
+      <li><a href="#tarifs">Mes tarifs</a></li>
+      <li><a href="#faq">Vos questions</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Me contacter</a>
+    <button class="nav-burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#apropos">Qui je suis&nbsp;?</a></li>
+    <li><a href="#parcours">Ce que je propose</a></li>
+    <li><a href="#tarifs">Mes tarifs</a></li>
+    <li><a href="#faq">Vos questions</a></li>
+  </ul>
+</div>
+
+<!-- ============ HERO — graphique / coloré, sans grande photo ============ -->
+<header class="hero" id="main">
+  <svg class="hero-decor" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- Ondes de voix colorées (motif propre). Couleurs pilotées par variables CSS pour se recolorer selon la version. -->
+    <circle cx="360" cy="300" r="250" fill="var(--ecru-2)"/>
+    <g fill="none" stroke-linecap="round">
+      <path d="M 470 205 A 95 95 0 0 0 470 395" stroke="var(--terracotta)" stroke-width="16"/>
+      <path d="M 470 160 A 140 140 0 0 0 470 440" stroke="var(--orange)" stroke-width="16" opacity="0.9"/>
+      <path d="M 470 118 A 182 182 0 0 0 470 482" stroke="var(--bordeaux)" stroke-width="16" opacity="0.8"/>
+      <path d="M 470 80 A 220 220 0 0 0 470 520" stroke="var(--prune)" stroke-width="16" opacity="0.6"/>
+    </g>
+    <circle cx="470" cy="300" r="16" fill="var(--hero-ink)"/>
+    <g>
+      <circle cx="205" cy="200" r="12" fill="var(--bordeaux)"/><rect x="215" y="160" width="5.5" height="42" rx="2.7" fill="var(--bordeaux)"/>
+      <circle cx="175" cy="410" r="10" fill="var(--prune)"/><rect x="183" y="376" width="4.6" height="36" rx="2.3" fill="var(--prune)"/>
+      <circle cx="250" cy="315" r="7.5" fill="var(--orange)"/>
+    </g>
+    <path d="M 500 120 q 44 26 12 60" stroke="var(--prune)" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.7"/>
+  </svg>
+  <div class="wrap">
+    <p class="eyebrow hero-eyebrow reveal">Cours de chant &amp; coaching vocal · Alençon (61)</p>
+    <h1 class="reveal d1">Votre <span class="art">voix</span>, votre <span class="accent">personnalité artistique</span></h1>
+    <p class="hero-desc reveal d2">Je vous accompagne avec sensibilité dans la découverte de votre voix et de votre personnalité artistique.</p>
+    <div class="hero-actions reveal d3">
+      <a href="#contact" class="btn btn-primary">Réserver un 1er cours offert</a>
+      <a href="#parcours" class="btn btn-ghost">Ce que je propose</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ À PROPOS ============ -->
+<section class="section about" id="apropos">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-label eyebrow reveal">Qui je suis&nbsp;?</p>
+        <h2 class="section-title reveal">Passionnée de chant,<br><em>passionnée de transmettre</em></h2>
+        <div class="about-body">
+          <p class="reveal d1"><strong>Auteure-compositrice-interprète</strong> formée en chant jazz au Conservatoire de Lille et diplômée d'un master recherche-création en musicologie, je vous accompagne avec sensibilité dans la découverte de votre voix et de votre personnalité artistique.</p>
+          <p class="reveal d1">En parallèle de mon parcours de formation pratique et théorique autour de la musique et de la voix, étant autant passionnée par la voix et la création musicale que par l'écriture de textes, je vous transmets mon expérience de la voix, de la création et de la scène.</p>
+          <p class="reveal d2">Passionnée de chant et de musique depuis toujours, j'ai à cœur de vous transmettre ce qui me fait vibrer. La voix est un outil vivant formidable pour laisser place à votre sensibilité, vous exprimer et vous épanouir&nbsp;!</p>
+          <!-- Encart "déclic" : placeholder VISIBLE pour inspirer Myriam et lui montrer l'emplacement.
+               À remplacer par son texte réel (anecdote / blocage dépassé) quand on l'a. NE PAS inventer. -->
+          <div class="about-teaser reveal d2">
+            <span class="teaser-label">à compléter par Myriam</span>
+            <p>Ici, ton déclic&nbsp;: un souvenir, une émotion, un blocage que tu as toi-même dépassé, ce qui t'a menée au chant…</p>
+          </div>
+          <p class="reveal d2">Je collabore par ailleurs avec <strong>Music'Alençon</strong>, situé au 65 cours Clemenceau à Alençon.</p>
+          <p class="about-sign reveal d2">Myriam</p>
+        </div>
+      </div>
+      <div class="about-photo reveal d1">
+        <img src="images/photo-myriam.png" alt="Myriam El Ouartassi, en concert" width="573" height="840"
+          onerror="this.parentElement.style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POUR QUI ============ -->
+<section class="section pourqui">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <p class="section-label eyebrow">Pour qui</p>
+      <h2 class="section-title">À qui s'adressent <em>les cours</em></h2>
+    </div>
+    <div class="pourqui-grid">
+      <div class="qcard reveal d1">
+        <span class="tag">Enfants dès 8 ans, ados &amp; adultes</span>
+        <h3>Quel que soit votre niveau</h3>
+        <p>Débutant complet, amateur qui a déjà une pratique ou chanteur confirmé qui veut approfondir&nbsp;: chaque cours part de votre niveau réel et de vos envies.</p>
+      </div>
+      <div class="qcard reveal d2">
+        <span class="tag">Vous vous cherchez&nbsp;?</span>
+        <h3>Même si vous « pensez chanter faux »</h3>
+        <p>Pas besoin d'« avoir une belle voix » pour commencer. « Chanter faux » est presque toujours une question de technique et de repères — c'est justement ce qui se travaille, en douceur et sans jugement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LES 3 PARCOURS ============ -->
+<section class="section parcours" id="parcours">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <p class="section-label eyebrow">Ce que je propose</p>
+      <h2 class="section-title">Un accompagnement <em>adapté à vos envies</em></h2>
+    </div>
+    <div class="parcours-grid">
+      <article class="pcard c1 reveal d1">
+        <div class="pcard-num">Cours de chant</div>
+        <h3>Découvrir &amp; approfondir votre voix</h3>
+        <p class="hook">Vous souhaitez découvrir votre voix ou approfondir votre apprentissage&nbsp;?</p>
+        <p>Dans l'écoute, le plaisir et la confiance, nous allierons technique vocale et savoir-faire de l'interprétation pour dépasser vos blocages et faire éclore votre voix. Vous vous réapproprierez les chansons que vous aimez d'une manière qui vous ressemble. Nous pourrons aussi explorer le terrain de jeu de l'improvisation, chemin possible vers votre liberté vocale.</p>
+      </article>
+      <article class="pcard c2 reveal d2">
+        <div class="pcard-num">Coaching vocal &amp; scénique</div>
+        <h3>Révéler votre présence sur scène</h3>
+        <p class="hook">Vous souhaitez faire éclore votre personnalité artistique et vous préparer à la scène&nbsp;?</p>
+        <p>Je vous accompagne dans le développement de votre personnalité artistique et de votre présence scénique. Nous explorerons ensemble votre rapport à la scène, au public et à votre univers, pour que votre interprétation gagne en présence et en sincérité.</p>
+        <!-- NOTE (à valider avec Myriam) : ce paragraphe complète sa phrase laissée en "…" dans le questionnaire ("Nous explorerons ensemble…"), en restant sur ses propres thèmes (personnalité artistique, présence scénique). Partie qu'elle a notée "à développer". -->
+      </article>
+      <article class="pcard c3 reveal d3">
+        <div class="pcard-num">Accompagnement à la création</div>
+        <h3>Écrire &amp; composer vos chansons</h3>
+        <p class="hook">Vous souhaitez vous essayer à l'écriture de chansons (en français) ou développer vos compositions&nbsp;?</p>
+        <p>Je vous accompagne dans l'écriture et la composition de chansons, que vous pourrez ensuite interpréter. Nous donnerons de l'importance aux mots, à leur sens, mais aussi à leur sonorité.</p>
+      </article>
+    </div>
+    <p class="parcours-foot reveal d1">Lors de notre premier échange, nous parlerons de vos envies, et nous trouverons ensemble <b>un chemin de progression qui vous correspond</b>&nbsp;!</p>
+  </div>
+</section>
+
+<!-- ============ CE QU'ON TRAVAILLE ============ -->
+<section class="section work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="section-label eyebrow">Ma pédagogie</p>
+      <h2 class="section-title">Ce que nous travaillons <em>ensemble</em></h2>
+      <p class="section-intro" style="color: rgba(251,245,234,0.8);">Une approche globale de la voix, adaptée à votre parcours et à vos envies.</p>
+    </div>
+    <div class="chips reveal d1">
+      <span class="chip">Technique vocale</span>
+      <span class="chip">Respiration &amp; souffle</span>
+      <span class="chip">Posture &amp; corps</span>
+      <span class="chip">Justesse &amp; tessiture</span>
+      <span class="chip">Interprétation &amp; émotion</span>
+      <span class="chip">Confiance &amp; présence scénique</span>
+      <span class="chip">Improvisation</span>
+      <span class="chip">Écriture &amp; composition</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TARIFS ============ -->
+<section class="section tarifs" id="tarifs">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <p class="section-label eyebrow">Mes tarifs</p>
+      <h2 class="section-title">Le tarif <em>des cours</em></h2>
+    </div>
+    <div class="tarifs-grid">
+      <div class="tcard reveal d1">
+        <h3><span class="dot"></span> À la séance</h3>
+        <div class="trow"><span class="lbl"><b>30 min</b> · cours de chant (plutôt enfants)</span><span class="price">18 €</span></div>
+        <div class="trow"><span class="lbl"><b>45 min</b> · cours de chant ou coaching vocal &amp; scénique</span><span class="price">27 €</span></div>
+        <div class="trow"><span class="lbl"><b>1 h</b> · cours de chant ou coaching vocal &amp; scénique</span><span class="price">35 €</span></div>
+        <div class="trow"><span class="lbl"><b>1 h 30</b> · cours ou coaching + accompagnement à la création</span><span class="price">50 €</span></div>
+        <div class="essai"><span class="star">★</span> 1<sup>er</sup> cours offert</div>
+      </div>
+      <div class="tcard forfait reveal d2">
+        <h3><span class="dot"></span> Forfait à l'année</h3>
+        <div class="trow"><span class="lbl"><b>30 min</b> / semaine</span><span class="price">60 €<span style="font-size:.7rem;font-weight:400;"> /mois</span></span></div>
+        <div class="trow"><span class="lbl"><b>45 min</b> / semaine</span><span class="price">90 €<span style="font-size:.7rem;font-weight:400;"> /mois</span></span></div>
+        <div class="trow"><span class="lbl"><b>1 h</b> / semaine</span><span class="price">120 €<span style="font-size:.7rem;font-weight:400;"> /mois</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section faq" id="faq">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <p class="section-label eyebrow">Vos questions</p>
+      <h2 class="section-title">Vous vous posez <em>peut-être ces questions</em></h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item reveal d1">
+        <summary class="faq-q">À partir de quel âge peut-on commencer&nbsp;? <span class="ic">+</span></summary>
+        <div class="faq-a">J'enseigne aux adolescents et aux adultes, ainsi qu'aux enfants dès 8 ans. Il n'y a pas d'âge maximum&nbsp;: l'approche s'adapte simplement à chacun, à sa maturité et à ses envies.</div>
+      </details>
+      <details class="faq-item reveal d1">
+        <summary class="faq-q">Faut-il « avoir une belle voix » ou déjà savoir chanter&nbsp;? <span class="ic">+</span></summary>
+        <div class="faq-a">Non, pas du tout. La plupart des élèves démarrent sans aucune base. « Chanter faux » est presque toujours une question de technique et de repères, pas un don manquant — et c'est justement ce qui se travaille en cours, progressivement.</div>
+      </details>
+      <details class="faq-item reveal d2">
+        <summary class="faq-q">Comment se déroule un premier cours&nbsp;? <span class="ic">+</span></summary>
+        <div class="faq-a">Le premier cours est offert. On échange d'abord sur vos envies, votre parcours et ce qui vous motive, puis on fait quelques exercices simples pour découvrir votre voix, en douceur et sans jugement. On repart avec un chemin de progression qui vous correspond.</div>
+      </details>
+      <details class="faq-item reveal d2">
+        <summary class="faq-q">À quelle fréquence faut-il prendre des cours&nbsp;? <span class="ic">+</span></summary>
+        <div class="faq-a">Un cours par semaine est le rythme le plus courant pour progresser régulièrement, mais tout s'adapte selon vos disponibilités et vos objectifs. Le forfait à l'année est là pour celles et ceux qui veulent s'installer dans un rythme régulier.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid" style="grid-template-columns:1fr;max-width:760px;">
+      <div class="contact-left reveal">
+        <h2>Envie de vous lancer&nbsp;?<br><em>Parlons-en.</em></h2>
+        <p class="contact-lead">Quel que soit votre niveau, si l'envie de chanter est là&nbsp;: écrivez-moi ou appelez-moi, et on trouvera ensemble un créneau qui vous convient.</p>
+        <div class="contact-methods">
+          <div class="cmethod">
+            <span class="ic" aria-hidden="true">✉</span>
+            <span><span class="k">Email</span><br><span class="v">myriam.elouartassi@gmail.com</span></span>
+            <button type="button" class="cmethod-copy" data-copy="myriam.elouartassi@gmail.com" aria-live="polite">Copier</button>
+          </div>
+          <div class="cmethod">
+            <span class="ic" aria-hidden="true">☎</span>
+            <span><span class="k">Téléphone</span><br><span class="v">06 23 06 48 82</span></span>
+            <button type="button" class="cmethod-copy" data-copy="06 23 06 48 82" aria-live="polite">Copier</button>
+          </div>
+        </div>
+        <div class="contact-info">
+          <p class="line"><b>Où&nbsp;:</b> Alençon (61) et environs</p>
+          <p class="line"><b>Quand&nbsp;:</b> sur rendez-vous</p>
+          <p class="line"><b>En collaboration avec</b> Music'Alençon · 65 cours Clemenceau, Alençon</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="footer-logo">Myriam <b>El Ouartassi</b></div>
+      <p class="footer-legal">Professeure de chant · Coach vocal — Auto-entrepreneur · Alençon (61)</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#apropos">Qui je suis&nbsp;?</a></li>
+      <li><a href="#parcours">Ce que je propose</a></li>
+      <li><a href="#tarifs">Mes tarifs</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="mentions-legales.html">Mentions légales</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+// Menu mobile (hamburger)
+(function () {
+  var burger = document.getElementById('navBurger');
+  var menu = document.getElementById('mobileMenu');
+  if (!burger || !menu) return;
+  function close() {
+    burger.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('open');
+  }
+  burger.addEventListener('click', function () {
+    var open = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!open));
+    menu.classList.toggle('open', !open);
+  });
+  menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', close); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+})();
+
+// Copier email / téléphone
+(function () {
+  document.querySelectorAll('.cmethod-copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy');
+      var done = function () {
+        var prev = btn.textContent;
+        btn.textContent = 'Copié !';
+        btn.classList.add('copied');
+        setTimeout(function () { btn.textContent = prev; btn.classList.remove('copied'); }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(done);
+      } else {
+        done();
+      }
+    });
+  });
+})();
+
+// Animations douces d'apparition au défilement
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    els.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+</body>
+</html>
