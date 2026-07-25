@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Myriam El Ouartassi — Cours de chant &amp; coaching vocal à Alençon (61)</title>
+<link rel="icon" type="image/svg+xml" href="images/logo18.svg">
+<meta name="description" content="Cours de chant, coaching vocal et scénique et accompagnement à la création à Alençon (61). Auteure-compositrice-interprète formée au Conservatoire de Lille, je vous accompagne dans la découverte de votre voix et de votre personnalité artistique.">
+<!-- Prototype de travail : non indexable tant que la version n'est pas choisie. Le rel=canonical revient à la vraie mise en prod. -->
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Myriam El Ouartassi — Cours de chant &amp; coaching vocal à Alençon (61)">
+<meta property="og:description" content="Je vous accompagne avec sensibilité dans la découverte de votre voix et de votre personnalité artistique.">
+<meta property="og:image" content="images/photo-myriam.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<!--FONTS-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Lora:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Lora:wght@400;500;600;700&display=swap"></noscript>
+<!--/FONTS-->
+
+<!--TYPO-->
+<style id="typo">:root{ --display: 'Fraunces', Georgia, serif; --sans: 'Lora', Georgia, serif; }</style>
+<!--/TYPO-->
+
+<script>document.documentElement.className += ' js';</script>
+<style>
+:root {
+  /* ---- Palette Myriam (docs/palette de couleurs.jpeg) ---- */
+  --encre:    #400101;   /* texte principal / fonds sombres */
+  --encre-2:  #6B3B33;   /* texte secondaire (brun chaud, 8,5:1 sur papier) */
+  --rouge:    #9A0C06;   /* couleur principale : CTA, accents de titre */
+  --orange:   #DE790B;   /* à-plats, pictos, filets — JAMAIS en texte sur fond clair */
+  --jaune:    #F2BB16;   /* à-plats, surlignage — JAMAIS en texte sur fond clair */
+  --sauge:    #8DA086;   /* à-plats calmes — JAMAIS en texte sur fond clair */
+  /* ---- Neutres chauds dérivés (la palette n'en fournit pas ; aucun gris) ---- */
+  --papier:   #FDFAF5;
+  --creme:    #F7F1E6;
+  --creme-2:  #EFE6D6;
+  --blanc:    #FFFFFF;
+  --trait:    rgba(64, 1, 1, 0.13);
+  --trait-fort: rgba(64, 1, 1, 0.22);
+  --r-sm: 6px;
+  --r-md: 12px;
+  --r-lg: 20px;
+  /* Respiration commune : une seule courbe d'accélération douce, réutilisée pour tous les mouvements. */
+  --ease-soft: cubic-bezier(.22, .61, .36, 1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--papier);
+  color: var(--encre-2);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  /* Dernières lignes plus jolies (pas de mot orphelin) sur les paragraphes ; hérité partout. */
+  text-wrap: pretty;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+section { position: relative; }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 2.5px solid var(--rouge); outline-offset: 3px; border-radius: 4px;
+}
+.skip-link {
+  position: absolute; top: -100px; left: 1rem; z-index: 1000;
+  background: var(--encre); color: var(--papier); font-weight: 600; font-size: 0.9rem;
+  padding: 0.7rem 1.2rem; border-radius: var(--r-sm); transition: top 0.2s;
+}
+.skip-link:focus { top: 1rem; }
+
+.wrap { max-width: 1140px; margin: 0 auto; padding: 0 2.4rem; }
+
+/* ---------- Pictogrammes ---------- */
+.ico { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.ico-lg { width: 34px; height: 34px; stroke-width: 1.4; }
+
+/* ---------- Typo commune ---------- */
+.eyebrow { font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rouge); }
+h1, h2, h3, .display { font-family: var(--display); text-transform: lowercase; font-weight: 600; color: var(--encre); letter-spacing: -0.005em; text-wrap: balance; }
+.section-title { font-size: clamp(2rem, 3.9vw, 3rem); line-height: 1.1; letter-spacing: -0.01em; }
+.section-title .a { color: var(--rouge); }
+.section-head { margin-bottom: 3rem; max-width: 680px; }
+.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.section-head .eyebrow { display: block; margin-bottom: 0.85rem; }
+.section-intro { font-size: 1.02rem; font-weight: 300; line-height: 1.75; margin-top: 1rem; }
+.section { padding: 6.5rem 0; }
+.bg-creme { background: var(--creme); }
+.rule-short { width: 46px; height: 2px; background: var(--orange); margin: 1.4rem 0; }
+
+/* ---------- Réveils au défilement ----------
+   Rien n'est masqué par défaut : le contenu ne disparaît que si le JS tourne (classe .js posée
+   par le script du <head>). Sans JS — ou si l'observateur ne se déclenche pas — la page reste lisible. */
+.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s var(--ease-soft); }
+.js .reveal.in { opacity: 1; transform: none; }
+.js .reveal.d1 { transition-delay: .07s; }
+.js .reveal.d2 { transition-delay: .14s; }
+.js .reveal.d3 { transition-delay: .21s; }
+
+/* ---------- Nav ---------- */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(253, 250, 245, 0.92); /* repli pour vieux navigateurs */
+  background: color-mix(in srgb, var(--papier) 92%, transparent); /* suit le fond choisi */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--trait);
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 80px; }
+.brand { display: flex; align-items: center; gap: 0.75rem; }
+.brand-emblem { flex: none; width: 56px; height: 56px; display: block; }
+.brand-txt { display: block; }
+.brand-name { display: block; font-family: var(--display); font-size: 1.14rem; font-weight: 600; color: var(--encre); line-height: 1.2; letter-spacing: 0.01em; }
+.brand-role { display: block; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rouge); margin-top: 0.28rem; }
+.nav-links { display: flex; gap: 1.4rem; list-style: none; }
+.nav-links a { position: relative; white-space: nowrap; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em; color: var(--encre-2); transition: color 0.45s var(--ease-soft); }
+.nav-links a:hover { color: var(--rouge); }
+.nav-cta {
+  font-size: 0.76rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--rouge); border: 1.5px solid var(--rouge); padding: 0.62rem 1.15rem; border-radius: var(--r-sm);
+  transition: background 0.2s, color 0.2s;
+}
+.nav-cta:hover { background: var(--rouge); color: var(--papier); }
+.nav-burger { display: none; flex: none; align-items: center; justify-content: center; width: 44px; height: 44px; background: none; border: none; cursor: pointer; }
+.nav-burger span { display: block; width: 22px; height: 2px; background: var(--encre); margin: 5px 0; transition: transform 0.2s, opacity 0.2s; }
+.nav-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu { display: none; position: fixed; top: 80px; left: 0; right: 0; background: var(--papier); border-bottom: 1px solid var(--trait); z-index: 99; }
+.mobile-menu ul { min-height: 0; list-style: none; display: flex; flex-direction: column; padding: 0.4rem 2rem 1.2rem; }
+.mobile-menu li { border-bottom: 1px solid var(--trait); }
+.mobile-menu a { display: block; padding: 0.85rem 0; font-size: 0.98rem; font-weight: 500; color: var(--encre); }
+
+/* ---------- Une (hero) ---------- */
+/* Le hero occupe au moins le premier écran (sous la barre de 80px) : sur grand moniteur, la section
+   suivante ne « pointe » plus en bas. Contenu calé en haut — pas de centrage vertical (le plein
+   écran centré de la V2 avait été jugé bizarre). Sur petits écrans, le contenu dépasse déjà, sans effet. */
+.hero { padding: 4.5rem 0 5rem; min-height: calc(100svh - 80px); }
+.hero-grid { display: grid; grid-template-columns: 1.05fr 0.85fr; gap: 3.5rem; align-items: center; }
+.hero h1 {
+  font-size: clamp(2.6rem, 5.9vw, 4.5rem); line-height: 1.03; font-weight: 600; letter-spacing: -0.02em;
+  margin-bottom: 0.2rem; max-width: 15ch;
+}
+/* « sa voix » surligné — le surligneur se pose de gauche à droite au chargement (petite signature animée). */
+.hero h1 .a {
+  color: var(--rouge);
+  background-image: linear-gradient(transparent 66%, rgba(242,187,22,0.45) 66%);
+  background-repeat: no-repeat; background-position: left bottom;
+  background-size: 100% 100%; /* visible par défaut (sans JS) */
+}
+.js .hero h1 .a { background-size: 0% 100%; animation: highlightSweep .8s var(--ease-soft) .55s forwards; }
+@keyframes highlightSweep { to { background-size: 100% 100%; } }
+.hero-eyebrow { display: block; margin-bottom: 1.5rem; }
+.hero-desc { font-size: 1.08rem; font-weight: 300; line-height: 1.75; max-width: 44ch; margin-bottom: 2.2rem; }
+.hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--sans);
+  font-size: 0.86rem; font-weight: 600; letter-spacing: 0.03em;
+  padding: 0.95rem 1.7rem; border-radius: var(--r-sm); border: 1.5px solid transparent; cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+}
+.btn-primary { background: var(--rouge); color: var(--papier); border-color: var(--rouge); }
+.btn-primary:hover { background: var(--encre); border-color: var(--encre); transform: translateY(-1px); }
+.btn-ghost { border-color: var(--trait-fort); color: var(--encre); }
+.btn-ghost:hover { border-color: var(--rouge); color: var(--rouge); }
+.hero-photo { position: relative; }
+.hero-photo .frame { position: absolute; inset: 18px -18px -18px 18px; background: var(--sauge); border-radius: var(--r-md); z-index: 0; }
+.hero-photo .shot { position: relative; z-index: 1; border-radius: var(--r-md); overflow: hidden; aspect-ratio: 4 / 5; }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; filter: saturate(0.5) sepia(0.28) contrast(1.03) brightness(1.03); }
+/* Voile chaud : la brume de la photo est froide, la charte est chaude — on la ramène vers le crème. */
+.hero-photo .shot::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(155deg, rgba(242,187,22,0.22), rgba(222,121,11,0.18) 45%, rgba(154,12,6,0.16));
+  mix-blend-mode: multiply;
+}
+
+/* ---------- Qui suis-je ---------- */
+.about-grid { display: grid; grid-template-columns: 1.1fr 0.8fr; gap: 4rem; align-items: center; }
+.about-body p { font-size: 1rem; font-weight: 300; line-height: 1.85; margin-bottom: 1.1rem; }
+.about-body p strong { color: var(--rouge); font-weight: 600; }
+.about-photo { position: relative; }
+.about-photo .frame { position: absolute; inset: -16px 16px 16px -16px; background: var(--jaune); border-radius: var(--r-md); z-index: 0; }
+.about-photo img { position: relative; z-index: 1; width: 100%; height: auto; border-radius: var(--r-md); }
+
+/* ---------- Pour qui ---------- */
+.qui-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+.qcard { background: var(--papier); border: 1px solid var(--trait); border-radius: var(--r-md); padding: 2.1rem 1.8rem; }
+.qcard .ico { color: var(--rouge); margin-bottom: 1.1rem; }
+.qcard .tag { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rouge); margin-bottom: 0.55rem; }
+.qcard h3 { font-size: 1.32rem; line-height: 1.25; margin-bottom: 0.7rem; }
+.qcard p { font-size: 0.93rem; font-weight: 300; line-height: 1.75; }
+
+/* ---------- Ce que je propose ---------- */
+.offre-lead { font-size: 1rem; font-weight: 300; line-height: 1.75; max-width: 62ch; margin: 0 auto 2.6rem; text-align: center; }
+.offre { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.offre-col { background: var(--papier); border: 1px solid var(--trait); border-radius: var(--r-md); padding: 2.6rem 2rem; }
+.offre-col .ico-lg { color: var(--rouge); margin-bottom: 1.2rem; }
+.offre-kicker { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rouge); margin-bottom: 0.6rem; }
+.offre-col h3 { font-size: 1.28rem; line-height: 1.3; margin-bottom: 0.8rem; }
+.offre-col p { font-size: 0.92rem; font-weight: 300; line-height: 1.75; }
+.offre-foot { margin-top: 2.2rem; text-align: center; font-size: 1.05rem; font-weight: 300; line-height: 1.7; }
+.offre-foot b { color: var(--encre); font-weight: 600; }
+
+/* ---------- Ma pédagogie (liste éditoriale, sans numéros) ---------- */
+.pedago { max-width: 800px; margin: 5rem auto 0; }
+.pedago-head { text-align: center; margin-bottom: 2.2rem; }
+.pedago-head h3 { font-size: clamp(1.5rem, 2.6vw, 2rem); margin-bottom: 0.7rem; }
+.pedago-head p { font-size: 0.98rem; font-weight: 300; line-height: 1.7; }
+.pedago-list { list-style: none; border-top: 1px solid var(--trait); }
+.pedago-list li { display: flex; align-items: center; gap: 1.1rem; padding: 1rem 0.2rem; border-bottom: 1px solid var(--trait); font-size: 1.02rem; color: var(--encre); }
+.pedago-list .ico { color: var(--orange); }
+
+/* ---------- Tarifs ---------- */
+.tarifs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; align-items: start; }
+.tcard { background: var(--papier); border: 1px solid var(--trait); border-radius: var(--r-md); padding: 2rem 1.9rem; }
+.tcard h3 { display: flex; align-items: center; gap: 0.7rem; font-size: 1.18rem; margin-bottom: 1.4rem; }
+.tcard h3 .ico { color: var(--rouge); width: 22px; height: 22px; }
+.tsub { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rouge); margin: 1.6rem 0 0.2rem; }
+.tsub:first-of-type { margin-top: 0; }
+.trow { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.8rem 0; border-bottom: 1px solid var(--trait); }
+.trow:last-child { border-bottom: none; }
+.trow .lbl { font-size: 0.98rem; font-weight: 400; color: var(--encre); }
+.trow .lbl .eq { display: block; font-size: 0.74rem; font-weight: 400; color: var(--encre-2); margin-top: 0.12rem; } /* équivalent /séance, discret */
+.trow .price { font-family: var(--display); font-weight: 600; font-size: 1.2rem; color: var(--encre); white-space: nowrap; }
+.trow .price small { font-family: var(--sans); font-size: 0.72rem; font-weight: 400; color: var(--encre-2); }
+/* La création se distingue par son pictogramme et son prix en rouge, pas par un liseré latéral. */
+.trow-creation { margin-top: 0.9rem; padding: 1rem 1.1rem; border: none; background: var(--creme); border-radius: var(--r-sm); }
+.tcard.on-creme .trow-creation { background: var(--creme-2); }
+.trow-creation .lbl { display: flex; align-items: center; gap: 0.75rem; }
+.trow-creation .lbl .ico { width: 20px; height: 20px; color: var(--orange); }
+.trow-creation .lbl small { display: block; font-size: 0.78rem; font-weight: 400; color: var(--encre-2); margin-top: 0.15rem; }
+.trow-creation .price { color: var(--rouge); }
+.decouverte { margin-top: 2.2rem; text-align: center; }
+.decouverte .pill {
+  display: inline-flex; align-items: center; gap: 0.55rem; background: var(--jaune); color: var(--encre);
+  font-weight: 600; font-size: 0.95rem; padding: 0.6rem 1.3rem; border-radius: 100px;
+}
+.decouverte .pill .ico { width: 20px; height: 20px; }
+.decouverte p { max-width: 60ch; margin: 1rem auto 0; font-size: 0.98rem; font-weight: 300; line-height: 1.7; }
+/* --- Propositions (test live) : toggles de présentation de la carte tarifs --- */
+.hide-eq .trow .lbl .eq { display: none; }                    /* équivalents « soit X €/séance » masqués */
+.tarifs-grid .crea-card { display: none; }                    /* carte création dédiée : cachée en 2 colonnes */
+.tarifs-grid.is-3col { grid-template-columns: 1fr 1fr 1fr; }  /* mode 3 colonnes : création à part */
+.tarifs-grid.is-3col .crea-card { display: block; }
+.tarifs-grid.is-3col .crea-card .trow-creation .lbl .ico,
+.tarifs-grid.is-3col .crea-sub { display: none; }             /* évite la redite avec le titre de la carte dédiée */
+
+/* ---------- Vos questions ---------- */
+.faq-block { background: var(--sauge); border-radius: var(--r-lg); padding: 3rem 3rem; }
+.faq-block .section-head { margin-bottom: 1.8rem; }
+.faq-block .eyebrow { color: var(--encre); }
+/* Deux colonnes INDÉPENDANTES (4 + 4) : chaque colonne empile ses questions sans s'aligner sur
+   l'autre → pas de trou entre questions courtes, et ouvrir une question ne pousse que sa colonne.
+   Une seule colonne en mobile. */
+.faq-list { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
+.faq-col { display: flex; flex-direction: column; gap: 0.7rem; }
+.faq-item { background: var(--papier); border-radius: var(--r-sm); overflow: hidden; }
+.faq-q {
+  width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+  font-family: var(--display); text-transform: lowercase; font-weight: 600; font-size: 1.04rem; color: var(--encre);
+  padding: 1.15rem 1.4rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+}
+.faq-q .ic { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--creme); color: var(--rouge); display: flex; align-items: center; justify-content: center; font-family: var(--sans); font-size: 1.1rem; transition: transform 0.25s, background 0.2s, color 0.2s; }
+.faq-item.open .faq-q .ic { transform: rotate(45deg); background: var(--rouge); color: var(--papier); }
+/* Repli/dépli fluide : on anime grid-template-rows (0fr↔1fr) d'un conteneur toujours présent —
+   jamais de « auto » ni de display:none, donc pas de saccade. Sans JS : tout ouvert (1fr), lisible. */
+.faq-a-wrap { display: grid; grid-template-rows: 1fr; }
+.js .faq-a-wrap { grid-template-rows: 0fr; transition: grid-template-rows 0.32s var(--ease-soft); }
+.js .faq-item.open .faq-a-wrap { grid-template-rows: 1fr; }
+.faq-a { min-height: 0; overflow: hidden; }
+.faq-a-c { padding: 0 1.4rem 1.25rem; font-size: 0.95rem; font-weight: 300; line-height: 1.75; }
+
+/* ---------- Contact ---------- */
+.contact { background: var(--rouge); color: var(--papier); text-align: center; }
+.contact h2 { color: var(--papier); font-size: clamp(2rem, 3.6vw, 2.9rem); line-height: 1.15; margin-bottom: 1rem; }
+.contact h2 em { font-style: italic; color: var(--jaune); }
+.contact-lead { max-width: 52ch; margin: 0 auto 2.4rem; font-size: 1.02rem; font-weight: 300; line-height: 1.75; color: rgba(253,250,245,0.88); }
+.contact-methods { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.cmethod { display: flex; align-items: center; gap: 0.9rem; min-width: 0; background: rgba(253,250,245,0.08); border: 1px solid rgba(253,250,245,0.28); border-radius: var(--r-md); padding: 0.9rem 1.2rem; text-align: left; transition: background 0.2s, border-color 0.2s, transform 0.15s; }
+.cmethod:hover { background: rgba(253,250,245,0.14); border-color: rgba(253,250,245,0.45); }
+.cm-text { min-width: 0; }
+.cmethod .ico { color: var(--jaune); }
+.cmethod .k { display: block; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--jaune); font-weight: 600; }
+.cmethod .v { display: block; font-size: 1rem; color: var(--papier); font-weight: 500; overflow-wrap: anywhere; }
+/* Retour "Copié !" sur ordinateur (pas de bouton) — masqué par défaut, apparaît une seconde au clic */
+.cm-toast { margin-left: auto; flex: none; font-size: 0.74rem; font-weight: 600; color: var(--jaune); opacity: 0; transform: translateX(-4px); transition: opacity 0.2s, transform 0.2s; white-space: nowrap; }
+.cmethod.copied .cm-toast { opacity: 1; transform: none; }
+.contact-info { margin-top: 2.2rem; display: flex; flex-direction: column; gap: 0.5rem; align-items: center; }
+.contact-info .line { font-size: 0.92rem; font-weight: 300; color: rgba(253,250,245,0.85); display: inline-flex; align-items: center; gap: 0.55rem; }
+.contact-info .line .ico { width: 18px; height: 18px; color: var(--jaune); }
+
+/* ---------- Pied de page ---------- */
+footer { background: var(--creme-2); color: var(--encre-2); padding: 2.6rem 0; border-top: 1px solid var(--trait); }
+footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.footer-links { display: flex; gap: 1.3rem; list-style: none; flex-wrap: wrap; }
+.footer-links a { position: relative; font-size: 0.78rem; color: var(--encre-2); transition: color 0.45s var(--ease-soft); }
+.footer-links a:hover { color: var(--rouge); }
+.footer-legal { font-size: 0.74rem; color: var(--encre-2); opacity: 0.8; }
+
+/* ---------- Micro-interactions (discrètes, cohérentes) ---------- */
+/* Ancres : le titre visé ne se cache plus sous la barre collante. */
+:where(#main, section[id]) { scroll-margin-top: 96px; }
+
+/* Enfoncement au clic — retour tactile léger */
+.btn:active { transform: translateY(0) scale(.985); }
+.nav-cta:active { transform: scale(.985); }
+.cmethod:active { transform: scale(.99); }
+
+/* Soulignement qui pousse depuis la gauche, menu + pied de page */
+.nav-links a::after, .footer-links a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -5px; height: 1.5px;
+  background: currentColor; transform: scaleX(0); transform-origin: left;
+  transition: transform .58s var(--ease-soft);
+}
+.nav-links a:hover::after, .nav-links a:focus-visible::after,
+.footer-links a:hover::after, .footer-links a:focus-visible::after { transform: scaleX(1); }
+
+/* Cartes qui se soulèvent doucement + picto qui monte d'un cheveu.
+   NB : .qcard porte aussi .reveal — on redéclare la transition ici (même spécificité, plus bas dans
+   la cascade) pour qu'elle couvre aussi ombre et bordure au survol, sans casser l'entrée au scroll. */
+.js .qcard { transition: opacity .6s ease, transform .4s var(--ease-soft), box-shadow .3s var(--ease-soft), border-color .3s; }
+.qcard .ico { transition: transform .3s var(--ease-soft); }
+.qcard:hover { transform: translateY(-4px); border-color: rgba(154,12,6,.28); box-shadow: 0 16px 34px rgba(64,1,1,.09); }
+.qcard:hover .ico { transform: translateY(-3px) scale(1.06); }
+/* 3 cartes aérées : même survol que les cartes « Pour qui » (soulèvement + ombre), pas de changement de fond. */
+.offre-col { transition: transform .3s var(--ease-soft), box-shadow .3s, border-color .3s; }
+.offre-col .ico-lg { transition: transform .3s var(--ease-soft); }
+.offre-col:hover { transform: translateY(-4px); border-color: rgba(154,12,6,.28); box-shadow: 0 16px 34px rgba(64,1,1,.09); }
+.offre-col:hover .ico-lg { transform: translateY(-3px) scale(1.06); }
+
+/* Question survolée : léger passage au rouge (affordance) */
+.faq-q { transition: color .2s; }
+.faq-q:hover { color: var(--rouge); }
+/* (Le repli/dépli de la FAQ est géré plus haut, via .faq-a-wrap en grid-template-rows.) */
+
+/* Liste pédagogie : apparition en cascade légère (le conteneur, lui, ne s'anime pas) */
+.js .pedago-list.reveal { opacity: 1; transform: none; }
+.js .pedago-list li { opacity: 0; transform: translateY(10px); transition: opacity .5s var(--ease-soft), transform .5s var(--ease-soft); }
+.js .pedago-list.in li { opacity: 1; transform: none; }
+.js .pedago-list.in li:nth-child(1) { transition-delay: .03s; }
+.js .pedago-list.in li:nth-child(2) { transition-delay: .07s; }
+.js .pedago-list.in li:nth-child(3) { transition-delay: .11s; }
+.js .pedago-list.in li:nth-child(4) { transition-delay: .15s; }
+.js .pedago-list.in li:nth-child(5) { transition-delay: .19s; }
+.js .pedago-list.in li:nth-child(6) { transition-delay: .23s; }
+.js .pedago-list.in li:nth-child(7) { transition-delay: .27s; }
+.js .pedago-list.in li:nth-child(8) { transition-delay: .31s; }
+
+/* ---------- Responsive ---------- */
+/* La barre passe au menu burger plus tôt (1080px) : avec l'emblème, les 5 liens n'ont plus la place sur une ligne en dessous. */
+@media (max-width: 1080px) {
+  .nav-links { display: none; }
+  .nav-burger { display: flex; flex-direction: column; }
+  .mobile-menu { display: grid; grid-template-rows: 0fr; overflow: hidden; transition: grid-template-rows 0.25s ease; }
+  .mobile-menu.open { grid-template-rows: 1fr; }
+}
+@media (max-width: 980px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 2.8rem; }
+  .hero-photo { max-width: 460px; }
+  .hero-photo .frame { inset: 14px -14px -14px 14px; }
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .about-photo { max-width: 420px; }
+  .qui-grid { grid-template-columns: 1fr; }
+  .offre { grid-template-columns: 1fr; }
+  .tarifs-grid, .tarifs-grid.is-3col { grid-template-columns: 1fr; }
+  .faq-block { padding: 3rem 1.6rem; }
+  .faq-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .wrap { padding: 0 1.3rem; }
+  .section { padding: 4.2rem 0; }
+  .hero { padding: 3rem 0 3.5rem; }
+  .nav-inner { height: 72px; }
+  .mobile-menu { top: 72px; }
+  .brand-role { font-size: 0.56rem; letter-spacing: 0.12em; }
+  .brand-emblem { width: 48px; height: 48px; }
+  /* Le CTA de la barre est redondant sous 560px : le menu déroulant contient déjà « Me contacter »,
+     et le garder écrasait le bouton hamburger sous la cible tactile de 44px. */
+  .nav-cta { display: none; }
+  .cmethod { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .js .reveal, .js .pedago-list li { opacity: 1 !important; transform: none !important; }
+  .js .hero h1 .a { background-size: 100% 100% !important; } /* surligneur affiché, non animé */
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Aller au contenu</a>
+
+<!-- ============ PICTOGRAMMES (sprite inline, recolorable par CSS) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-note" viewBox="0 0 24 24"><circle cx="8" cy="17.5" r="3.4"/><path d="M11.4 17.5V5.2l8-1.7v11.4"/><circle cx="16" cy="14.9" r="3.4"/></symbol>
+  <symbol id="i-scene" viewBox="0 0 24 24"><circle cx="12" cy="4.6" r="2.4"/><path d="M9.6 6.6 4 20.5h16L14.4 6.6"/><path d="M8.2 15.4h7.6"/></symbol>
+  <symbol id="i-plume" viewBox="0 0 24 24"><path d="M20.4 3.6c-7.2.6-12 4.6-13 10.4l-.5 3.1 3.1-.5c5.8-1 9.8-5.8 10.4-13z"/><path d="M9.4 14.6 3.6 20.4"/></symbol>
+  <symbol id="i-soleil" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.6v2.2M12 19.2v2.2M4.3 4.3l1.6 1.6M18.1 18.1l1.6 1.6M2.6 12h2.2M19.2 12h2.2M4.3 19.7l1.6-1.6M18.1 5.9l1.6-1.6"/></symbol>
+  <symbol id="i-personne" viewBox="0 0 24 24"><circle cx="12" cy="7.4" r="3.4"/><path d="M4.8 20.4a7.2 7.2 0 0 1 14.4 0"/></symbol>
+  <symbol id="i-escalier" viewBox="0 0 24 24"><path d="M3 20.4v-4.6h5.4v-4.6h5.4V6.6h5.4"/><path d="M19.2 6.6v13.8"/></symbol>
+  <symbol id="i-onde" viewBox="0 0 24 24"><path d="M3 10.4v3.2M7.4 6.6v10.8M11.8 3.4v17.2M16.2 7.6v8.8M20.6 10.9v2.2"/></symbol>
+  <symbol id="i-souffle" viewBox="0 0 24 24"><path d="M3 8.4c3-3 6-3 9 0s6 3 9 0"/><path d="M3 15.6c3-3 6-3 9 0s6 3 9 0"/></symbol>
+  <symbol id="i-corps" viewBox="0 0 24 24"><circle cx="12" cy="4.4" r="2.4"/><path d="M12 6.8v7.4M12 14.2 8.6 20.6M12 14.2l3.4 6.4M7.4 9.6h9.2"/></symbol>
+  <symbol id="i-gamme" viewBox="0 0 24 24"><path d="M4 20.4v-3.6M9.3 20.4v-7.2M14.7 20.4V9.2M20 20.4V3.6"/></symbol>
+  <symbol id="i-coeur" viewBox="0 0 24 24"><path d="M12 20.4C6.4 16.2 3.4 13.2 3.4 9.6A4.2 4.2 0 0 1 12 7.4a4.2 4.2 0 0 1 8.6 2.2c0 3.6-3 6.6-8.6 10.8z"/></symbol>
+  <symbol id="i-etoile" viewBox="0 0 24 24"><path d="M12 3.2l2.6 5.6 6 .8-4.4 4.2 1.1 6.1-5.3-3-5.3 3 1.1-6.1L3.4 9.6l6-.8z"/></symbol>
+  <symbol id="i-spirale" viewBox="0 0 24 24"><path d="M14.6 12a2.6 2.6 0 1 1-2.6-2.6 5 5 0 1 1-5 5 7.6 7.6 0 1 1 7.6 7.6"/></symbol>
+  <symbol id="i-horloge" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.8"/><path d="M12 6.6V12l3.6 2.2"/></symbol>
+  <symbol id="i-calendrier" viewBox="0 0 24 24"><rect x="3.4" y="5.2" width="17.2" height="15.4" rx="2.2"/><path d="M3.4 10h17.2M8.2 3.4v3.6M15.8 3.4v3.6"/></symbol>
+  <symbol id="i-enveloppe" viewBox="0 0 24 24"><rect x="3" y="5.4" width="18" height="13.2" rx="2.2"/><path d="M3.6 7.2 12 13l8.4-5.8"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path d="M6.2 3.4h3.2l1.9 4.7-2.4 1.4a12.4 12.4 0 0 0 5.6 5.6l1.4-2.4 4.7 1.9v3.2a2 2 0 0 1-2.1 2A17.2 17.2 0 0 1 4.2 5.5a2 2 0 0 1 2-2.1z"/></symbol>
+  <symbol id="i-lieu" viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+</svg>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="#" class="brand">
+      <img class="brand-emblem" src="images/logo18.svg" alt="" width="56" height="56">
+      <span class="brand-txt">
+        <span class="brand-name">Myriam El Ouartassi</span>
+        <span class="brand-role">Professeure de chant · Coach vocale</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#apropos">Qui suis-je&nbsp;?</a></li>
+      <li><a href="#pourqui">Pour qui&nbsp;?</a></li>
+      <li><a href="#propose" class="propose-label">Travailler ensemble</a></li>
+      <li><a href="#tarifs">Les tarifs</a></li>
+      <li><a href="#faq">Vos questions</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Me contacter</a>
+    <button class="nav-burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#apropos">Qui suis-je&nbsp;?</a></li>
+    <li><a href="#pourqui">Pour qui&nbsp;?</a></li>
+    <li><a href="#propose" class="propose-label">Travailler ensemble</a></li>
+    <li><a href="#tarifs">Les tarifs</a></li>
+    <li><a href="#faq">Vos questions</a></li>
+    <li><a href="#contact">Me contacter</a></li>
+  </ul>
+</div>
+
+<!-- ============ UNE ============ -->
+<header class="hero" id="main">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="eyebrow hero-eyebrow reveal">Cours de chant à Alençon (61)</span>
+      <h1 class="reveal d1">Prendre confiance,<br>trouver <span class="a">sa voix</span></h1>
+      <div class="rule-short reveal d1"></div>
+      <p class="hero-desc reveal d2">Je vous accompagne avec sensibilité dans la découverte de votre voix et de votre personnalité artistique.</p>
+      <div class="hero-actions reveal d3">
+        <a href="#contact" class="btn btn-primary cta-label">Ma séance découverte offerte</a>
+        <a href="#propose" class="btn btn-ghost propose-label">Travailler ensemble</a>
+      </div>
+    </div>
+    <div class="hero-photo reveal d2">
+      <div class="frame" aria-hidden="true"></div>
+      <div class="shot">
+        <img src="images/falaise.jpg" alt="Myriam El Ouartassi, de profil au sommet d'une falaise dans la brume" width="1100" height="1954" loading="eager">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ QUI SUIS-JE ============ -->
+<section class="section bg-creme" id="apropos">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="section-head" style="margin-bottom:2rem;">
+          <span class="eyebrow reveal">Qui suis-je&nbsp;?</span>
+          <h2 class="section-title reveal">Passionnée de chant,<br><span class="a">passionnée de transmettre</span></h2>
+        </div>
+        <div class="about-body">
+          <p class="reveal d1"><strong>Auteure-compositrice-interprète</strong> formée en chant jazz au <strong>Conservatoire de Lille</strong> et diplômée d'un <strong>master recherche-création en musicologie</strong>, je vous accompagne avec sensibilité dans la découverte de votre voix et de votre personnalité artistique.</p>
+          <p class="reveal d1">En parallèle de mon parcours de formation pratique et théorique autour de la musique et de la voix, étant autant passionnée par la voix et la création musicale que par l'écriture de textes, je vous transmets mon expérience de la voix, de la création et de la scène.</p>
+          <p class="reveal d2">Passionnée de chant et de musique depuis toujours, j'ai à cœur de vous transmettre ce qui me fait vibrer. La voix est un outil vivant formidable pour laisser place à votre sensibilité, vous exprimer et vous épanouir&nbsp;!</p>
+          <p class="reveal d2">Je collabore par ailleurs avec <strong>Music'Alençon</strong>, situé au 65 cours Clemenceau à Alençon.</p>
+        </div>
+      </div>
+      <div class="about-photo reveal d1">
+        <div class="frame" aria-hidden="true"></div>
+        <img src="images/photo-myriam.png" alt="Myriam El Ouartassi, en concert" width="573" height="840"
+             onerror="this.parentElement.style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POUR QUI ============ -->
+<section class="section" id="pourqui">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Pour qui&nbsp;?</span>
+      <h2 class="section-title">À qui s'adressent <span class="a">les cours</span></h2>
+    </div>
+    <div class="qui-grid">
+      <div class="qcard reveal d1">
+        <svg class="ico" aria-hidden="true"><use href="#i-soleil"></use></svg>
+        <span class="tag">Enfants &amp; ados</span>
+        <h3>Apprenez en confiance</h3>
+        <p>Des cours ludiques et rassurants, au rythme de l'enfant ou de l'ado. On avance pas à pas, sans pression, pour que le chant reste avant tout un plaisir et une source de confiance en soi.</p>
+      </div>
+      <div class="qcard reveal d2">
+        <svg class="ico" aria-hidden="true"><use href="#i-personne"></use></svg>
+        <span class="tag">Adultes</span>
+        <h3>Osez votre voix</h3>
+        <p>Débutant complet ou déjà à l'aise, il n'y a pas besoin de «&nbsp;bien chanter&nbsp;» pour commencer un cours. Chaque séance est pensée pour vous, votre niveau et vos envies, à votre rythme.</p>
+      </div>
+      <div class="qcard reveal d3">
+        <svg class="ico" aria-hidden="true"><use href="#i-escalier"></use></svg>
+        <span class="tag">Tous les niveaux</span>
+        <h3>Partez d'où vous en êtes</h3>
+        <p>Débutant, amateur ou chanteur confirmé&nbsp;: chaque cours part de votre niveau réel. Et si vous «&nbsp;pensez chanter faux&nbsp;», c'est presque toujours une question de technique et de repères — c'est justement ce qui se travaille.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CE QUE JE PROPOSE (+ MA PÉDAGOGIE) ============ -->
+<section class="section bg-creme" id="propose">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow propose-label">Travailler ensemble</span>
+      <h2 class="section-title">Un accompagnement <span class="a">adapté à vos envies</span></h2>
+    </div>
+    <p class="offre-lead reveal d1">Ces trois dimensions ne sont pas des formules séparées&nbsp;: un cours peut les mêler, selon là où vous en êtes et ce dont vous avez envie.</p>
+    <div class="offre reveal d1">
+      <article class="offre-col">
+        <svg class="ico ico-lg" aria-hidden="true"><use href="#i-note"></use></svg>
+        <p class="offre-kicker">Cours de chant</p>
+        <h3>Découvrez votre voix, approfondissez votre pratique</h3>
+        <p>Dans l'écoute, le plaisir et la confiance, nous allierons technique vocale et savoir-faire de l'interprétation pour dépasser vos blocages et faire éclore votre voix. Vous vous réapproprierez les chansons que vous aimez d'une manière qui vous ressemble. Nous pourrons aussi explorer le terrain de jeu de l'improvisation, chemin possible vers votre liberté vocale.</p>
+      </article>
+      <article class="offre-col">
+        <svg class="ico ico-lg" aria-hidden="true"><use href="#i-scene"></use></svg>
+        <p class="offre-kicker">Coaching vocal &amp; scénique</p>
+        <h3>Révélez votre personnalité artistique</h3>
+        <!-- NOTE (à valider avec Myriam) : paragraphe complétant sa phrase laissée en "…" dans le questionnaire. -->
+        <p>Je vous accompagne dans le développement de votre personnalité artistique et de votre présence scénique. Nous explorerons ensemble votre rapport à la scène, au public et à votre univers, pour que votre interprétation gagne en présence et en sincérité.</p>
+      </article>
+      <article class="offre-col">
+        <svg class="ico ico-lg" aria-hidden="true"><use href="#i-plume"></use></svg>
+        <p class="offre-kicker">Accompagnement à la création</p>
+        <h3>Écrivez et composez vos chansons</h3>
+        <p>Je vous accompagne dans l'écriture et la composition de chansons, que vous pourrez ensuite interpréter. Nous donnerons de l'importance aux mots, à leur sens, mais aussi à leur sonorité.</p>
+      </article>
+    </div>
+    <p class="offre-foot reveal d2">Lors de notre premier échange, nous parlerons de vos envies, et nous trouverons ensemble <b>un chemin de progression qui vous correspond</b>&nbsp;!</p>
+
+    <div class="pedago">
+      <div class="pedago-head reveal">
+        <h3>Ma pédagogie</h3>
+        <p>Une approche globale de la voix, adaptée à votre parcours et à vos envies.</p>
+      </div>
+      <ul class="pedago-list reveal d1">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-onde"></use></svg> Technique vocale</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-souffle"></use></svg> Respiration &amp; souffle</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-corps"></use></svg> Posture &amp; corps</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-gamme"></use></svg> Justesse &amp; tessiture</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-coeur"></use></svg> Interprétation &amp; émotion</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-etoile"></use></svg> Confiance &amp; présence scénique</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-spirale"></use></svg> Improvisation</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-plume"></use></svg> Écriture &amp; composition</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LES TARIFS ============
+     Tous les prix sont regroupés ici : une ligne = un tarif, rien de dupliqué ailleurs.
+     Grille issue de docs/analyse-tarifs.md — NON VALIDÉE par Myriam à ce jour. -->
+<section class="section" id="tarifs">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Les tarifs</span>
+      <h2 class="section-title tarif-title">À chacun <span class="a">sa formule</span></h2>
+    </div>
+    <div class="tarifs-grid">
+      <div class="tcard reveal d1" id="card-seance">
+        <h3><svg class="ico" aria-hidden="true"><use href="#i-horloge"></use></svg> À la séance</h3>
+        <div class="trow"><span class="lbl">30 minutes</span><span class="price">20 €</span></div>
+        <div class="trow"><span class="lbl">45 minutes</span><span class="price">27 €</span></div>
+        <div class="trow"><span class="lbl">1 heure</span><span class="price">35 €</span></div>
+        <div class="trow trow-creation" id="crea-seance">
+          <span class="lbl"><svg class="ico" aria-hidden="true"><use href="#i-plume"></use></svg><span>1 h 30 <small class="crea-sub">Accompagnement à la création</small></span></span>
+          <span class="price">65 €</span>
+        </div>
+      </div>
+      <div class="tcard on-creme reveal d2" id="card-forfait">
+        <h3><svg class="ico" aria-hidden="true"><use href="#i-calendrier"></use></svg> <span class="card2-title">Forfaits &amp; cycle</span></h3>
+        <p class="tsub">Forfait à l'année (10 mois) · chant &amp; coaching</p>
+        <div class="trow"><span class="lbl">30 min / semaine <small class="eq">soit 15 € la séance</small></span><span class="price">60 €<small> /mois</small></span></div>
+        <div class="trow"><span class="lbl">45 min / semaine <small class="eq">soit 22,50 € la séance</small></span><span class="price">90 €<small> /mois</small></span></div>
+        <div class="trow"><span class="lbl">1 h / semaine <small class="eq">soit 30 € la séance</small></span><span class="price">120 €<small> /mois</small></span></div>
+        <div class="trow trow-creation" id="crea-cycle">
+          <span class="lbl"><svg class="ico" aria-hidden="true"><use href="#i-plume"></use></svg><span>Cycle création · 5 séances de 1 h 30 <small>vers une chanson finie</small><small class="eq">soit 58 € la séance</small></span></span>
+          <span class="price">290 €</span>
+        </div>
+      </div>
+      <!-- Carte création dédiée (mode 3 colonnes). Le JS y déplace #crea-seance et #crea-cycle ; aucun prix n'est dupliqué. -->
+      <div class="tcard crea-card" id="crea-card">
+        <h3><svg class="ico" aria-hidden="true"><use href="#i-plume"></use></svg> Accompagnement à la création</h3>
+      </div>
+    </div>
+    <div class="decouverte reveal d2">
+      <span class="pill"><svg class="ico" aria-hidden="true"><use href="#i-etoile"></use></svg> Séance découverte offerte</span>
+      <p>La séance découverte est avant tout un temps d'échange, sans engagement&nbsp;: on fait connaissance et on parle de vos envies, pour voir ensemble comment avancer à votre rythme.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VOS QUESTIONS ============ -->
+<section class="section bg-creme" id="faq">
+  <div class="wrap">
+    <div class="faq-block reveal">
+      <div class="section-head center">
+        <span class="eyebrow">Vos questions</span>
+        <h2 class="section-title">Vous vous posez peut-être ces questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-col">
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Faut-il «&nbsp;avoir une belle voix&nbsp;» ou déjà savoir chanter&nbsp;? <span class="ic" aria-hidden="true">+</span></button>
+          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">Non, pas du tout. La plupart des élèves démarrent sans aucune base. «&nbsp;Chanter faux&nbsp;» est presque toujours une question de technique et de repères, pas un don manquant — et c'est justement ce qui se travaille en cours, progressivement.</div></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Faut-il savoir lire la musique&nbsp;? <span class="ic" aria-hidden="true">+</span></button>
+          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">Non. Il n'y a aucun prérequis de solfège&nbsp;: on travaille à l'oreille et avec des repères concrets. La théorie n'arrive que si elle vous est utile, et jamais comme un passage obligé.</div></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Faut-il vouloir monter sur scène ou avoir un projet précis&nbsp;? <span class="ic" aria-hidden="true">+</span></button>
+          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">Pas du tout. Beaucoup viennent simplement pour le plaisir de chanter et prendre confiance. La scène, l'écriture ou la création sont des chemins possibles, jamais un passage obligé.</div></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Peut-on travailler les chansons et les styles que j'aime&nbsp;? <span class="ic" aria-hidden="true">+</span></button>
+          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">Oui, c'est même le point de départ. On part de ce qui vous touche et de vos envies, pour vous réapproprier les chansons que vous aimez d'une manière qui vous ressemble.</div></div></div>
+        </div>
+        </div>
+        <div class="faq-col">
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Comment se déroule un premier cours&nbsp;? <span class="ic" aria-hidden="true">+</span></button>
+          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">La séance découverte est offerte. On échange d'abord sur vos envies, votre parcours et ce qui vous motive, puis on fait quelques exercices simples pour découvrir votre voix, en douceur et sans jugement. On repart avec un chemin de progression qui vous correspond.</div></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">À quelle fréquence faut-il prendre des cours&nbsp;? <span class="ic" aria-hidden="true">+</span></button>
+          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">Un cours par semaine est le rythme le plus courant pour progresser régulièrement, mais tout s'adapte selon vos disponibilités et vos objectifs. Le forfait à l'année est là pour celles et ceux qui veulent s'installer dans un rythme régulier.</div></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Suis-je obligé(e) de m'engager à l'année&nbsp;? <span class="ic" aria-hidden="true">+</span></button>
+          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">Non. On peut tout à fait avancer à la séance, à votre rythme. Le forfait à l'année existe pour celles et ceux qui veulent s'installer dans une régularité — c'est un choix, pas une condition.</div></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Au bout de combien de temps voit-on des progrès&nbsp;? <span class="ic" aria-hidden="true">+</span></button>
+          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">Cela dépend de chacun et de vos objectifs, mais les premières sensations (souffle, justesse, aisance) arrivent souvent vite. On avance pas à pas, et on prend le temps qu'il faut.</div></div></div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <h2 class="reveal">Envie de vous lancer&nbsp;?<br><em>Parlons-en.</em></h2>
+    <p class="contact-lead reveal d1">Quel que soit votre niveau, si l'envie de chanter est là&nbsp;: écrivez-moi ou appelez-moi. <b>La séance découverte est offerte</b> — on trouvera ensemble un créneau qui vous convient.</p>
+    <div class="contact-methods reveal d2">
+      <a class="cmethod" href="mailto:myriam.elouartassi@gmail.com?subject=Cours%20de%20chant" data-copy="myriam.elouartassi@gmail.com">
+        <svg class="ico" aria-hidden="true"><use href="#i-enveloppe"></use></svg>
+        <span class="cm-text"><span class="k">Email</span><span class="v">myriam.elouartassi@gmail.com</span></span>
+        <span class="cm-toast" aria-hidden="true">Copié&nbsp;!</span>
+      </a>
+      <a class="cmethod" href="tel:+33623064882" data-copy="06 23 06 48 82">
+        <svg class="ico" aria-hidden="true"><use href="#i-tel"></use></svg>
+        <span class="cm-text"><span class="k">Téléphone</span><span class="v">06 23 06 48 82</span></span>
+        <span class="cm-toast" aria-hidden="true">Copié&nbsp;!</span>
+      </a>
+    </div>
+    <div class="contact-info reveal d3">
+      <p class="line"><svg class="ico" aria-hidden="true"><use href="#i-lieu"></use></svg> Alençon (61)</p>
+      <p class="line"><svg class="ico" aria-hidden="true"><use href="#i-note"></use></svg> En collaboration avec Music'Alençon · 65 cours Clemenceau</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <ul class="footer-links">
+      <li><a href="#apropos">Qui suis-je&nbsp;?</a></li>
+      <li><a href="#pourqui">Pour qui&nbsp;?</a></li>
+      <li><a href="#propose" class="propose-label">Travailler ensemble</a></li>
+      <li><a href="#tarifs">Les tarifs</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="mentions-legales.html">Mentions légales</a></li>
+    </ul>
+    <p class="footer-legal">© 2026 Myriam El Ouartassi · Alençon (61)</p>
+  </div>
+</footer>
+
+<script>
+// Menu mobile
+(function () {
+  var burger = document.getElementById('navBurger');
+  var menu = document.getElementById('mobileMenu');
+  if (!burger || !menu) return;
+  function close() {
+    burger.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('open');
+  }
+  burger.addEventListener('click', function () {
+    var open = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!open));
+    menu.classList.toggle('open', !open);
+  });
+  menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', close); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+})();
+
+// Contact : liens natifs mailto:/tel:. Sur MOBILE, tout reste natif (appel / appli mail).
+// Sur ORDINATEUR, l'email (mailto:) ouvre le client mail normalement ; seul le TÉLÉPHONE (tel:)
+// ouvrirait une appli parasite (« Mobile connecté »/Phone Link) → sur ce seul lien on BLOQUE la
+// navigation (preventDefault) et on COPIE le numéro + « Copié ! ».
+(function () {
+  var fine = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (!fine) return; // appareil tactile : liens natifs (appel / mail)
+  document.querySelectorAll('.cmethod[href^="tel:"]').forEach(function (card) {
+    card.addEventListener('click', function (e) {
+      e.preventDefault(); // ordinateur : pas d'appli téléphone utile, on copie le numéro
+      var text = card.getAttribute('data-copy');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).catch(function () {});
+      }
+      card.classList.add('copied');
+      clearTimeout(card._t);
+      card._t = setTimeout(function () { card.classList.remove('copied'); }, 1600);
+    });
+  });
+})();
+
+// FAQ : un seul volet ouvert à la fois. L'animation est 100 % CSS (grid-template-rows sur
+// .faq-a-wrap) ; ici on ne fait que basculer la classe .open et l'état aria. Sans JS, tout reste ouvert.
+(function () {
+  var items = [].slice.call(document.querySelectorAll('.faq-item'));
+  items.forEach(function (item) {
+    var btn = item.querySelector('.faq-q');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var willOpen = !item.classList.contains('open');
+      if (willOpen) {
+        items.forEach(function (o) {
+          if (o !== item) {
+            o.classList.remove('open');
+            var b = o.querySelector('.faq-q');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+      item.classList.toggle('open', willOpen);
+      btn.setAttribute('aria-expanded', String(willOpen));
+    });
+  });
+})();
+
+// Apparitions au défilement
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    els.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+<div id="testSwitch" style="position:fixed;left:16px;bottom:16px;z-index:2000;display:flex;flex-direction:column;gap:.4rem;background:#400101;color:#FDFAF5;padding:.5rem .6rem;border-radius:12px;box-shadow:0 8px 24px rgba(64,1,1,.32);font-family:system-ui,-apple-system,sans-serif;"><button id="testToggle" type="button" style="display:flex;align-items:center;gap:.4rem;width:100%;background:none;border:none;color:#FDFAF5;font:inherit;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;padding:.1rem;"><span style="font-size:.95rem;line-height:1;">&#9881;</span><span>Propositions</span><span id="testArrow" style="margin-left:auto;">&#9662;</span></button><div id="testBody" style="display:flex;flex-direction:column;gap:.4rem;min-width:232px;"><div style="display:flex;align-items:center;gap:.55rem;"><label for="typoSelect" style="font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.85;min-width:42px;white-space:nowrap;">Police</label><select id="typoSelect" style="font:inherit;font-size:.82rem;font-weight:600;color:#400101;background:#FDFAF5;border:none;border-radius:7px;padding:.35rem 1.6rem .35rem .55rem;cursor:pointer;flex:1;-webkit-appearance:none;appearance:none;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23400101' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right .5rem center;background-size:9px;"><option value="../typo-1/index.html">1 · Lora / General Sans</option><option value="../typo-2/index.html">2 · Lora / Lora</option><option value="../typo-3/index.html" selected>3 · Fraunces / Lora</option><option value="../typo-4/index.html">4 · Lora / Satoshi</option><option value="../typo-5/index.html">5 · Satoshi / Lora</option></select></div><div style="display:flex;align-items:center;gap:.55rem;"><label for="logoSelect" style="font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.85;min-width:42px;white-space:nowrap;">Logo</label><select id="logoSelect" style="font:inherit;font-size:.82rem;font-weight:600;color:#400101;background:#FDFAF5;border:none;border-radius:7px;padding:.35rem 1.6rem .35rem .55rem;cursor:pointer;flex:1;-webkit-appearance:none;appearance:none;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23400101' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right .5rem center;background-size:9px;"><option value="1">Emblème (choisi)</option><option value="2">Cheveux lâchés</option><option value="3">Bandeau</option><option value="4">Queue bouclée</option><option value="5">Cheveux noués</option><option value="7">Silhouette douce</option><option value="8">Silhouette foulard</option><option value="9">Bouclée médaillon</option><option value="10">Sceau bouclée</option><option value="11">Voix & feuillage</option><option value="12">Trait au foulard</option><option value="13">Monogramme M</option><option value="14">Monogramme M·E</option><option value="15">Oiseau chanteur</option><option value="16">Micro ruban</option><option value="17">Voix abstraite</option><option value="18" selected>Visage au trait</option><option value="0">Texte seul</option></select></div><div style="display:flex;align-items:center;gap:.55rem;"><label for="ctaSelect" style="font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.85;min-width:42px;white-space:nowrap;">Bouton 1</label><select id="ctaSelect" style="font:inherit;font-size:.82rem;font-weight:600;color:#400101;background:#FDFAF5;border:none;border-radius:7px;padding:.35rem 1.6rem .35rem .55rem;cursor:pointer;flex:1;-webkit-appearance:none;appearance:none;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23400101' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right .5rem center;background-size:9px;"><option value="Ma séance découverte offerte" selected>Ma séance découverte offerte</option><option value="Votre séance découverte offerte">Votre séance découverte offerte</option><option value="Séance découverte offerte">Séance découverte offerte</option><option value="Profitez de votre séance offerte">Profitez de votre séance offerte</option></select></div><div style="display:flex;align-items:center;gap:.55rem;"><label for="labelSelect" style="font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.85;min-width:42px;white-space:nowrap;">Bouton 2</label><select id="labelSelect" style="font:inherit;font-size:.82rem;font-weight:600;color:#400101;background:#FDFAF5;border:none;border-radius:7px;padding:.35rem 1.6rem .35rem .55rem;cursor:pointer;flex:1;-webkit-appearance:none;appearance:none;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23400101' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right .5rem center;background-size:9px;"><option value="Ce que je propose">Ce que je propose</option><option value="Travailler ensemble" selected>Travailler ensemble</option><option value="Votre accompagnement">Votre accompagnement</option><option value="Votre parcours">Votre parcours</option><option value="Mon accompagnement">Mon accompagnement</option><option value="L'accompagnement">L'accompagnement</option></select></div><div style="display:flex;align-items:center;gap:.55rem;"><label for="fondSelect" style="font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.85;min-width:42px;white-space:nowrap;">Fond</label><select id="fondSelect" style="font:inherit;font-size:.82rem;font-weight:600;color:#400101;background:#FDFAF5;border:none;border-radius:7px;padding:.35rem 1.6rem .35rem .55rem;cursor:pointer;flex:1;-webkit-appearance:none;appearance:none;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23400101' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right .5rem center;background-size:9px;"><option value="#FDFAF5,#F7F1E6,#EFE6D6" selected>Actuel</option><option value="#FBF6EC,#F4EEDD,#EBE1CE">Doux</option><option value="#FAF3E6,#F1E9D5,#E7DBC6">Chaud</option><option value="#F7EFDD,#EEE4CD,#E3D6BE">Très chaud</option></select></div><div style="display:flex;align-items:center;gap:.55rem;"><label for="tarifSelect" style="font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.85;min-width:42px;white-space:nowrap;">Tarifs</label><select id="tarifSelect" style="font:inherit;font-size:.82rem;font-weight:600;color:#400101;background:#FDFAF5;border:none;border-radius:7px;padding:.35rem 1.6rem .35rem .55rem;cursor:pointer;flex:1;-webkit-appearance:none;appearance:none;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23400101' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right .5rem center;background-size:9px;"><option value="À chacun sa formule" selected>À chacun sa formule</option><option value="De la séance à l'année">De la séance à l'année</option><option value="Choisir votre rythme">Choisir votre rythme</option><option value="Un tarif pour chaque envie">Un tarif pour chaque envie</option><option value="À votre rythme">À votre rythme</option><option value="À vous de choisir">À vous de choisir</option></select></div><div style="display:flex;align-items:center;gap:.55rem;"><label for="eqSelect" style="font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.85;min-width:42px;white-space:nowrap;">Prix/séance</label><select id="eqSelect" style="font:inherit;font-size:.82rem;font-weight:600;color:#400101;background:#FDFAF5;border:none;border-radius:7px;padding:.35rem 1.6rem .35rem .55rem;cursor:pointer;flex:1;-webkit-appearance:none;appearance:none;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23400101' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right .5rem center;background-size:9px;"><option value="show" selected>Affiché</option><option value="hide">Masqué</option></select></div><div style="display:flex;align-items:center;gap:.55rem;"><label for="creaSelect" style="font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.85;min-width:42px;white-space:nowrap;">Disposition</label><select id="creaSelect" style="font:inherit;font-size:.82rem;font-weight:600;color:#400101;background:#FDFAF5;border:none;border-radius:7px;padding:.35rem 1.6rem .35rem .55rem;cursor:pointer;flex:1;-webkit-appearance:none;appearance:none;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23400101' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right .5rem center;background-size:9px;"><option value="2col" selected>Création intégrée</option><option value="3col">Création à part</option></select></div><div style="display:flex;align-items:center;gap:.55rem;"><label for="domainSelect" style="font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.85;min-width:42px;white-space:nowrap;">Domaine</label><select id="domainSelect" style="font:inherit;font-size:.82rem;font-weight:600;color:#400101;background:#FDFAF5;border:none;border-radius:7px;padding:.35rem 1.6rem .35rem .55rem;cursor:pointer;flex:1;-webkit-appearance:none;appearance:none;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23400101' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right .5rem center;background-size:9px;"><option value="" selected>— domaine à choisir —</option><optgroup label="À son nom"><option value="myriamelouartassi.fr">myriamelouartassi.fr</option><option value="myriam-elouartassi.fr">myriam-elouartassi.fr</option></optgroup><optgroup label="Prénom + activité"><option value="chanter-avec-myriam.fr">chanter-avec-myriam.fr</option><option value="myriam-chant.fr">myriam-chant.fr</option></optgroup><optgroup label="Activité + ville"><option value="cours-de-chant-alencon.fr">cours-de-chant-alencon.fr</option><option value="coach-vocal-alencon.fr">coach-vocal-alencon.fr</option><option value="chant-alencon.fr">chant-alencon.fr</option></optgroup><optgroup label="Marque / atelier"><option value="atelier-vocal-alencon.fr">atelier-vocal-alencon.fr</option><option value="studio-chant-alencon.fr">studio-chant-alencon.fr</option></optgroup><optgroup label="Évocatif"><option value="oser-chanter.fr">oser-chanter.fr</option></optgroup></select></div></div></div>
+<script>(function(){try{if("scrollRestoration" in history){history.scrollRestoration="manual";}var m=location.hash.match(/y=(\d+)/);if(m){var y=parseInt(m[1],10);var root=document.documentElement;var prev=root.style.scrollBehavior;root.style.scrollBehavior="auto";var go=function(){window.scrollTo(0,y);};go();window.addEventListener("load",function(){go();setTimeout(function(){go();root.style.scrollBehavior=prev;},120);});if(history.replaceState){history.replaceState(null,"",location.pathname);}}}catch(e){}var s=document.getElementById("typoSelect");if(s){s.addEventListener("change",function(){var y=Math.round(window.scrollY||window.pageYOffset||0);location.href=s.value+"#y="+y;});}var e=document.querySelector(".brand-emblem");var l=document.getElementById("logoSelect");function ap(v){if(!e)return;if(v==="0"){e.style.display="none";}else{e.style.display="";e.src="images/logo"+v+".svg";}}try{var sv=localStorage.getItem("logoChoice");if(sv){if(l)l.value=sv;ap(sv);}}catch(_){}if(l){l.addEventListener("change",function(){ap(l.value);try{localStorage.setItem("logoChoice",l.value);}catch(_){}});}var lb=document.getElementById("labelSelect");function apl(v){document.querySelectorAll(".propose-label").forEach(function(el){el.textContent=v;});}try{var lv=localStorage.getItem("labelChoice");if(lv){if(lb)lb.value=lv;apl(lv);}}catch(_){}if(lb){lb.addEventListener("change",function(){apl(lb.value);try{localStorage.setItem("labelChoice",lb.value);}catch(_){}});}var cb=document.getElementById("ctaSelect");function apc(v){document.querySelectorAll(".cta-label").forEach(function(el){el.textContent=v;});}try{var cv=localStorage.getItem("ctaChoice");if(cv){if(cb)cb.value=cv;apc(cv);}}catch(_){}if(cb){cb.addEventListener("change",function(){apc(cb.value);try{localStorage.setItem("ctaChoice",cb.value);}catch(_){}});}var fb=document.getElementById("fondSelect");function apf(v){var p=v.split(",");var r=document.documentElement;r.style.setProperty("--papier",p[0]);r.style.setProperty("--creme",p[1]);r.style.setProperty("--creme-2",p[2]);}try{var fv=localStorage.getItem("fondChoice");if(fv){if(fb)fb.value=fv;apf(fv);}}catch(_){}if(fb){fb.addEventListener("change",function(){apf(fb.value);try{localStorage.setItem("fondChoice",fb.value);}catch(_){}});}var tsel=document.getElementById("tarifSelect");var tttl=document.querySelector(".tarif-title");var TT={"À chacun sa formule": "À chacun <span class=\"a\">sa formule</span>", "De la séance à l'année": "De la séance <span class=\"a\">à l'année</span>", "Choisir votre rythme": "Choisir <span class=\"a\">votre rythme</span>", "Un tarif pour chaque envie": "Un tarif pour <span class=\"a\">chaque envie</span>", "À votre rythme": "À <span class=\"a\">votre rythme</span>", "À vous de choisir": "<span class=\"a\">À vous</span> de choisir"};function apt(v){if(tttl&&TT[v])tttl.innerHTML=TT[v];}try{var ttv=localStorage.getItem("tarifTitle");if(ttv){if(tsel)tsel.value=ttv;apt(ttv);}}catch(_){}if(tsel){tsel.addEventListener("change",function(){apt(tsel.value);try{localStorage.setItem("tarifTitle",tsel.value);}catch(_){}});}var eqs=document.getElementById("eqSelect");function apeq(v){if(v==="hide"){document.body.classList.add("hide-eq");}else{document.body.classList.remove("hide-eq");}}try{var eqv=localStorage.getItem("eqChoice");if(eqv){if(eqs)eqs.value=eqv;apeq(eqv);}}catch(_){}if(eqs){eqs.addEventListener("change",function(){apeq(eqs.value);try{localStorage.setItem("eqChoice",eqs.value);}catch(_){}});}var crs=document.getElementById("creaSelect");var c2t=document.querySelector(".card2-title");function apcrea(v){var grid=document.querySelector(".tarifs-grid");if(!grid)return;var c1=document.getElementById("card-seance"),c2=document.getElementById("card-forfait"),cc=document.getElementById("crea-card");var s=document.getElementById("crea-seance"),cy=document.getElementById("crea-cycle");if(!cc)return;if(v==="3col"){if(s)cc.appendChild(s);if(cy)cc.appendChild(cy);grid.classList.add("is-3col");if(c2t)c2t.textContent="Forfaits";}else{if(s&&c1)c1.appendChild(s);if(cy&&c2)c2.appendChild(cy);grid.classList.remove("is-3col");if(c2t)c2t.textContent="Forfaits & cycle";}}try{var crv=localStorage.getItem("creaChoice");if(crv){if(crs)crs.value=crv;apcrea(crv);}}catch(_){}if(crs){crs.addEventListener("change",function(){apcrea(crs.value);try{localStorage.setItem("creaChoice",crs.value);}catch(_){}});}var ds=document.getElementById("domainSelect");try{var dv=localStorage.getItem("domainChoice");if(dv&&ds)ds.value=dv;}catch(_){}if(ds){ds.addEventListener("change",function(){try{localStorage.setItem("domainChoice",ds.value);}catch(_){}});}var tt=document.getElementById("testToggle");var tbd=document.getElementById("testBody");var tar=document.getElementById("testArrow");function setColl(c){if(tbd)tbd.style.display=c?"none":"flex";if(tar)tar.innerHTML=c?"&#9656;":"&#9662;";}try{setColl(localStorage.getItem("panelCollapsed")==="1");}catch(_){}if(tt){tt.addEventListener("click",function(){var c=tbd.style.display!=="none";setColl(c);try{localStorage.setItem("panelCollapsed",c?"1":"0");}catch(_){}});}})();</script>
+</body>
+</html>
