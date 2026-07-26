@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentions légales — Myriam El Ouartassi</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%239A0C06'/><g fill='%23FDFAF5'><rect x='30' y='14' width='5' height='28' rx='2.5'/><circle cx='24' cy='43' r='8.5'/><path d='M30 14 c10 1 14 6 14 13 c-3 -6 -8 -8 -14 -8 z'/></g></svg>">
+<meta name="robots" content="noindex, nofollow">
+
+<!--FONTS-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap"></noscript>
+<link rel="preload" as="style" href="https://api.fontshare.com/v2/css?f%5B%5D=satoshi@300,400,500,700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f%5B%5D=satoshi@300,400,500,700&display=swap"></noscript>
+<!--/FONTS-->
+
+<!--TYPO-->
+<style id="typo">:root{ --display: 'Lora', Georgia, serif; --sans: 'Satoshi', system-ui, sans-serif; }</style>
+<!--/TYPO-->
+
+<style>
+:root {
+  --encre: #400101; --encre-2: #6B3B33;
+  --rouge: #9A0C06; --orange: #DE790B; --jaune: #F2BB16; --sauge: #8DA086;
+  --papier: #FBF6EC; --creme: #F4EEDD; --creme-2: #EBE1CE;
+  --trait: rgba(64,1,1,0.13); --bw: 2px;
+  --r-sm: 6px; --r-md: 12px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--sans); font-size-adjust: 0.52; background: var(--papier); color: var(--encre-2); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2.5px solid var(--rouge); outline-offset: 3px; border-radius: 4px; }
+.skip-link { position: absolute; top: -100px; left: 1rem; z-index: 1000; background: var(--encre); color: var(--papier); font-weight: 600; font-size: 0.9rem; padding: 0.7rem 1.2rem; border-radius: var(--r-sm); transition: top 0.2s; }
+.skip-link:focus { top: 1rem; }
+.wrap { max-width: 800px; margin: 0 auto; padding: 0 2.4rem; }
+
+nav { position: sticky; top: 0; z-index: 100; background: rgba(251,246,236,0.92); backdrop-filter: blur(10px); border-bottom: var(--bw) solid var(--trait); }
+nav .wrap { max-width: 1140px; display: flex; align-items: center; justify-content: space-between; height: 80px; }
+.brand-name { display: block; font-family: var(--display); font-size: 1.14rem; font-weight: 600; color: var(--encre); line-height: 1.2; }
+.brand-role { display: block; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rouge); margin-top: 0.28rem; }
+.nav-back { font-size: 0.82rem; font-weight: 600; color: var(--rouge); }
+
+.legal { padding: 4rem 0 5rem; }
+.legal .eyebrow { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rouge); margin-bottom: 0.9rem; }
+.legal h1 { font-family: var(--display); text-transform: lowercase; font-weight: 600; font-size: clamp(1.9rem, 4vw, 2.6rem); color: var(--encre); margin-bottom: 2.4rem; }
+.legal h2 { font-family: var(--display); text-transform: lowercase; font-weight: 600; font-size: 1.2rem; margin: 2.4rem 0 0.9rem; color: var(--rouge); }
+.legal h2:first-of-type { margin-top: 0; }
+/* Casse des titres : meme mecanisme que la page d'accueil. La feuille pose les minuscules,
+   et body.caps-titres restaure la capitale d'attaque. La classe est posee par le petit script
+   de fin de page, qui lit le meme reglage que le panneau — sans quoi cette page resterait
+   figee et contredirait le choix de Myriam. */
+body.caps-titres .legal h1, body.caps-titres .legal h2 { text-transform: none; }
+.legal p { font-size: 0.98rem; font-weight: 300; line-height: 1.8; margin-bottom: 0.9rem; }
+.legal p strong { color: var(--encre); font-weight: 600; }
+/* font-size-adjust cale la hauteur d'x de Satoshi ; neutralise sur le Lora des titres,
+   sinon ils grossissent eux aussi. Meme decoupage que dans site-v4.html. */
+.brand-name, .legal h1, .legal h2 { font-size-adjust: none; }
+.tbc { display: inline-block; background: var(--creme); border: 1px dashed rgba(154,12,6,0.45); border-radius: var(--r-sm); padding: 0.15rem 0.6rem; font-size: 0.85rem; font-weight: 600; color: var(--rouge); }
+
+footer { background: var(--creme-2); border-top: var(--bw) solid var(--trait); padding: 2.6rem 0; }
+footer .wrap { max-width: 1140px; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.footer-links { display: flex; gap: 1.3rem; list-style: none; flex-wrap: wrap; }
+.footer-links a { font-size: 0.78rem; color: var(--encre-2); }
+.footer-links a:hover { color: var(--rouge); }
+.footer-legal { font-size: 0.74rem; width: 100%; opacity: 0.8; }
+
+@media (max-width: 560px) {
+  .wrap { padding: 0 1.3rem; }
+  .legal { padding: 3rem 0 3.5rem; }
+  nav .wrap { height: 72px; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Aller au contenu</a>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html">
+      <span class="brand-name">Myriam El Ouartassi</span>
+      <span class="brand-role">Professeure de chant · Coach vocale</span>
+    </a>
+    <a href="index.html" class="nav-back">&larr; Retour au site</a>
+  </div>
+</nav>
+
+<main class="legal" id="main">
+  <div class="wrap">
+    <span class="eyebrow">Informations légales</span>
+    <h1>Mentions légales</h1>
+
+    <h2>Éditrice du site</h2>
+    <!-- Obligation légale (LCEN art. 6-III) pour une professionnelle individuelle : nom, domicile (ou adresse
+         de domiciliation professionnelle) et téléphone sont requis. Une ville seule ("Alençon") ne suffit pas
+         juridiquement -- si Myriam ne veut pas publier son adresse personnelle, la seule option est une
+         domiciliation professionnelle (service payant) utilisée comme adresse légale. À trancher avec elle. -->
+    <p><strong>Myriam El Ouartassi</strong> — Professeure de chant · Coach vocale<br>
+    Statut&nbsp;: Auto-entrepreneuse<br>
+    Numéro SIRET&nbsp;: <span class="tbc">à compléter</span><br>
+    Adresse&nbsp;: <span class="tbc">à compléter (adresse complète requise légalement)</span><br>
+    Téléphone&nbsp;: 06 23 06 48 82</p>
+
+    <h2>Directrice de publication</h2>
+    <p>Myriam El Ouartassi.</p>
+
+    <h2>Hébergement</h2>
+    <p>Ce site est actuellement hébergé, à titre de prototype, par&nbsp;:<br>
+    <strong>GitHub, Inc.</strong> — 88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis<br>
+    <span class="tbc">à mettre à jour si l'hébergement change au moment de la mise en ligne définitive</span></p>
+
+    <h2>Propriété intellectuelle</h2>
+    <p>L'ensemble des contenus présents sur ce site (textes, photographies, mise en page) est la propriété de Myriam El Ouartassi, sauf mention contraire. Toute reproduction, représentation ou diffusion, en tout ou partie, sans autorisation préalable, est interdite.</p>
+
+    <h2>Données personnelles</h2>
+    <p>Ce site ne comporte aucun formulaire et ne dépose aucun cookie. Aucune donnée personnelle des visiteurs n'est collectée.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <span class="brand-name">Myriam El Ouartassi</span>
+      <span class="brand-role">Professeure de chant · Coach vocale</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="index.html#apropos">Qui suis-je&nbsp;?</a></li>
+      <li><a href="index.html#propose">Ce que je propose</a></li>
+      <li><a href="index.html#tarifs">Les tarifs</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <p class="footer-legal">© 2026 Myriam El Ouartassi · Alençon (61)</p>
+  </div>
+</footer>
+
+<script>(function(){try{var b=document.body,r=document.documentElement;b.classList.toggle("caps-titres",(localStorage.getItem("v4caps")||"caps")==="caps");r.style.setProperty("--bw",localStorage.getItem("v4bw")||"2px");}catch(_){}})();</script>
+</body>
+</html>
