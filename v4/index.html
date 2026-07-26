@@ -122,6 +122,15 @@ nav {
   backdrop-filter: blur(10px);
   border-bottom: var(--bw) solid var(--trait);
 }
+/* La barre a besoin de PLUS de large que la colonne de texte du site.
+   Mesuré en production, à 1900px de fenêtre : son contenu réclame 1086px alors que `.wrap`
+   n'offre que 1063px utiles (max-width 1140 dont 77 de padding) — il en manquait 23, à
+   TOUTE largeur d'écran. C'est pour ça que le sous-titre et le bouton passaient sur deux
+   lignes. La barre est un bandeau pleine largeur : rien ne l'oblige à se caler sur la
+   colonne de lecture. On lui donne 1260, soit ~1183 utiles et ~97px de marge réelle.
+   (Ce déficit vient du Lot 1 : Myriam a demandé d'agrandir Satoshi partout — la barre est
+   passée juste au-dessus de ce que `.wrap` pouvait offrir.) */
+nav .wrap { max-width: 1260px; }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 80px; }
 .brand { display: flex; align-items: center; gap: 0.75rem; }
 /* object-fit: contain — sans lui, un emblème NON CARRÉ est étiré pour remplir les 56×56.
@@ -130,11 +139,12 @@ nav {
 .brand-emblem { flex: none; width: 56px; height: 56px; display: block; object-fit: contain; }
 .brand-txt { display: block; }
 .brand-name { display: block; font-family: var(--display); font-size: 1.14rem; font-weight: 600; color: var(--encre); line-height: 1.2; letter-spacing: 0.01em; font-size-adjust: none; }
-.brand-role { display: block; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rouge); margin-top: 0.28rem; }
+.brand-role { display: block; white-space: nowrap; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rouge); margin-top: 0.28rem; }
 .nav-links { display: flex; gap: 1.4rem; list-style: none; }
 .nav-links a { position: relative; white-space: nowrap; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em; color: var(--encre-2); transition: color 0.45s var(--ease-soft); }
 .nav-links a:hover { color: var(--rouge); }
 .nav-cta {
+  white-space: nowrap;
   font-size: 0.76rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
   color: var(--rouge); border: 1.5px solid var(--rouge); padding: 0.62rem 1.15rem; border-radius: var(--r-sm);
   transition: background 0.2s, color 0.2s;
@@ -555,8 +565,16 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
 .js .pedago-list.in li:nth-child(8) { transition-delay: .31s; }
 
 /* ---------- Responsive ---------- */
-/* La barre passe au menu burger plus tôt (1080px) : avec l'emblème, les 5 liens n'ont plus la place sur une ligne en dessous. */
-@media (max-width: 1080px) {
+/* La barre passe au menu burger à 1220px et non 1080. Mesuré : le contenu de la barre
+   réclame 1071px, alors que `.wrap` (max-width 1140, padding 2×38px compté dedans) n'offre
+   que 1063px de zone utile — la barre n'a donc JAMAIS vraiment tenu. Au-dessus de 1217px de
+   fenêtre l'écrasement était de 8px et invisible ; en dessous il devenait assez fort pour
+   casser le sous-titre et le bouton sur deux lignes, entre 1081 et 1216px. */
+@media (max-width: 1220px) {
+  /* Le `nowrap` du sous-titre ne vaut que tant que la barre affiche ses liens : en dessous,
+     la place manque vraiment et l'empecher de se replier faisait DEBORDER la page de 13px
+     sur mobile. Ici on lui rend le droit de passer a la ligne. */
+  .brand-role { white-space: normal; }
   .nav-links { display: none; }
   .nav-burger { display: flex; flex-direction: column; }
   .mobile-menu { display: grid; grid-template-rows: 0fr; overflow: hidden; transition: grid-template-rows 0.25s ease; }
