@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://myriam-elouartassi-chant.fr/sitemap.xml

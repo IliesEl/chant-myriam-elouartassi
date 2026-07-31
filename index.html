@@ -12,13 +12,122 @@
 <link rel="icon" type="image/svg+xml" href="images/favicon-M.svg">
 <meta name="description" content="Cours de chant, coaching vocal et scénique et accompagnement à la création à Alençon (61). Auteure-compositrice-interprète formée au Conservatoire de Lille, je vous accompagne dans la découverte de votre voix et de votre personnalité artistique.">
 <!-- Prototype de travail : non indexable tant que la version n'est pas choisie. Le rel=canonical revient à la vraie mise en prod. -->
+<link rel="canonical" href="https://myriam-elouartassi-chant.fr/">
 <meta name="robots" content="noindex, nofollow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Myriam El Ouartassi">
+<meta property="og:url" content="https://myriam-elouartassi-chant.fr/">
 <meta property="og:title" content="Myriam El Ouartassi — Cours de chant &amp; coaching vocal à Alençon (61)">
 <meta property="og:description" content="Je vous accompagne avec sensibilité dans la découverte de votre voix et de votre personnalité artistique.">
-<meta property="og:image" content="images/qsj-2.jpg">
+<!-- ⚠️ URL ABSOLUE OBLIGATOIRE : en chemin relatif (l'etat precedent),
+     aucune messagerie n'affiche d'image. -->
+<meta property="og:image" content="https://myriam-elouartassi-chant.fr/images/og-partage.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Myriam El Ouartassi en concert, au chant et au clavier">
+<meta name="twitter:image" content="https://myriam-elouartassi-chant.fr/images/og-partage.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<!-- Donnees structurees : dit a Google qui est Myriam et ce qu'elle propose.
+     ⚠️ Ni adresse postale ni prix, deliberement — voir
+     tools/applique/v6_donnees_structurees.py pour le pourquoi. -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://myriam-elouartassi-chant.fr/#site",
+   "url": "https://myriam-elouartassi-chant.fr/",
+   "name": "Myriam El Ouartassi — Cours de chant & coaching vocal",
+   "inLanguage": "fr-FR",
+   "publisher": {
+    "@id": "https://myriam-elouartassi-chant.fr/#myriam"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://myriam-elouartassi-chant.fr/#myriam",
+   "name": "Myriam El Ouartassi",
+   "jobTitle": "Professeure de chant et coach vocale",
+   "description": "Auteure-compositrice-interprète formée en chant jazz au Conservatoire de Lille et diplômée d'un master recherche en musicologie.",
+   "url": "https://myriam-elouartassi-chant.fr/",
+   "image": "https://myriam-elouartassi-chant.fr/images/og-partage.jpg",
+   "telephone": "+33695458619",
+   "email": "myriam.eo.chant@gmail.com",
+   "knowsLanguage": "fr",
+   "workLocation": {
+    "@type": "Place",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "Alençon",
+     "postalCode": "61000",
+     "addressRegion": "Orne",
+     "addressCountry": "FR"
+    }
+   },
+   "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Conservatoire de Lille"
+   },
+   "knowsAbout": [
+    "Chant",
+    "Technique vocale",
+    "Coaching vocal",
+    "Interprétation scénique",
+    "Écriture de chansons",
+    "Composition"
+   ]
+  },
+  {
+   "@type": "Service",
+   "@id": "https://myriam-elouartassi-chant.fr/#cours-de-chant",
+   "name": "Cours de chant",
+   "description": "Technique vocale et interprétation, dans l'écoute, le plaisir et la confiance.",
+   "serviceType": "Cours de chant",
+   "provider": {
+    "@id": "https://myriam-elouartassi-chant.fr/#myriam"
+   },
+   "areaServed": {
+    "@type": "City",
+    "name": "Alençon"
+   }
+  },
+  {
+   "@type": "Service",
+   "@id": "https://myriam-elouartassi-chant.fr/#coaching-vocal",
+   "name": "Coaching vocal & scénique",
+   "description": "Développement de la personnalité artistique et de la présence scénique.",
+   "serviceType": "Coaching vocal & scénique",
+   "provider": {
+    "@id": "https://myriam-elouartassi-chant.fr/#myriam"
+   },
+   "areaServed": {
+    "@type": "City",
+    "name": "Alençon"
+   }
+  },
+  {
+   "@type": "Service",
+   "@id": "https://myriam-elouartassi-chant.fr/#accompagnement-creation",
+   "name": "Accompagnement à la création",
+   "description": "Accompagnement à l'écriture et à la composition de vos chansons.",
+   "serviceType": "Accompagnement à la création",
+   "provider": {
+    "@id": "https://myriam-elouartassi-chant.fr/#myriam"
+   },
+   "areaServed": {
+    "@type": "City",
+    "name": "Alençon"
+   }
+  }
+ ]
+}
+</script>
+
+<!-- Filet sans JavaScript : tout le contenu est en opacity 0 et n'apparait que
+     par IntersectionObserver. Sans JS, la page serait blanche. -->
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 
 <!--FONTS-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -585,6 +694,26 @@ body.qsj-rouge-e #apropos .about-body p strong { color: #CACFBE; }
   background-size: cover, var(--une-size), var(--une-size);
   background-position: center, var(--une-pos), var(--une-pos);
   background-repeat: no-repeat, no-repeat, no-repeat;
+}
+/* WebP quand le navigateur sait le lire, JPEG sinon : 200 Ko -> 102 Ko sur le plus
+   gros fichier du site. Verifie a 100 % avant remplacement (PSNR 39,9 dB).
+
+   ⚠️ LE REPLI PASSE PAR @supports, ET C'EST INDISPENSABLE : une propriete
+   personnalisee n'est pas validee a la DECLARATION, seulement a l'USAGE. Doubler
+   la declaration de --une-img ne protegerait donc de rien — un navigateur sans
+   image-set() accepterait la valeur puis echouerait a peindre, et la une n'aurait
+   PLUS D'IMAGE DU TOUT au lieu de retomber sur le JPEG.
+
+   ⚠️⚠️ ET LA VALEUR EST UN url() SIMPLE, PAS UN image-set() AVEC type() —
+   MESURE, PAS SUPPOSE. Avec type("image/webp"), le navigateur CROIT l'en-tete
+   Content-Type du serveur : si celui-ci se trompe, l'image est rejetee et la une
+   devient BLANCHE, sans retomber sur le JPEG. C'est exactement ce qui s'est
+   produit au premier essai (le serveur de previsualisation renvoyait
+   application/octet-stream). Un url() nu, lui, est RENIFLE d'apres les octets :
+   il s'affiche quel que soit l'en-tete. Le @supports suffit a ecarter les vieux
+   navigateurs — tous ceux qui connaissent image-set()+type() lisent le WebP. */
+@supports (background-image: image-set(url("i.webp") type("image/webp"))) {
+  .hero { --une-img: url(images/une/t2-retouch-e-11.webp); }
 }
 /* Le voile est dense DU COTE DU TEXTE et transparent sur elle : c'est ce qui garde le
    texte lisible quand des branches claires entrent dans le cadre. Le sens du dégradé
@@ -1201,7 +1330,7 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
         </div>
       </div>
       <div class="about-photo reveal d1">
-        <img class="qsj-photo" src="images/qsj-2.jpg" alt="Myriam El Ouartassi en concert, au chant et au clavier" width="900" height="1350"
+        <img class="qsj-photo" loading="lazy" decoding="async" src="images/qsj-2.jpg" alt="Myriam El Ouartassi en concert, au chant et au clavier" width="900" height="1350"
              onerror="this.parentElement.style.display='none'">
         <p class="photo-credit">Photos&nbsp;: © Vannamalie Phongsouvanh &amp; Léonard Novarina</p>
     </div>
