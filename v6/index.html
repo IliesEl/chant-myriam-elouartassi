@@ -13,6 +13,10 @@
 <meta name="description" content="Cours de chant, coaching vocal et scénique et accompagnement à la création à Alençon (61). Auteure-compositrice-interprète formée au Conservatoire de Lille, je vous accompagne dans la découverte de votre voix et de votre personnalité artistique.">
 <!-- Prototype de travail : non indexable tant que la version n'est pas choisie. Le rel=canonical revient à la vraie mise en prod. -->
 <meta name="robots" content="noindex, nofollow">
+<!-- La photo de la une est un fond CSS : le navigateur ne la decouvre qu'apres
+     avoir lu la feuille. On la demande tout de suite. Le type= fait sauter le
+     prechargement chez qui ne lit pas le WebP. -->
+<link rel="preload" as="image" href="images/une/t2-retouch-e-11.webp" type="image/webp">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Myriam El Ouartassi">
@@ -1296,6 +1300,12 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
   </ul>
 </div>
 
+<!-- ⚠️ REPERE PRINCIPAL INTRODUIT LE 31/07 : la page n'en avait aucun
+     (releve par Lighthouse). L'id="main" reste sur la une, le lien
+     d'evitement est donc inchange. Verifie : aucun selecteur ne depend de
+     la position des sections entre elles, et la preuve est faite par
+     comparaison d'images avant / apres. -->
+<main>
 <!-- ============ UNE ============ -->
 <header class="hero" id="main">
   <div class="wrap hero-grid">
@@ -1538,6 +1548,7 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="wrap">
