@@ -274,7 +274,7 @@ nav .wrap { max-width: 1260px; }
 .brand { display: flex; align-items: center; gap: 0.75rem; }
 .brand-txt { display: block; }
 .brand-name { display: block; font-family: var(--display); font-size: 1.14rem; font-weight: 600; color: var(--encre); line-height: 1.2; letter-spacing: 0.01em; font-size-adjust: none; }
-.brand-role { display: block; white-space: nowrap; font-size: var(--role-size, 0.62rem); font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rouge); margin-top: 0.28rem; }
+.brand-role { display: block; white-space: nowrap; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rouge); margin-top: 0.28rem; }
 .nav-links { display: flex; gap: 1.4rem; list-style: none; }
 .nav-links a { position: relative; white-space: nowrap; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em; color: var(--encre-2); transition: color 0.45s var(--ease-soft); }
 .nav-links a:hover { color: var(--rouge); }
@@ -298,11 +298,31 @@ nav .wrap { max-width: 1260px; }
 
 /* ---------- Une (hero) ---------- */
 /* Le hero occupe au moins le premier écran (sous la barre de 80px) : sur grand moniteur, la section
-   suivante ne « pointe » plus en bas. Contenu calé en haut — pas de centrage vertical (le plein
-   écran centré de la V2 avait été jugé bizarre). Sur petits écrans, le contenu dépasse déjà, sans effet. */
+   suivante ne « pointe » plus en bas. ⚠️ Le contenu ÉTAIT calé en haut à dessein — « le plein
+   écran centré de la V2 avait été jugé bizarre ». Myriam demande le 31/07 de « modifier les
+   espacements pour que ce soit centré sur la page », et le vide sous les boutons atteignait 350 px
+   avec sa formulation courte. L'équilibrage est donc rétabli, mais AU-DESSUS DE 980 px SEULEMENT
+   (voir plus bas) : sur petits écrans le contenu dépasse déjà, et la photo en bandeau vit dans ce
+   même bloc. ⚠️ Point rouvert, à confirmer par Myriam sur pièce. */
 .hero { padding: 4.5rem 0 5rem; min-height: calc(100svh - 80px); }
+/* ⚠️ VARIANTE ESSAYEE PUIS ECARTEE AVANT DE LUI SOUMETTRE : augmenter le seul
+   espace du haut. Ca equilibre la formulation en trois lignes et rate celle en
+   une seule, qui est justement celle qu'elle a retenue — il restait 350 px de
+   vide sous les boutons. Un espace fixe ne peut pas servir deux hauteurs de
+   titre ; seul l'equilibrage repond a « centre sur la page ».
+   ⚠️ BORNE AU GRAND ECRAN A DESSEIN : plus bas, le contenu depasse deja la
+   hauteur visible et la photo en bandeau vit dans ce meme bloc — l'y appliquer
+   la deplacerait. Les marges ci-dessus restent le minimum garanti. */
+@media (min-width: 981px) {
+  .hero { display: flex; align-items: center; }
+  .hero > .wrap { width: 100%; }
+}
 .hero-grid { display: grid; grid-template-columns: 1.05fr 0.85fr; gap: 3.5rem; align-items: center; }
+/* Sa demande du 31/07. La mise en bas de casse est une regle de charte posee
+   plus haut sur tous les titres ; ce seul titre en sort. Les 7 formulations du
+   panneau sont capitalisees a la source, aucune ne devient fautive. */
 .hero h1 {
+  text-transform: none;
   font-size: clamp(2.6rem, 5.9vw, 4.5rem); line-height: 1.03; font-weight: 600; letter-spacing: -0.02em;
   margin-bottom: 0.2rem; max-width: 15ch;
 }
@@ -333,10 +353,10 @@ nav .wrap { max-width: 1260px; }
 /* Retour Myriam 30/07 : « un peu plus d'espace entre les deux lignes », et une
    taille reglable — « j'aimerais que ce texte ressorte + ». */
 .hero-eyebrow { display: block; margin-bottom: 1.5rem; line-height: 2;
-                font-size: var(--eb-size, 0.72rem);
+                font-size: 0.95rem;
                 /* ⚠️ L'interlettrage suit la taille : a espacement constant,
                    le sur-titre passe a 3 lignes des 0,95 rem (mesure a 1280 px). */
-                letter-spacing: var(--eb-track, 0.18em); }
+                letter-spacing: 0.12em; }
 .hero-desc { font-size: 1.08rem; font-weight: 300; line-height: 1.75; max-width: 44ch; margin-bottom: 2.2rem; }
 .hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
 .btn {
@@ -367,6 +387,10 @@ nav .wrap { max-width: 1260px; }
 .qcard .tag { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rouge); margin-bottom: 0.55rem; }
 .qcard h3 { font-size: 1.32rem; line-height: 1.25; margin-bottom: 0.7rem; }
 .qcard p { font-size: 0.93rem; font-weight: 300; line-height: 1.75; }
+/* Myriam demande d'aller a la ligne dans « Adultes » et « Tous les niveaux ».
+   Deux paragraphes voisins n'ont aucun ecart par defaut : sans cette regle,
+   la coupure ne se verrait pas. */
+.qcard p + p { margin-top: 0.85rem; }
 
 /* ---------- Ce que je propose ---------- */
 .offre-lead { font-size: 1rem; font-weight: 300; line-height: 1.75; max-width: 62ch; margin: 0 auto 2.6rem; text-align: center; }
@@ -435,7 +459,7 @@ body.appr-2col .pedago-list li { border-top: var(--bw) solid var(--trait); borde
    gauche, hors du centrage. En la remettant dans le FLUX du texte, elle devient un mot
    comme un autre : la 1re ligne se centre avec elle dedans. Vaut aussi pour l'alignement
    à gauche, sans cas particulier. */
-.tcard h3 { display: block; text-align: center; font-size: 1.18rem; margin-bottom: 1.4rem; }
+.tcard h3 { display: block; text-align: center; font-size: 1.28rem; margin-bottom: 1.4rem; }
 .tcard .tsub { text-align: center; }
 body.tarifs-gauche .tcard h3 { text-align: left; }
 body.tarifs-gauche .tcard .tsub { text-align: left; }
@@ -477,7 +501,10 @@ body.tarifs-gauche .tcard .tsub { text-align: left; }
 .decouverte .pill:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(64, 1, 1, 0.16); }
 .decouverte .pill:active { transform: translateY(0); box-shadow: none; }
 .decouverte .pill .ico { width: calc(20px * var(--ico-tarifs, 1)); height: calc(20px * var(--ico-tarifs, 1)); }
-.decouverte p { max-width: 60ch; margin: 1rem auto 0; font-size: 0.98rem; font-weight: 300; line-height: 1.7; }
+/* « J'aimerais que le texte soit a la meme taille et aussi gras que » la phrase
+   de la section precedente (Myriam). Meme valeur, au chiffre pres. */
+.decouverte p b { color: var(--encre); font-weight: 600; }
+.decouverte p { max-width: 60ch; margin: 1rem auto 0; font-size: 1.05rem; font-weight: 300; line-height: 1.7; }
 /* --- Propositions (test live) : toggles de présentation de la carte tarifs --- */
 /* Toggles V4 (pistes « Test : » du retour Myriam, testables en direct via le panneau) */
 /* Poids du texte — le réglage ne porte plus QUE sur la UNE.
@@ -812,6 +839,10 @@ body.une-src-portrait.une-texte-gauche .hero { --une-pos: right top;
 .js .faq-item.open .faq-a-wrap { grid-template-rows: 1fr; }
 .faq-a { min-height: 0; overflow: hidden; }
 .faq-a-c { padding: 0 1.4rem 1.25rem; font-size: 0.95rem; font-weight: 300; line-height: 1.75; }
+/* Une seule reponse est en deux temps ; sans ces deux lignes elle se
+   lirait d'un bloc, et la coupure demandee ne se verrait pas. */
+.faq-a-c p { margin: 0; }
+.faq-a-c p + p { margin-top: 0.7rem; }
 
 /* ---------- Contact ---------- */
 .contact { background: var(--rouge); color: var(--papier); text-align: center; }
@@ -836,9 +867,12 @@ body.une-src-portrait.une-texte-gauche .hero { --une-pos: right top;
    donc l'etat de base de la page est rigoureusement inchange. Un facteur plutot qu'une
    taille absolue : le contact melange 24 px et 18 px, tout doit y grandir du meme rapport. */
 .pedago-list .ico { width: calc(24px * var(--ico-appr, 1)); height: calc(24px * var(--ico-appr, 1)); }
-.qcard .pq-ico { width: calc(24px * var(--ico-pourqui, 1)); height: calc(24px * var(--ico-pourqui, 1)); }
+.qcard .pq-ico { width: 30px; height: 30px; }
 .cmethod .ico { width: calc(24px * var(--ico-contact, 1)); height: calc(24px * var(--ico-contact, 1)); }
 .contact-info { margin-top: 2.2rem; display: flex; flex-direction: column; gap: 0.5rem; align-items: center; }
+/* La ligne est volontairement en retrait ; sa mise en valeur doit donc
+   remonter a pleine opacite, sinon le renfort demande ne se lit pas. */
+.contact-info .line b { color: var(--papier); font-weight: 600; }
 .contact-info .line { font-size: 0.92rem; font-weight: 300; color: rgba(253,250,245,0.85); display: inline-flex; align-items: center; gap: 0.55rem; }
 .contact-info .line .ico { width: calc(18px * var(--ico-contact, 1)); height: calc(18px * var(--ico-contact, 1)); color: var(--jaune); }
 
@@ -1011,12 +1045,33 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
   body.une-mob-visible .hero {
     background-image: linear-gradient(rgba(251,246,236,0.65), rgba(251,246,236,0.65)), var(--une-img);
   }
-  body.une-mob-dessous .hero { background-image: none; }
+  body.une-mob-dessous .hero { background-image: none; padding-bottom: 0; }
   body.une-mob-dessous .hero::before { display: none; }
+  /* Retour Myriam (31/07), trois demandes d'un coup :
+     — « qu'on la voit pas quand on ouvre la page » : c'est le bloc de texte qui porte
+       la hauteur minimale (ci-dessous), pas une marge fixe. Une marge fixe tombe juste
+       sur un ecran et faux sur le suivant ; la hauteur visible, elle, est toujours la
+       bonne reference.
+     — « sans le bandeau blanc casse en-dessous » : la marge du bas de la une tombe a
+       zero et la photo devient le dernier element du bloc.
+     — « un fondu en haut pour que la photo s'integre mieux au fond de la UNE » : le
+       degrade est un MASQUE, donc il decoupe la photo au lieu de peindre une couleur
+       par-dessus. Il suit n'importe quel fond de une sans etre recolorie.
+     ⚠️⚠️ LE FONDU EST TRES COURT (6 %), ET C'EST UNE CONTRAINTE DE LA PHOTO, PAS UN
+     choix esthetique : Myriam est a moins de 10 % du haut de l'image source, et il n'y
+     a PAS de ciel au-dessus d'elle. Tout fondu plus long lui mange la tete — essaye a
+     18 %, elle disparaissait. Le cadrage est donc remonte au bord haut et le degrade
+     tient en 23 px : assez pour supprimer l'arete franche, pas assez pour l'effacer.
+     ⚠️ A REPRENDRE avec la photo retouchee qu'elle annonce pour samedi. */
   body.une-mob-dessous .hero::after {
-    content: ""; display: block; width: 100%; height: 300px; margin-top: 2.2rem;
-    background-image: var(--une-img); background-size: cover; background-position: 31% 6%;
+    content: ""; display: block; width: 100%; height: 380px; margin-top: 2.2rem;
+    background-image: var(--une-img); background-size: cover; background-position: 31% 0%;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 6%);
+            mask-image: linear-gradient(to bottom, transparent 0%, #000 6%);
   }
+  /* La zone visible a l'arrivee = hauteur d'ecran - barre du haut - marge du haut.
+     La photo commence donc exactement au bord bas. */
+  body.une-mob-dessous .hero-grid { min-height: calc(100svh - 152px); }
   .hero-text { margin-left: 0; margin-right: 0; max-width: none; }
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
   .about-photo { max-width: 420px; }
@@ -1032,6 +1087,9 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
   .wrap { padding: 0 1.3rem; }
   .section { padding: 4.2rem 0; }
   .hero { padding: 3rem 0 3.5rem; }
+  /* Barre a 72 px et marge du haut a 48 px sous cette largeur : la reference du
+     bloc de texte suit, sinon la photo depasserait du bas de l'ecran. */
+  body.une-mob-dessous .hero-grid { min-height: calc(100svh - 120px); }
   .nav-inner { height: 72px; }
   .mobile-menu { top: 72px; }
   .brand-role { font-size: 0.56rem; letter-spacing: 0.12em; }
@@ -1047,7 +1105,7 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
 }
 </style>
 </head>
-<body class="une-mob-dessous une-src-portrait credit-pied une-fond-papier propose-fond-creme pourqui-fond-rouge tarifs-fond-creme">
+<body class="une-mob-dessous une-src-portrait credit-pied une-fond-papier propose-fond-creme pourqui-fond-rouge tarifs-fond-creme qsj-rouge-b appr-cartes pourqui-gauche faq-pleine faq-fond-vertdeau">
 
 <a href="#main" class="skip-link">Aller au contenu</a>
 
@@ -1063,18 +1121,18 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
        un micro », « retravailler la plume, on dirait une feuille », et les 3 de « Pour qui ? »
        « plus travaillés et plus créatifs ». -->
   <!-- quelqu'un qui chante : buste + la voix qui sort (remplace la note de musique) -->
-  <symbol id="i-chant" viewBox="0 0 24 24"><circle cx="9.4" cy="6.9" r="3.4"/><path d="M3.6 20.5a5.8 5.8 0 0 1 11.6 0"/><path d="M17.4 9.9a3.2 3.2 0 0 1 0 4.4"/><path d="M19.7 7.7a6 6 0 0 1 0 8.8"/></symbol>
+  
   <!-- micro sur pied, simplifié à partir de la marque (remplace le métronome) -->
   
   <!-- jeune pousse : apprendre en confiance, ça grandit (remplace le soleil) -->
-  <symbol id="i-pousse" viewBox="0 0 24 24"><path d="M12 20.6v-9.4"/><path d="M8.2 20.6h7.6"/><path d="M12 13.2C10.5 9.9 7.9 8.8 5.3 9.2c-.2 2.8 2 5 6.7 4z"/><path d="M12 11.2c1.3-3.5 3.7-4.8 6.3-4.4.2 3-2.2 5.4-6.3 4.4z"/></symbol>
+  
   <!-- bras levés : « osez votre voix » — écho direct à sa photo sur la falaise.
        Tracé en COURBES et non en segments : un bonhomme-bâton serait tout sauf « travaillé ». -->
   <!-- « Adultes / Osez votre voix ». Les bras leves d'avant se lisaient comme deux
        PARENTHESES a 24 px (constat d'Ilies) : une forme parfaitement symetrique sans
        detail interieur devient un signe typographique. Ce bourgeon est diagonal, ouvert,
        et sa densite de trait (25 %) est celle de ses voisins de rangee (36 % / 21 %). -->
-  <symbol id="i-osez" viewBox="0 0 24 24"><path d="M4.14 21.34c3.82-1.27 7.01-4.03 9.45-8.18"/><path d="M13.59 13.17c-2.34-0.53-3.61-2.12-3.4-4.46 2.340.11 3.5 1.49 3.4 4.46z"/><path d="M13.59 13.17c0.11-3.61 1.8-5.73 4.88-6.37 0.42 3.29-1.27 5.41-4.88 6.37z"/></symbol>
+  
   <!-- « commencez là où vous en êtes » : un chemin jalonné d'étapes, du point de départ vers
        la suite. Les jalons évitent que la courbe seule ne se lise comme un simple trait. -->
   
@@ -1086,7 +1144,7 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
        Ils avaient ete supprimes au Lot 5B ; Ilies veut pouvoir les recomparer. -->
   <!-- Picto de la V3, recale au poids de la rangee et rattache a SA carte :
        depuis le 26/07 il n'y a plus de reglage « tous les pictos V3 d'un coup ». -->
-  
+  <symbol id="i-enf-soleil" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.105"/><path d="M12 4.703v1.708M12 17.589v1.708M6.023 6.023l1.242 1.242M16.735 16.735l1.242 1.242M4.703 12h1.708M17.589 12h1.708M6.023 17.977l1.242-1.242M16.735 7.265l1.242-1.242"/></symbol>
   <!-- Picto de la V3, recale au poids de la rangee et rattache a SA carte :
        depuis le 26/07 il n'y a plus de reglage « tous les pictos V3 d'un coup ». -->
   
@@ -1113,7 +1171,7 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
        — large et plat, il serait sorti du cadre en LARGEUR avant d'atteindre la bonne
        hauteur. Redessine en TROIS vagues : meme motif, la hauteur en plus, et sans le
        vide central que laissaient deux vagues simplement ecartees. -->
-  <symbol id="i-souffle" viewBox="0 0 24 24"><path d="M3 5.8c3-2.7 6-2.7 9 0s6 2.7 9 0"/><path d="M3 12c3-2.7 6-2.7 9 0s6 2.7 9 0"/><path d="M3 18.2c3-2.7 6-2.7 9 0s6 2.7 9 0"/></symbol>
+  
   <!-- « Posture & corps » — 3 pistes, toutes des OBJETS. Le bonhomme-baton d'origine a été
        supprimé : Myriam le trouvait enfantin. ⚠️ Ne pas redessiner un corps ici — le Lot 5C
        a buté 4 fois dessus, un corps entier dans 24 px redevient toujours un bonhomme. -->
@@ -1125,7 +1183,7 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
   <!-- Meme dedoublement pour l'etoile : liste « Confiance & presence scenique » d'un
        cote, bouton « Seance decouverte offerte » de l'autre. Le trace est inchange —
        son poids est deja bon aux deux tailles (18,4 a 24 px, 15,3 a 20 px). -->
-  <symbol id="i-etoile-liste" viewBox="0 0 24 24"><path d="M12 3.2l2.6 5.6 6 .8-4.4 4.2 1.1 6.1-5.3-3-5.3 3 1.1-6.1L3.4 9.6l6-.8z"/></symbol>
+  
   <!-- Lot 5A (30/07) : Justesse : diapason. Dessin repris et recale a 18.19 px d'encre
        (echelle 0.901) pour tenir la rangee de la liste. Id PROPRE : l'original
        reste independant dans « Ce que je vous propose ». -->
@@ -1133,16 +1191,16 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
   <!-- Lot 5A (30/07) : Confiance : micro filaire. Dessin repris et recale a 18.19 px d'encre
        (echelle 0.911) pour tenir la rangee de la liste. Id PROPRE : l'original
        reste independant dans « Ce que je vous propose ». -->
-  
+  <symbol id="i-conf-micro" viewBox="0 0 24 24"><rect x="9.085" y="3.801" width="5.831" height="7.471" rx="2.915"/><rect x="10.542" y="11.271" width="2.915" height="4.92" rx="1.093"/><path d="M12 16.191c0 2.369-3.462 1.822-3.462 4.191"/></symbol>
   <!-- Lot 5B (30/07) : Posture : personnage qui leve les bras. Dessine pour 24 px : 2 a 3 elements amples
        plutot que 5 fins — la premiere passe a echoue exactement la-dessus. -->
-  
+  <symbol id="i-posture-personne" viewBox="0 0 24 24"><circle cx="12" cy="5.842" r="2.333"/><path d="M4.162 6.588 12 11.44 19.838 5.095"/><path d="M12 11.44v8.584"/></symbol>
   <!-- Lot 5B (30/07) : Respiration : vent qui souffle. Dessine pour 24 px : 2 a 3 elements amples
        plutot que 5 fins — la premiere passe a echoue exactement la-dessus. -->
-  
+  <symbol id="i-resp-vent" viewBox="0 0 24 24"><path d="M4.68 9.197h8.099a2.726 2.726 0 1 0-2.726-2.726"/><path d="M4.68 14.803h8.488a2.726 2.726 0 1 1-2.726 2.726"/></symbol>
   <!-- Lot 5B (30/07) : Adultes : personnage qui leve les bras. Dessine pour 24 px : 2 a 3 elements amples
        plutot que 5 fins — la premiere passe a echoue exactement la-dessus. -->
-  
+  <symbol id="i-adu-epanoui" viewBox="0 0 24 24"><circle cx="12" cy="6.584" r="2.051"/><path d="M5.107 7.241 12 11.508 18.893 5.928"/><path d="M12 11.508v7.549"/></symbol>
   <!-- Lot 5B (30/07) : Adultes : arbre. Dessine pour 24 px : 2 a 3 elements amples
        plutot que 5 fins — la premiere passe a echoue exactement la-dessus. -->
   
@@ -1159,7 +1217,7 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
   <!-- Picto « cours de chant », proposition du 30/07 : Eventail croissant : la voix se deploie. -->
   
   <!-- Picto « cours de chant », proposition du 30/07 : Souffle en volute. -->
-  
+  <symbol id="i-chant-volute" viewBox="0 0 24 24"><circle cx="8.6" cy="8.4" r="3.1"/><path d="M2.8 20.8a5.8 5.8 0 0 1 11.6 0"/><path d="M15.2 11.4c4.2-.6 5.6-3.4 4.4-5.6-.8-1.4-2.8-1.2-3 .6"/></symbol>
   <!-- Picto « cours de chant », proposition du 30/07 : Tete relevee, onde ample. -->
   
   <!-- Lot C (30/07) : Respiration : s evase puis se rapproche. -->
@@ -1177,7 +1235,7 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
   <!-- Lot C (30/07) : Improvisation : la ligne se libere. -->
   
   <!-- Lot C (30/07) : Improvisation : boucle libre. -->
-  
+  <symbol id="i-impro-noeud" viewBox="0 0 24 24"><path d="M3.4 20.8c6.4-1.6 8.2-6 6.4-10.2C8.6 7.6 5.8 8.4 6.2 11c.4 2.6 4 3.6 7.4 2.2 3.4-1.4 5-4.8 4-9"/></symbol>
   <!-- Lot C (30/07) : Adultes : personnage complet. -->
   
   <!-- Lot C (30/07) : Adultes : arbre a couronne asymetrique. -->
@@ -1234,11 +1292,11 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
   <symbol id="i-coeur-battement" viewBox="0 0 24 24"><path d="M12 20.412C6.327 16.108 3.392 13.076 3.392 9.457A4.206 4.206 0 0 1 12 7.207a4.206 4.206 0 0 1 8.608 2.25c0 3.619-2.935 6.652-8.608 10.956z"/><path d="M6.718 11.609h2.543l1.369-2.543 1.956 4.891 1.174-2.348h2.543"/></symbol>
   
   
-  <symbol id="i-impro-envol" viewBox="0 0 24 24"><path d="M2.384 21.616h19.232"/><path d="M3.949 12.671c2.907-3.802 5.814-4.696 8.051-2.684 2.236-4.696 5.143-6.038 8.721-4.025-3.802 0.671-6.262 3.578-7.38 8.945-2.236-4.473-5.367-5.143-9.392-2.236z"/></symbol>
   
   
   
-  <symbol id="i-posture-galets" viewBox="0 0 24 24"><ellipse cx="12" cy="19.807" rx="6.752" ry="2.532"/><ellipse cx="12" cy="14.321" rx="4.853" ry="2.532"/><ellipse cx="12" cy="8.835" rx="3.165" ry="2.532"/></symbol>
+  
+  
   <!-- LOT C · tranche 3 — « Pour qui ? ». « Route en perspective » devient le DEFAUT
        de « Tous les niveaux » : elle casse la ressemblance de silhouette avec le
        bourgeon (deux diagonales fines) ET solde la reserve du Lot 5B jamais arbitree,
@@ -1335,7 +1393,7 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
         </div>
         <div class="about-body">
           <p class="reveal d1"><strong>Auteure-compositrice-interprète</strong> formée en chant jazz au <strong>Conservatoire de Lille</strong> et diplômée d'un <strong>master recherche en musicologie</strong>, je vous accompagne avec sensibilité dans la découverte de votre voix et de votre personnalité artistique.</p>
-          <p class="reveal d1">Étant autant passionnée par la voix et l'écriture de textes que par la composition de chansons, je vous partage mon expérience du chant, de la scène et de la création musicale.</p>
+          <p class="reveal d1">Étant autant passionnée par la voix et l'écriture de textes que par la composition de chansons, je vous partage mon <strong>expérience du chant, de la scène et de la création musicale.</strong></p>
           <p class="reveal d2">Passionnée de chant depuis toujours, j'ai à cœur de vous transmettre ce qui me fait vibrer. La voix est un outil vivant formidable pour laisser place à votre sensibilité, vous exprimer et vous épanouir&nbsp;!</p>
         </div>
       </div>
@@ -1357,10 +1415,10 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
     </div>
     <div class="offre reveal d1">
       <article class="offre-col">
-        <svg class="ico ico-lg" aria-hidden="true"><use href="#i-chant"></use></svg>
+        <svg class="ico ico-lg" aria-hidden="true"><use href="#i-chant-volute"></use></svg>
         <p class="offre-kicker">Cours de chant</p>
         <h3>Découvrez votre voix, approfondissez votre pratique</h3>
-        <p>Dans l'écoute, le plaisir et la confiance, nous allierons technique vocale et savoir-faire de l'interprétation pour dépasser vos blocages et faire éclore votre voix. Vous vous réapproprierez les chansons que vous aimez d'une manière qui vous ressemble. Nous pourrons aussi explorer le terrain de jeu de l'improvisation, chemin possible vers votre liberté vocale&nbsp;!</p>
+        <p>Dans l'écoute, le plaisir et la confiance, nous allierons technique vocale et savoir-faire de l'interprétation pour dépasser vos blocages et faire éclore votre voix. Je vous accompagne au piano sur des chansons choisies ensemble ou vos propres créations, dans l'univers des musiques actuelles&nbsp;: chanson, variété, pop, jazz, rock, musiques du monde, entre autres. Vous vous réapproprierez les chansons que vous aimez d'une manière qui vous ressemble. Nous pourrons aussi explorer le terrain de jeu de l'improvisation, chemin possible vers votre liberté vocale&nbsp;!</p>
       </article>
       <article class="offre-col">
         <svg class="ico ico-lg" aria-hidden="true"><use href="#i-micro-main"></use></svg>
@@ -1385,12 +1443,12 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
       </div>
       <ul class="pedago-list reveal d1">
         <li><svg class="ico" aria-hidden="true"><use href="#i-onde-curseurs"></use></svg> Technique vocale</li>
-        <li><svg class="ico" aria-hidden="true"><use href="#i-souffle"></use></svg> Respiration &amp; souffle</li>
-        <li><svg class="ico posture-ico" aria-hidden="true"><use href="#i-posture-galets"></use></svg> Posture &amp; corps</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-resp-vent"></use></svg> Respiration &amp; souffle</li>
+        <li><svg class="ico posture-ico" aria-hidden="true"><use href="#i-posture-personne"></use></svg> Posture &amp; corps</li>
         <li><svg class="ico" aria-hidden="true"><use href="#i-juste-diapason"></use></svg> Justesse &amp; tessiture</li>
         <li><svg class="ico" aria-hidden="true"><use href="#i-coeur-battement"></use></svg> Interprétation &amp; émotion</li>
-        <li><svg class="ico" aria-hidden="true"><use href="#i-etoile-liste"></use></svg> Confiance &amp; présence scénique</li>
-        <li><svg class="ico" aria-hidden="true"><use href="#i-impro-envol"></use></svg> Improvisation</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-conf-micro"></use></svg> Confiance &amp; présence scénique</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-impro-noeud"></use></svg> Improvisation</li>
         <li><svg class="ico" aria-hidden="true"><use href="#i-plume-liste"></use></svg> Écriture &amp; composition</li>
       </ul>
     </div>
@@ -1406,22 +1464,25 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
     </div>
     <div class="qui-grid">
       <div class="qcard reveal d1">
-        <svg class="ico pq-ico" aria-hidden="true"><use href="#i-pousse"></use></svg>
+        <svg class="ico pq-ico" aria-hidden="true"><use href="#i-enf-soleil"></use></svg>
         <span class="tag">Enfants &amp; ados</span>
         <h3>Apprenez en confiance</h3>
-        <p>Des cours ludiques et rassurants, au rythme de l'enfant ou de l'ado. On avance pas à pas, sans pression, pour que le chant reste avant tout un plaisir et une source de confiance en soi&nbsp;!</p>
+        <p>Des cours au rythme de l'enfant ou de l'ado. On avance pas à pas, sans pression, pour que le chant reste avant tout un plaisir et une source de confiance en soi&nbsp;!</p>
       </div>
       <div class="qcard reveal d2">
-        <svg class="ico pq-ico" aria-hidden="true"><use href="#i-osez"></use></svg>
+        <svg class="ico pq-ico" aria-hidden="true"><use href="#i-adu-epanoui"></use></svg>
         <span class="tag">Adultes</span>
         <h3>Osez votre voix</h3>
-        <p id="pqAduTxt">Débutant complet ou déjà à l'aise, il n'y a pas besoin de «&nbsp;bien chanter&nbsp;» pour commencer un cours. Chaque séance est pensée pour vous, votre niveau et vos envies, à votre rythme.</p>
+        <p id="pqAduTxt">Vous n'osez pas encore chanter&nbsp;? Vous n'aimez pas votre voix&nbsp;? Je vous accompagne avec douceur pour la découvrir&nbsp;!</p>
+        <p>Vous êtes plus à l'aise et souhaitez libérer votre voix, aller plus loin&nbsp;? Nous explorerons ensemble de nouveaux chemins, à votre rythme et selon vos envies&nbsp;!</p>
       </div>
       <div class="qcard reveal d3">
         <svg class="ico pq-ico" aria-hidden="true"><use href="#i-tous-poteau"></use></svg>
         <span class="tag" id="pqTousTag">Tous les niveaux</span>
         <h3 id="pourquiTitle">Quel que soit votre parcours</h3>
-        <p>Chaque séance est pensée pour vous, votre parcours, votre rythme et vos envies, que vous soyez débutant·e, amateur·e ou confirmé·e&nbsp;! Je vous accompagne au piano sur vos chansons préférées dans <span id="pqStyles">ces esthétiques musicales&nbsp;: chanson, variété, pop, jazz, rock, musiques du monde</span>.</p>
+        <p>Chaque séance est pensée pour vous&nbsp;: votre parcours, votre rythme, vos envies — que vous soyez débutant·e, amateur·e ou confirmé·e.</p>
+        <p>Nous partirons de là où vous en êtes pour aller là où vous avez envie d'aller&nbsp;: apprivoiser votre voix, affiner votre technique, explorer un nouveau répertoire, préparer un concert, donner vie à vos propres chansons…</p>
+        <p>Un seul mot d'ordre&nbsp;: prendre du plaisir&nbsp;!</p>
       </div>
     </div>
   </div>
@@ -1475,7 +1536,7 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
     </div>
     <div class="decouverte reveal d2">
       <a href="#contact" class="pill"><svg class="ico" aria-hidden="true"><use href="#i-etoile-decouverte"></use></svg> Séance découverte offerte</a>
-      <p>La séance découverte est avant tout <b>un temps d'échange, sans engagement</b>&nbsp;: on fait connaissance et on parle de vos envies, pour voir ensemble comment avancer <b>à votre rythme</b>&nbsp;!</p>
+      <p>La séance découverte est avant tout <b>un temps d'échange</b>, sans engagement&nbsp;: <b>on fait connaissance, on chante et on parle de vos envies</b> pour voir ensemble comment avancer à votre rythme&nbsp;!</p>
     </div>
   </div>
 </section>
@@ -1492,33 +1553,37 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
         <div class="faq-col">
         <div class="faq-item">
           <button type="button" class="faq-q" aria-expanded="false">Faut-il «&nbsp;avoir une belle voix&nbsp;» ou déjà savoir chanter&nbsp;? <span class="ic" aria-hidden="true">+</span></button>
-          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">Non, pas du tout. La plupart des élèves démarrent sans aucune base. «&nbsp;Chanter faux&nbsp;» est presque toujours une question de technique et de repères, pas un don manquant — et c'est justement ce qui se travaille en cours, progressivement.</div></div></div>
+          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">Non, pas nécessairement. Nous avons souvent l'idée reçue qu'il faut un don pour chanter. Mais cela s'apprend, et heureusement&nbsp;! Chaque voix a ses spécificités, son timbre, ses atouts&nbsp;: la vôtre a déjà tout ce qu'il faut. Je vous accompagne pour la découvrir et l'apprivoiser&nbsp;!</div></div></div>
         </div>
         <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false">Faut-il savoir lire la musique&nbsp;? <span class="ic" aria-hidden="true">+</span></button>
-          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">Non. Il n'y a aucun prérequis de solfège&nbsp;: on travaille à l'oreille et avec des repères concrets. La théorie n'arrive que si elle vous est utile, et jamais comme un passage obligé.</div></div></div>
+          <button type="button" class="faq-q" aria-expanded="false">Je suis déjà à l'aise avec ma voix. Peut-on avancer ensemble&nbsp;? <span class="ic" aria-hidden="true">+</span></button>
+          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">Tout à fait&nbsp;! Je m'adapte à votre parcours. Si votre rapport à votre voix est déjà avancé, nous irons plus loin ensemble&nbsp;: affiner votre technique, faire éclore votre interprétation, explorer un nouveau répertoire, préparer un concert, gagner en présence scénique, ou même donner vie à vos propres chansons. Votre voix a toujours de nouveaux territoires à explorer&nbsp;!</div></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Peut-on chanter les chansons et les styles que j'aime&nbsp;? <span class="ic" aria-hidden="true">+</span></button>
+          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">Oui, c'est même l'idéal&nbsp;! Partir de vos inspirations vous permettra de prendre du plaisir et de trouver votre personnalité artistique. On part de ce qui vous touche et de vos envies, pour vous réapproprier les chansons que vous aimez d'une manière qui vous ressemble&nbsp;!</div></div></div>
         </div>
         <div class="faq-item">
           <button type="button" class="faq-q" aria-expanded="false">Faut-il vouloir monter sur scène ou avoir un projet précis&nbsp;? <span class="ic" aria-hidden="true">+</span></button>
-          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">Pas du tout. Beaucoup viennent simplement pour le plaisir de chanter et prendre confiance. La scène, l'écriture ou la création sont des chemins possibles, jamais un passage obligé.</div></div></div>
-        </div>
-        <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false">Peut-on travailler les chansons et les styles que j'aime&nbsp;? <span class="ic" aria-hidden="true">+</span></button>
-          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">Oui, c'est même le point de départ. On part de ce qui vous touche et de vos envies, pour vous réapproprier les chansons que vous aimez d'une manière qui vous ressemble.</div></div></div>
+          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">Pas nécessairement&nbsp;! Beaucoup chantent simplement pour le plaisir, pour s'épanouir et prendre confiance. La scène, l'écriture ou la création sont des chemins possibles, jamais un passage obligé.</div></div></div>
         </div>
         </div>
         <div class="faq-col">
         <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Faut-il savoir lire la musique&nbsp;? <span class="ic" aria-hidden="true">+</span></button>
+          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">Non. Il n'y a aucun prérequis de solfège&nbsp;: on travaille à l'oreille et on développe la musicalité autrement, par l'écoute et les ressentis. La théorie peut être abordée de temps à autres, mais toujours à votre rythme&nbsp;!</div></div></div>
+        </div>
+        <div class="faq-item">
           <button type="button" class="faq-q" aria-expanded="false">Comment se déroule un premier cours&nbsp;? <span class="ic" aria-hidden="true">+</span></button>
-          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">La séance découverte est offerte. On échange d'abord sur vos envies, votre parcours et ce qui vous motive, puis on fait quelques exercices simples pour découvrir votre voix, en douceur et sans jugement. Puis nous trouverons ensemble un chemin de progression qui vous correspond.</div></div></div>
+          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">La séance découverte est offerte&nbsp;! Pendant ce temps, on échange sur vos envies, votre parcours et ce qui vous motive. On prend ensuite le temps de faire connaissance avec votre voix, par des petits exercices et jeux vocaux, en douceur et sans jugement. Nous trouverons ensemble un chemin de progression qui vous correspond&nbsp;!</div></div></div>
         </div>
         <div class="faq-item">
           <button type="button" class="faq-q" aria-expanded="false">À quelle fréquence faut-il prendre des cours&nbsp;? <span class="ic" aria-hidden="true">+</span></button>
-          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">Un cours par semaine est le rythme le plus courant pour progresser régulièrement, mais tout s'adapte selon vos disponibilités et vos objectifs. Le forfait à l'année est là pour celles et ceux qui veulent s'installer dans un rythme régulier. L'accompagnement à la création, lui, suit un tout autre rythme&nbsp;: les séances s'espacent au gré de vos textes et de vos musiques, entre lesquelles vous avancez de votre côté.</div></div></div>
+          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c"><p>Un cours par semaine est le rythme le plus courant pour progresser régulièrement, mais tout s'adapte selon vos disponibilités et vos envies. Pour les cours de chant et le coaching vocal et scénique, vous choisissez entre un forfait à l'année, pour un rythme régulier, ou des séances à la carte, pour plus de flexibilité.</p><p>L'accompagnement à la création suit un autre rythme&nbsp;: uniquement à la séance, programmée selon votre avancée dans votre parcours artistique.</p></div></div></div>
         </div>
         <div class="faq-item">
-          <button type="button" class="faq-q" aria-expanded="false">Suis-je obligé(e) de m'engager à l'année&nbsp;? <span class="ic" aria-hidden="true">+</span></button>
-          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">Non. On peut tout à fait avancer à la séance, à votre rythme. Le forfait à l'année existe pour celles et ceux qui veulent s'installer dans une régularité — c'est un choix, pas une condition.</div></div></div>
+          <button type="button" class="faq-q" aria-expanded="false">Suis-je obligé·e de m'engager à l'année&nbsp;? <span class="ic" aria-hidden="true">+</span></button>
+          <div class="faq-a-wrap"><div class="faq-a"><div class="faq-a-c">Non, pas nécessairement. On peut tout à fait avancer à la séance, à votre rythme. Le forfait à l'année est là pour celles et ceux qui veulent installer un rythme d'apprentissage régulier. C'est un choix, pas une condition&nbsp;!</div></div></div>
         </div>
         </div>
       </div>
@@ -1545,7 +1610,7 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
     </div>
     <div class="contact-info reveal d3">
       <p class="line"><svg class="ico" aria-hidden="true"><use href="#i-lieu"></use></svg> Alençon (61)</p>
-      <p class="line"><svg class="ico" aria-hidden="true"><use href="#i-collab-ecole"></use></svg> En collaboration avec Music'Alençon · 65 cours Clemenceau</p>
+      <p class="line"><svg class="ico" aria-hidden="true"><use href="#i-collab-ecole"></use></svg> <b>En collaboration avec Music'Alençon · 65 cours Clemenceau</b></p>
     </div>
   </div>
 </section>
