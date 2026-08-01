@@ -305,24 +305,30 @@ nav .wrap { max-width: 1260px; }
    (voir plus bas) : sur petits écrans le contenu dépasse déjà, et la photo en bandeau vit dans ce
    même bloc. ⚠️ Point rouvert, à confirmer par Myriam sur pièce. */
 .hero { padding: 4.5rem 0 5rem; min-height: calc(100svh - 80px); }
-/* ⚠️ VARIANTE ESSAYEE PUIS ECARTEE AVANT DE LUI SOUMETTRE : augmenter le seul
-   espace du haut. Ca equilibre la formulation en trois lignes et rate celle en
-   une seule, qui est justement celle qu'elle a retenue — il restait 350 px de
-   vide sous les boutons. Un espace fixe ne peut pas servir deux hauteurs de
-   titre ; seul l'equilibrage repond a « centre sur la page ».
-   ⚠️ BORNE AU GRAND ECRAN A DESSEIN : plus bas, le contenu depasse deja la
-   hauteur visible et la photo en bandeau vit dans ce meme bloc — l'y appliquer
-   la deplacerait. Les marges ci-dessus restent le minimum garanti. */
+/* « Tester de modifier les espacements pour que ce soit centre sur la page »
+   (Myriam, 31/07). ⚠️ SA PHRASE A DEUX LECTURES, et on ne choisit pas pour elle :
+   sur grand ecran le bloc de texte est cale EN HAUT **et** colle A DROITE. Les
+   deux lectures ont ete essayees. ⚠️ CELLE DU CENTRAGE HORIZONTAL EST ECARTEE :
+   elle fait passer le texte sur la photo, la ou le voile est transparent, et le
+   contraste sous le sous-titre tombe de 8,41:1 a 4,34:1 — sous le seuil de 4,5.
+   Reste donc le centrage en hauteur, avec l'etat d'origine pour comparer.
+   ⚠️ VARIANTE ESSAYEE PUIS ECARTEE : augmenter le seul espace du haut. Ca
+   equilibre un titre de trois lignes et rate celui d'une seule — le sien — ou il
+   restait 350 px de vide sous les boutons. Un espace fixe ne peut pas servir deux
+   hauteurs de titre.
+   ⚠️ SANS EFFET SOUS 980 px, a dessein : le texte y occupe deja toute la largeur,
+   il depasse la hauteur visible, et la photo en bandeau vit dans ce meme bloc. */
 @media (min-width: 981px) {
-  .hero { display: flex; align-items: center; }
-  .hero > .wrap { width: 100%; }
+  body.une-esp-v .hero { display: flex; align-items: center; }
+  body.une-esp-v .hero > .wrap { width: 100%; }
 }
 .hero-grid { display: grid; grid-template-columns: 1.05fr 0.85fr; gap: 3.5rem; align-items: center; }
-/* Sa demande du 31/07. La mise en bas de casse est une regle de charte posee
-   plus haut sur tous les titres ; ce seul titre en sort. Les 7 formulations du
-   panneau sont capitalisees a la source, aucune ne devient fautive. */
+/* « Est-ce qu'on peut essayer de mettre une majuscule a "Trouver" » (Myriam,
+   31/07). C'est une PROPOSITION, pas une decision : la regle de charte qui met tous
+   les titres du site en bas de casse reste la valeur de base, et la majuscule ne
+   s'obtient que par le reglage. ⚠️ Si elle la garde, ce titre sera le SEUL du site
+   a porter une capitale — c'est ce qu'il faut qu'elle voie. */
 .hero h1 {
-  text-transform: none;
   font-size: clamp(2.6rem, 5.9vw, 4.5rem); line-height: 1.03; font-weight: 600; letter-spacing: -0.02em;
   margin-bottom: 0.2rem; max-width: 15ch;
 }
@@ -331,6 +337,8 @@ nav .wrap { max-width: 1260px; }
    La décoration passe par un ::after (plus souple qu'un dégradé de fond) ; `isolation:isolate`
    garantit que le z-index:-1 reste sous le texte SANS pouvoir glisser derrière le fond de
    section (le bug de cadre qui « flashait » rencontré en V2). Sans JS : décor visible, non animé. */
+/* La majuscule ne s'obtient que par le reglage : la charte reste la valeur de base. */
+body.une-capitale .hero h1 { text-transform: none; }
 .hero h1 .a { color: var(--rouge); position: relative; isolation: isolate; }
 .hero h1 .a::after {
   content: ""; position: absolute; z-index: -1; left: 0; right: 0;
@@ -1072,6 +1080,13 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
   /* La zone visible a l'arrivee = hauteur d'ecran - barre du haut - marge du haut.
      La photo commence donc exactement au bord bas. */
   body.une-mob-dessous .hero-grid { min-height: calc(100svh - 152px); }
+  /* Les deux etats a comparer avec la proposition ci-dessus.
+     ⚠️ La DESCENTE de la photo n'en fait pas partie : « pas qu'on la voit quand on
+     ouvre la page » est une demande ferme, elle vaut pour les trois. */
+  body.une-mob-bandeau .hero { padding-bottom: 3.5rem; }
+  body.une-mob-bandeau .hero::after { height: 300px;
+    -webkit-mask-image: none; mask-image: none; }
+  body.une-mob-haute .hero::after { height: 460px; }
   .hero-text { margin-left: 0; margin-right: 0; max-width: none; }
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
   .about-photo { max-width: 420px; }
@@ -1370,7 +1385,7 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
   <div class="wrap hero-grid">
     <div class="hero-text">
       <span class="eyebrow hero-eyebrow reveal" id="heroEyebrow">Cours de chant et coaching vocal à Alençon (61)<br>+ Accompagnement à la création</span>
-      <h1 class="reveal d1" id="heroTitle">Prendre confiance,<br>trouver <span class="a">sa voix</span></h1>
+      <h1 class="reveal d1" id="heroTitle">Trouver <span class="a">sa voix</span></h1>
       <div class="rule-short reveal d1"></div>
       <p class="hero-desc reveal d2">Je vous accompagne avec sensibilité dans la découverte de votre voix et de votre personnalité artistique</p>
       <div class="hero-actions reveal d3">
