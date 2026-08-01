@@ -718,6 +718,12 @@ body.qsj-rouge-e #apropos .section-title { color: #FBF6EC; }
 body.qsj-rouge-e #apropos .section-title .a { color: #CACFBE; }
 body.qsj-rouge-e #apropos .about-body p { color: #EBE1CE; }
 body.qsj-rouge-e #apropos .about-body p strong { color: #CACFBE; }
+/* Le fond de base, mais la dominante du titre s'inverse : titre en rouge,
+   accent en encre. La bichromie est conservee — l'accent n'est pas un mot
+   mais la ligne entiere, soit la moitie du titre. Titre 6,67 sur le fond
+   clair pour un seuil de 3 ; accent 13,24. Corps et gras inchanges. */
+body.qsj-creme-titre #apropos .section-title { color: var(--rouge); }
+body.qsj-creme-titre #apropos .section-title .a { color: var(--encre); }
 /* Photo en BANDEAU — validé par Ilies le 26/07, CÂBLÉ EN DUR.
    ⚠️ C'est le préfixe de classe qui a été retiré, pas les règles : l'état sans cette classe
    remettait la photo à côté du texte, en portrait.
