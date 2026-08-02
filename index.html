@@ -17,7 +17,7 @@
 <!-- La photo de la une est un fond CSS : le navigateur ne la decouvre qu'apres
      avoir lu la feuille. On la demande tout de suite. Le type= fait sauter le
      prechargement chez qui ne lit pas le WebP. -->
-<link rel="preload" as="image" href="images/une/t2-retouch-e-11-finale.webp" type="image/webp">
+<link rel="preload" as="image" href="images/une/une-02aout.webp" type="image/webp">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Myriam El Ouartassi">
@@ -456,35 +456,6 @@ body.une-capitale .hero h1 { text-transform: none; }
 .about-body p strong { color: var(--rouge); font-weight: 600; }
 /* Idem « Qui suis-je » : liseré jaune retiré (elle ne l'aime pas), même intégration douce. */
 .about-photo { position: relative; }
-/* Le defile de la section, cable apres son choix du 02/08 : deux vues, une
-   seule fleche a droite, des ronds evides dessous. Il etait jusqu'ici bati
-   par le JavaScript du panneau ; il vit desormais dans la page.
-   ⚠️ La fleche n'a PAS de pastille, c'est son choix. Sous elle le fond est la
-   photo : sur la vue de concert le feuillage est sombre (mediane 16,2:1),
-   sur sa vue n°1 il alterne (mediane 4,9:1, et 29,7 % de la surface sous
-   4,5:1). C'est l'ombre portee qui rattrape ce second cas — ne pas la
-   retirer en la prenant pour une coquetterie. */
-.qd { position: relative; }
-.qd-sc { position: relative; }
-.qd-sc .qd-i { opacity: 0; transition: opacity .55s ease; }
-.qd-sc .qd-i.on { opacity: 1; }
-.qd-sc .qd-i + .qd-i { position: absolute; left: 0; top: 0; }
-@media (prefers-reduced-motion: reduce) { .qd-sc .qd-i { transition: none; } }
-.qd-f { position: absolute; top: 50%; right: .35rem; transform: translateY(-50%);
-  z-index: 3; width: 44px; height: 44px; padding: 0; cursor: pointer;
-  display: grid; place-items: center; font: inherit; line-height: 1;
-  background: none; border: none; box-shadow: none; }
-.qd-f svg { width: 30px; height: 30px; color: #EBE1CE;
-  filter: drop-shadow(0 1px 2px rgba(64,1,1,.55)); }
-.qd-bar { margin-top: .75rem; }
-/* ⚠️ Hauteur plancher : un rond fait 12 px avec son lisere. Sans plancher, la
-   rangee changerait la hauteur de toute la section. */
-.qd-pts { display: flex; gap: .45rem; justify-content: center;
-  align-items: center; min-height: 12px; }
-.qd-pts button { width: 10px; height: 10px; padding: 0; border-radius: 50%;
-  cursor: pointer; border: 1px solid var(--papier); background: transparent;
-  box-shadow: 0 0 0 1px rgba(64,1,1,.45); transition: all .2s; }
-.qd-pts button.on { background: var(--papier); }
 .about-photo img { position: relative; z-index: 1; width: 100%; height: auto; border-radius: var(--r-md);
   box-shadow: 0 18px 42px rgba(64, 1, 1, 0.12); }
 
@@ -697,7 +668,7 @@ body.qsj-rouge-b #apropos .about-body p strong { color: #FBF6EC; }
    pose à droite et le voile crème est dense de ce côté, transparent sur elle. Nécessaire : le
    ciel est clair (texte encre à 9,6:1) mais les branches y entrent par endroits (1,7:1). */
 .hero {
-  --une-img: url(images/une/t2-retouch-e-11-finale.jpg);
+  --une-img: url(images/une/une-02aout.jpg);
   --une-size: cover;
   --une-pos: center 38%;
   --une-fondu: linear-gradient(rgba(251,246,236,0), rgba(251,246,236,0));   /* neutre : paysage plein cadre */
@@ -724,7 +695,7 @@ body.qsj-rouge-b #apropos .about-body p strong { color: #FBF6EC; }
    il s'affiche quel que soit l'en-tete. Le @supports suffit a ecarter les vieux
    navigateurs — tous ceux qui connaissent image-set()+type() lisent le WebP. */
 @supports (background-image: image-set(url("i.webp") type("image/webp"))) {
-  .hero { --une-img: url(images/une/t2-retouch-e-11-finale.webp); }
+  .hero { --une-img: url(images/une/une-02aout.webp); }
 }
 /* Source PORTRAIT (tests 1 et 2) : bandeau PLEINE LARGEUR, comme pour le paysage —
    « un peu comme tu as fait avec la photo paysage », écrit-elle. `cover` ne déforme
@@ -918,11 +889,19 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
   .mobile-menu.open { grid-template-rows: 1fr; border-bottom: var(--bw) solid var(--trait); }
 }
 /* (b) meme idee, mais un bloc PAR concept : l'autre lecture de sa phrase.        */
-body.appr-cartes .pedago-list { border-top: none; display: grid; gap: 0.6rem; }
+body.appr-cartes .pedago-list {
+  border-top: none; display: grid; gap: 0.6rem;
+  /* Demande de Myriam du 02/08 : les encarts a la taille du plus long,
+     « Confiance & presence scenique ». Mesure : son texte fait 239 px la
+     ou l'encart en faisait 800. La colonne ci-dessous donne les deux
+     moities de sa phrase — tous a la MEME taille, celle du PLUS LONG — et
+     se plafonne toute seule en telephone, ou la place manque deja. */
+  grid-template-columns: fit-content(100%); justify-content: center;
+}
 body.appr-cartes .pedago-list li {
   background: var(--papier); border: var(--bw) solid var(--trait);
   border-radius: var(--r-md); border-bottom: var(--bw) solid var(--trait);
-  padding: 0.85rem 1.2rem;
+  padding: 0.85rem 1.6rem;   /* « + un peu de marge autour » */
 }
 /* (c) « sans les marges et qui se colle avec le pied de page de contact ».
    ⚠️ Le fond de la section est retire AUSSI : sinon une bande creme resterait
@@ -932,11 +911,9 @@ body.faq-pleine #faq .wrap { max-width: none; padding: 0; }
 body.faq-pleine .faq-block { border-radius: 0; padding: 5rem 2.4rem; }
 
 /* ---- Credits photo (Myriam, 30/07) : l'emplacement visible est un reglage. ---- */
-.footer-credit, .photo-credit { display: none; }
+.footer-credit { display: none; }
 body.credit-pied .footer-credit { display: block; }
 .footer-credit { font-size: 0.72rem; opacity: 0.72; margin-top: 0.35rem; }
-.photo-credit { font-size: 0.68rem; opacity: 0.68; margin-top: 0.55rem; text-align: center; }
-.hero-credit { display: none; }
 @media (max-width: 980px) {
   .hero-grid { grid-template-columns: 1fr; gap: 2.8rem; }
   /* Bandeau : sous 980px le texte occupe toute la largeur et retomberait sur la falaise
@@ -1150,7 +1127,6 @@ body.credit-pied .footer-credit { display: block; }
       </div>
     </div>
   </div>
-  <p class="hero-credit">Photos&nbsp;: © Vannamalie Phongsouvanh</p>
 </header>
 
 <!-- ============ QUI SUIS-JE ============ -->
@@ -1169,22 +1145,9 @@ body.credit-pied .footer-credit { display: block; }
         </div>
       </div>
       <div class="about-photo reveal d1">
-        <div class="qd">
-        <div class="qd-sc">
-          <img class="qsj-photo qd-i on" decoding="async" src="images/qsj-6.jpg"
-               alt="Myriam El Ouartassi dans son studio, en train d'enseigner" width="900" height="1350">
-          <img class="qsj-photo qd-i" loading="lazy" decoding="async" src="images/qsj-2.jpg"
-               alt="Myriam El Ouartassi en concert, au chant et au clavier" width="900" height="1350">
-          <div class="qd-bar">
-            <div class="qd-pts">
-              <button type="button" class="on" aria-label="vue 1"></button>
-              <button type="button" aria-label="vue 2"></button>
-            </div>
-            <button type="button" class="qd-f qd-next" aria-label="vue suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-          </div>
-        </div>
-      </div>
-        <p class="photo-credit">Photos&nbsp;: © Vannamalie Phongsouvanh</p>
+        <img class="qsj-photo" decoding="async" src="images/qsj-6.jpg"
+             alt="Myriam El Ouartassi dans son studio, en train d'enseigner"
+             width="900" height="1350">
     </div>
     </div>
   </div>
@@ -1288,16 +1251,16 @@ body.credit-pied .footer-credit { display: block; }
         <div class="trow"><span class="lbl">1 heure</span><span class="price">35 €</span></div>
       </div>
       <div class="tcard on-creme reveal d2" id="card-forfait">
-        <h3><svg class="ico" aria-hidden="true"><use href="#i-calendrier"></use></svg> <span class="card2-title">Forfaits</span></h3>
+        <h3><svg class="ico" aria-hidden="true"><use href="#i-calendrier"></use></svg> <span class="card2-title">Forfaits à l'année</span></h3>
         <!-- « 10 mois » ne figure plus ici : l'information est donnée une seule fois, dans la
              note du bas, là où elle sert vraiment (elle justifie le prix à la séance).
              « Forfait » non plus : le titre de la carte le porte déjà juste au-dessus, et le
              sous-titre tient ainsi sur une ligne comme ses deux voisins. -->
-        <p class="tsub">Chant et coaching<br>Engagement à l'année</p>
+        <p class="tsub">Chant et coaching</p>
         <div class="trow"><span class="lbl">30 min / semaine <small class="eq">soit 16,67 € la séance</small></span><span class="price">60 €<small> /mois</small></span></div>
         <div class="trow"><span class="lbl">45 min / semaine <small class="eq">soit 23,61 € la séance</small></span><span class="price">85 €<small> /mois</small></span></div>
         <div class="trow"><span class="lbl">1 h / semaine <small class="eq">soit 29,17 € la séance</small></span><span class="price">105 €<small> /mois</small></span></div>
-        <p class="tnote"><span class="tn-a">1 séance / semaine *hors vacances scolaires</span><span class="tn-b">Soit 36 séances par an, réparties sur 10 mois.</span></p>
+        <p class="tnote"><span class="tn-a">1 séance / semaine hors vacances scolaires</span><span class="tn-b">Soit 36 séances par an, réparties sur 10 mois.</span></p>
       </div>
       <!-- Carte création DÉDIÉE (demande ferme de Myriam, répétée 2× dans son retour).
            Tous les tarifs de création vivent ici, nulle part ailleurs. -->
@@ -1494,18 +1457,6 @@ body.credit-pied .footer-credit { display: block; }
 })();
 </script>
 
-<script>(function(){
-var IM=[].slice.call(document.querySelectorAll(".qd-i"));
-var PT=[].slice.call(document.querySelectorAll(".qd-pts button"));
-var bn=document.querySelector(".qd-next");
-if(IM.length<2||!bn||PT.length!==IM.length)return;
-var cur=0;
-function montre(n){cur=(n+IM.length)%IM.length;
-for(var j=0;j<IM.length;j++){IM[j].classList.toggle("on",j===cur);
-PT[j].classList.toggle("on",j===cur);}}
-PT.forEach(function(p,i){p.addEventListener("click",function(){montre(i);});});
-bn.addEventListener("click",function(){montre(cur+1);});
-})();</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ac00be4cdb484f2e95ca89d2b1752c1e"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
