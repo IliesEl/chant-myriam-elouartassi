@@ -483,7 +483,19 @@ body.tarifs-gauche .tcard .tsub { text-align: left; }
    du vide depuis que la note occupe sa propre ligne de grille. */
 .trow:last-of-type { border-bottom: none; }
 .trow .lbl { font-size: 0.98rem; font-weight: 400; color: var(--encre); }
-.trow .lbl .eq { display: block; font-size: 0.74rem; font-weight: 400; color: var(--encre-2); margin-top: 0.12rem; } /* équivalent /séance, discret */
+.trow .lbl .eq { display: block; font-size: 0.74rem; font-weight: 400; color: var(--encre-2); margin-top: 0.12rem; }
+/* Les equivalents par seance de la carte des forfaits : MASQUES par defaut.
+   Demande d'Ilies pour voir la version finale ; le reglage les rappelle, parce
+   qu'ils repondaient au « trop commercial » de Myriam et que c'est son avis qui
+   tranchera. La carte creation garde les siens, elle n'est pas visee. */
+#card-forfait .eq { display: none; }
+body.forfait-eq #card-forfait .eq { display: block; }
+/* Mention sous les forfaits : la phrase demandee seule, ou les deux lignes.
+   L'ancienne justifiait le prix par seance ; sans les equivalents elle est
+   orpheline, et elle dit deja la meme chose que la neuve. */
+.tnote .tn-a, .tnote .tn-b { display: block; }
+.tnote .tn-b { display: none; }
+body.tnote-deux .tnote .tn-b { display: block; } /* équivalent /séance, discret */
 .trow .price { font-family: var(--display); font-weight: 600; font-size: 1.2rem; color: var(--encre); white-space: nowrap; font-size-adjust: none; }
 .trow .price small { font-family: var(--sans); font-size: 0.72rem; font-weight: 400; color: var(--encre-2); }
 /* La création se distingue par son pictogramme et son prix en rouge, pas par un liseré latéral. */
@@ -1532,11 +1544,11 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
              note du bas, là où elle sert vraiment (elle justifie le prix à la séance).
              « Forfait » non plus : le titre de la carte le porte déjà juste au-dessus, et le
              sous-titre tient ainsi sur une ligne comme ses deux voisins. -->
-        <p class="tsub">À l'année · chant et coaching</p>
+        <p class="tsub">Engagement à l'année · chant et coaching</p>
         <div class="trow"><span class="lbl">30 min / semaine <small class="eq">soit 16,67 € la séance</small></span><span class="price">60 €<small> /mois</small></span></div>
-        <div class="trow"><span class="lbl">45 min / semaine <small class="eq">soit 25 € la séance</small></span><span class="price">90 €<small> /mois</small></span></div>
-        <div class="trow"><span class="lbl">1 h / semaine <small class="eq">soit 33,33 € la séance</small></span><span class="price">120 €<small> /mois</small></span></div>
-        <p class="tnote">Soit 36 séances par an, réparties sur 10 mois.</p>
+        <div class="trow"><span class="lbl">45 min / semaine <small class="eq">soit 23,61 € la séance</small></span><span class="price">85 €<small> /mois</small></span></div>
+        <div class="trow"><span class="lbl">1 h / semaine <small class="eq">soit 30,56 € la séance</small></span><span class="price">110 €<small> /mois</small></span></div>
+        <p class="tnote"><span class="tn-a">1 séance / semaine hors vacances scolaires</span><span class="tn-b">Soit 36 séances par an, réparties sur 10 mois.</span></p>
       </div>
       <!-- Carte création DÉDIÉE (demande ferme de Myriam, répétée 2× dans son retour).
            Tous les tarifs de création vivent ici, nulle part ailleurs. -->
