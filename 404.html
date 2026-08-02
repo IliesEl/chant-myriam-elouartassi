@@ -10,71 +10,15 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap"></noscript>
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@600&display=swap"></noscript>
 <link rel="preload" as="style" href="https://api.fontshare.com/v2/css?f%5B%5D=satoshi@300,400,500,700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f%5B%5D=satoshi@300,400,500,700&display=swap"></noscript>
 
-<style id="typo">:root{ --display: 'Lora', Georgia, serif; --sans: 'Satoshi', system-ui, sans-serif; }</style>
+<style id="typo">:root{--display: 'Lora',Georgia,serif;--sans: 'Satoshi',system-ui,sans-serif}</style>
 
-<style>
-:root {
-  --encre: #400101; --encre-2: #6B3B33;
-  --rouge: #9A0C06; --orange: #DE790B; --jaune: #F2BB16; --sauge: #8DA086;
-  --papier: #FBF6EC; --creme: #F4EEDD; --creme-2: #EBE1CE;
-  --trait: rgba(64,1,1,0.13); --trait-fort: rgba(64,1,1,0.28); --bw: 1px;
-  --r-sm: 6px; --r-md: 12px;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--sans); font-size-adjust: 0.52; background: var(--papier); color: var(--encre-2); -webkit-font-smoothing: antialiased; }
-a { color: inherit; text-decoration: none; }
-a:focus-visible { outline: 2.5px solid var(--rouge); outline-offset: 3px; border-radius: 4px; }
-
-.wrap { max-width: 800px; margin: 0 auto; padding: 0 2.4rem; }
-
-nav { position: sticky; top: 0; z-index: 100; background: rgba(251,246,236,0.92); backdrop-filter: blur(10px); border-bottom: var(--bw) solid var(--trait); }
-nav .wrap { max-width: 1140px; display: flex; align-items: center; justify-content: space-between; height: 80px; }
-.brand-name { display: block; font-family: var(--display); font-size: 1.14rem; font-weight: 600; color: var(--encre); line-height: 1.2; }
-.brand-role { display: block; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rouge); margin-top: 0.28rem; }
-.nav-back { font-size: 0.82rem; font-weight: 600; color: var(--rouge); }
-
-.nf { min-height: calc(100vh - 80px - 168px); display: flex; align-items: center; padding: 4rem 0 5rem; }
-
-.nf > .wrap { width: 100%; min-width: 0; }
-.nf-in { max-width: 620px; }
-.nf .eyebrow { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rouge); margin-bottom: 0.9rem; }
-.nf h1 { font-family: var(--display); text-transform: lowercase; font-weight: 600; font-size: clamp(1.9rem, 4vw, 2.6rem); color: var(--encre); line-height: 1.15; margin-bottom: 1.1rem; font-size-adjust: none; }
-.nf p { font-size: 1rem; font-weight: 300; line-height: 1.8; margin-bottom: 2rem; }
-.rule-short { width: 54px; height: 2px; background: var(--orange); border: 0; margin: 0 0 1.6rem; }
-
-.btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--sans);
-  font-size: 0.86rem; font-weight: 600; letter-spacing: 0.03em;
-  padding: 0.95rem 1.7rem; border-radius: var(--r-sm); border: 1.5px solid transparent; cursor: pointer;
-  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s; }
-.btn-primary { background: var(--rouge); color: var(--papier); border-color: var(--rouge); }
-.btn-primary:hover { background: var(--encre); border-color: var(--encre); transform: translateY(-1px); }
-.btn:active { transform: translateY(0) scale(.985); }
-
-.nf-joindre { margin-top: 2.2rem; font-size: 0.88rem; font-weight: 300; }
-
-.nf-joindre a { font-weight: 600; color: var(--rouge); border-bottom: 1px solid rgba(154,12,6,0.3); overflow-wrap: break-word; }
-.nf-joindre a:hover { border-bottom-color: var(--rouge); }
-.nf-joindre .sep { margin: 0 0.5rem; }
-
-footer { background: var(--creme-2); border-top: var(--bw) solid var(--trait); padding: 2.6rem 0; }
-footer .wrap { max-width: 1140px; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
-.footer-links { display: flex; gap: 1.3rem; list-style: none; flex-wrap: wrap; }
-.footer-links a { font-size: 0.78rem; color: var(--encre-2); }
-.footer-links a:hover { color: var(--rouge); }
-.footer-legal { font-size: 0.74rem; width: 100%; opacity: 0.85; }
-
-@media (max-width: 560px) {
-  .wrap { padding: 0 1.3rem; }
-  nav .wrap { height: 72px; }
-  .nf { min-height: 0; padding: 3.2rem 0 3.8rem; }
-  .nf-joindre .sep { display: block; height: 0; overflow: hidden; margin: 0.4rem 0; }
-}
-</style>
+<style>:root{--encre: #400101;--encre-2: #6B3B33;--rouge: #9A0C06;--orange: #DE790B;--jaune: #F2BB16;--sauge: #8DA086;--papier: #FBF6EC;--creme: #F4EEDD;--creme-2: #EBE1CE;--trait: rgba(64,1,1,0.13);--trait-fort: rgba(64,1,1,0.28);--bw: 1px;--r-sm: 6px;--r-md: 12px}*,*::before,*::after{box-sizing: border-box;margin: 0;padding: 0}body{font-family: var(--sans);font-size-adjust: 0.52;background: var(--papier);color: var(--encre-2);-webkit-font-smoothing: antialiased}a{color: inherit;text-decoration: none}a:focus-visible{outline: 2.5px solid var(--rouge);outline-offset: 3px;border-radius: 4px}.wrap{max-width: 800px;margin: 0 auto;padding: 0 2.4rem}nav{position: sticky;top: 0;z-index: 100;background: rgba(251,246,236,0.92);backdrop-filter: blur(10px);border-bottom: var(--bw) solid var(--trait)}nav .wrap{max-width: 1140px;display: flex;align-items: center;justify-content: space-between;height: 80px}.brand-name{display: block;font-family: var(--display);font-size: 1.14rem;font-weight: 600;color: var(--encre);line-height: 1.2}.brand-role{display: block;font-size: 0.62rem;font-weight: 600;letter-spacing: 0.16em;text-transform: uppercase;color: var(--rouge);margin-top: 0.28rem}.nav-back{font-size: 0.82rem;font-weight: 600;color: var(--rouge)}.nf{min-height: calc(100vh - 80px - 168px);display: flex;align-items: center;padding: 4rem 0 5rem}.nf > .wrap{width: 100%;min-width: 0}.nf-in{max-width: 620px}.nf .eyebrow{display: block;font-size: 0.72rem;font-weight: 600;letter-spacing: 0.18em;text-transform: uppercase;color: var(--rouge);margin-bottom: 0.9rem}.nf h1{font-family: var(--display);text-transform: lowercase;font-weight: 600;font-size: clamp(1.9rem,4vw,2.6rem);color: var(--encre);line-height: 1.15;margin-bottom: 1.1rem;font-size-adjust: none}.nf p{font-size: 1rem;font-weight: 300;line-height: 1.8;margin-bottom: 2rem}.rule-short{width: 54px;height: 2px;background: var(--orange);border: 0;margin: 0 0 1.6rem}.btn{display: inline-flex;align-items: center;gap: 0.5rem;font-family: var(--sans);font-size: 0.86rem;font-weight: 600;letter-spacing: 0.03em;padding: 0.95rem 1.7rem;border-radius: var(--r-sm);border: 1.5px solid transparent;cursor: pointer;transition: background 0.2s,color 0.2s,border-color 0.2s,transform 0.15s}.btn-primary{background: var(--rouge);color: var(--papier);border-color: var(--rouge)}.btn-primary:hover{background: var(--encre);border-color: var(--encre);transform: translateY(-1px)}.btn:active{transform: translateY(0) scale(.985)}.nf-joindre{margin-top: 2.2rem;font-size: 0.88rem;font-weight: 300}.nf-joindre a{font-weight: 600;color: var(--rouge);border-bottom: 1px solid rgba(154,12,6,0.3);overflow-wrap: break-word}.nf-joindre a:hover{border-bottom-color: var(--rouge)}.nf-joindre .sep{margin: 0 0.5rem}footer{background: var(--creme-2);border-top: var(--bw) solid var(--trait);padding: 2.6rem 0}footer .wrap{max-width: 1140px;display: flex;align-items: center;justify-content: space-between;gap: 1.5rem;flex-wrap: wrap}.footer-links{display: flex;gap: 1.3rem;list-style: none;flex-wrap: wrap}.footer-links a{font-size: 0.78rem;color: var(--encre-2)}.footer-links a:hover{color: var(--rouge)}.footer-legal{font-size: 0.74rem;width: 100%;opacity: 0.85}@media (max-width: 560px){.wrap{padding: 0 1.3rem}nav .wrap{height: 72px}.nf{min-height: 0;padding: 3.2rem 0 3.8rem}.nf-joindre .sep{display: block;height: 0;overflow: hidden;margin: 0.4rem 0}}</style>
 </head>
 <body>
 
