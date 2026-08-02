@@ -128,6 +128,78 @@
  ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Faut-il « avoir une belle voix » ou déjà savoir chanter ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non, pas nécessairement. Nous avons souvent l'idée reçue qu'il faut un don pour chanter. Mais cela s'apprend, et heureusement ! Chaque voix a ses spécificités, son timbre, ses atouts : la vôtre a déjà tout ce qu'il faut. Je vous accompagne pour la découvrir et l'apprivoiser !"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Je suis déjà à l'aise avec ma voix. Peut-on avancer ensemble ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tout à fait ! Je m'adapte à votre parcours. Si votre rapport à votre voix est déjà avancé, nous irons plus loin ensemble : affiner votre technique, faire éclore votre interprétation, explorer un nouveau répertoire, préparer un concert, gagner en présence scénique, ou même donner vie à vos propres chansons. Votre voix a toujours de nouveaux territoires à explorer !"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on chanter les chansons et les styles que j'aime ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, c'est même l'idéal ! Partir de vos inspirations vous permettra de prendre du plaisir et de trouver votre personnalité artistique. On part de ce qui vous touche et de vos envies, pour vous réapproprier les chansons que vous aimez d'une manière qui vous ressemble !"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il vouloir monter sur scène ou avoir un projet précis ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pas nécessairement ! Beaucoup chantent simplement pour le plaisir, pour s'épanouir et prendre confiance. La scène, l'écriture ou la création sont des chemins possibles, jamais un passage obligé."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il savoir lire la musique ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Il n'y a aucun prérequis de solfège : on travaille à l'oreille et on développe la musicalité autrement, par l'écoute et les ressentis. La théorie peut être abordée de temps à autres, mais toujours à votre rythme !"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment se déroule un premier cours ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La séance découverte est offerte ! Pendant ce temps, on échange sur vos envies, votre parcours et ce qui vous motive. On prend ensuite le temps de faire connaissance avec votre voix, par des petits exercices et jeux vocaux, en douceur et sans jugement. Nous trouverons ensemble un chemin de progression qui vous correspond !"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "À quelle fréquence faut-il prendre des cours ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un cours par semaine est le rythme le plus courant pour progresser régulièrement, mais tout s'adapte selon vos disponibilités et vos envies. Pour les cours de chant et le coaching vocal et scénique, vous choisissez entre un forfait à l'année, pour un rythme régulier, ou des séances à la carte, pour plus de flexibilité. L'accompagnement à la création suit un autre rythme : uniquement à la séance, programmée selon votre avancée dans votre parcours artistique."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Suis-je obligé·e de m'engager à l'année ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non, pas nécessairement. On peut tout à fait avancer à la séance, à votre rythme. Le forfait à l'année est là pour celles et ceux qui veulent installer un rythme d'apprentissage régulier. C'est un choix, pas une condition !"
+      }
+    }
+  ]
+}
+</script>
 
 <!-- Filet sans JavaScript : tout le contenu est en opacity 0 et n'apparait que
      par IntersectionObserver. Sans JS, la page serait blanche. -->
@@ -455,31 +527,6 @@ body.une-capitale .hero h1 { text-transform: none; }
    soient rouge, comme ceux des autres sections du site ». Ces 8 pictos etaient les
    SEULS en orange sur fond clair ; propose, pour qui et tarifs sont deja en rouge. */
 .pedago-list .ico { color: var(--rouge); }
-/* « Tester les textes et pictos centrés au milieu » (Myriam) — proposition du panneau.
-   ⚠️ PAS de « justify-content: center » sur la ligne flex : l'icône et le texte y seraient
-   centrés COMME UN GROUPE, et le jour où un libellé passe à deux lignes — « Confiance &
-   présence scénique » sur un écran étroit — l'icône se collerait à gauche du bloc, hors du
-   centrage. C'est exactement le défaut relevé sur les cartes de tarifs ce matin. L'icône est
-   donc remise dans le FLUX du texte : elle devient un mot comme un autre et se centre avec lui.
-   Le « gap » du flex n'ayant plus d'effet sur un bloc, il est remplacé par une marge. */
-body.appr-centre .pedago-list li { display: block; text-align: center; }
-body.appr-centre .pedago-list li .ico { display: inline-block; vertical-align: -0.16em;
-                                        margin-right: 0.55rem; }
-/* ⚠️ Centrer ne suffit pas : les filets courent sur toute la largeur pendant que les libellés,
-   courts, flottent au milieu — beaucoup de vide de chaque côté, et ça se voit. Constat d'Ilies.
-   Trois variantes règlent ce vide de trois façons différentes, elle choisit. */
-/* (a) filets resserrés sur le contenu : c'est toujours « centré au milieu », mais les traits
-       s'arrêtent où le texte s'arrête. */
-body.appr-serre .pedago-list { max-width: 27rem; margin-left: auto; margin-right: auto; }
-/* (b) sans filets du tout : le vide n'est plus souligné, l'espacement sépare. */
-body.appr-nofilet .pedago-list { border-top: none; }
-body.appr-nofilet .pedago-list li { border-bottom: none; padding: 0.6rem 0.2rem; }
-/* (c) deux colonnes : la largeur est occupée au lieu d'être laissée vide. Les 8 thématiques se
-       répartissent 4 + 4. Repli à une colonne sous 640 px, où deux colonnes seraient illisibles. */
-body.appr-2col .pedago-list { display: grid; grid-template-columns: 1fr 1fr;
-                              column-gap: 2.6rem; border-top: none; }
-body.appr-2col .pedago-list li { border-top: var(--bw) solid var(--trait); border-bottom: none; }
-@media (max-width: 640px) { body.appr-2col .pedago-list { grid-template-columns: 1fr; } }
 
 /* ---------- Tarifs ---------- */
 /* 3 colonnes : la création a sa carte à part (demande ferme de Myriam, répétée 2×). */
@@ -502,8 +549,6 @@ body.appr-2col .pedago-list li { border-top: var(--bw) solid var(--trait); borde
    à gauche, sans cas particulier. */
 .tcard h3 { display: block; text-align: center; font-size: 1.28rem; margin-bottom: 1.4rem; }
 .tcard .tsub { text-align: center; }
-body.tarifs-gauche .tcard h3 { text-align: left; }
-body.tarifs-gauche .tcard .tsub { text-align: left; }
 /* Le gap du flex n'a plus d'effet sur un bloc : la marge le remplace, sinon le picto se
    collerait au premier mot. vertical-align cale son axe sur celui des capitales. */
 .tcard h3 .ico { color: var(--rouge); width: calc(22px * var(--ico-tarifs, 1)); height: calc(22px * var(--ico-tarifs, 1)); display: inline-block;
@@ -522,13 +567,11 @@ body.tarifs-gauche .tcard .tsub { text-align: left; }
    qu'ils repondaient au « trop commercial » de Myriam et que c'est son avis qui
    tranchera. La carte creation garde les siens, elle n'est pas visee. */
 #card-forfait .eq { display: none; }
-body.forfait-eq #card-forfait .eq { display: block; }
 /* Mention sous les forfaits : la phrase demandee seule, ou les deux lignes.
    L'ancienne justifiait le prix par seance ; sans les equivalents elle est
    orpheline, et elle dit deja la meme chose que la neuve. */
 .tnote .tn-a, .tnote .tn-b { display: block; }
-.tnote .tn-b { display: none; }
-body.tnote-deux .tnote .tn-b { display: block; } /* équivalent /séance, discret */
+.tnote .tn-b { display: none; } /* équivalent /séance, discret */
 .trow .price { font-family: var(--display); font-weight: 600; font-size: 1.2rem; color: var(--encre); white-space: nowrap; font-size-adjust: none; }
 .trow .price small { font-family: var(--sans); font-size: 0.72rem; font-weight: 400; color: var(--encre-2); }
 /* La création se distingue par son pictogramme et son prix en rouge, pas par un liseré latéral. */
@@ -560,18 +603,6 @@ body.tnote-deux .tnote .tn-b { display: block; } /* équivalent /séance, discre
    de la section precedente (Myriam). Meme valeur, au chiffre pres. */
 .decouverte p b { color: var(--encre); font-weight: 600; }
 .decouverte p { max-width: 60ch; margin: 1rem auto 0; font-size: 1.05rem; font-weight: 300; line-height: 1.7; }
-/* --- Propositions (test live) : toggles de présentation de la carte tarifs --- */
-/* Toggles V4 (pistes « Test : » du retour Myriam, testables en direct via le panneau) */
-/* Poids du texte — le réglage ne porte plus QUE sur la UNE.
-   « QUI SUIS-JE ? : mettre le texte en light » est FERME (Myriam, 26/07) : son
-   .about-body p reste sur son poids de base, 300. Rien n'a été ajouté pour ça —
-   il a suffi de le sortir du sélecteur ci-dessous.
-   Pour la UNE, elle laisse le choix ouvert : « en gras si la photo rogne sur le texte,
-   en light sinon (ma préférence) ». La condition dépend de l'image de fond, qu'Ilies
-   retravaille plus tard → les deux options restent au panneau. */
-body.una-medium .hero-desc { font-weight: 500; }
-body.center-offre .offre-col { text-align: center; }          /* (h) centrer les 3 blocs de « Ce que je vous propose » */
-body.center-offre .offre-col .ico-lg { display: block; margin-left: auto; margin-right: auto; }
 /* Les trois pastilles colorées de « Pour qui ? » (« enfants et ados », « adultes »,
    « tous les niveaux ») sont RETIRÉES — décision d'Ilies du 26/07. Les libellés reprennent
    leur style de base : petites capitales rouges, sans fond. */
@@ -593,23 +624,6 @@ body.appr-cartes .pedago-list li { justify-content: center; }
 /* Le picto suivait le texte a gauche ; elle demande le 02/08 de le centrer
    tout en laissant les textes alignes a gauche.                             */
 body.pourqui-gauche .qcard .ico { margin-left: auto; margin-right: auto; }
-
-/* NIVEAU « PLUS DE TOUCHES » — RECADRÉ le 26/07 sur la seule section « Ce que je vous
-   propose » (demande d'Ilies). Même principe qu'au-dessus poussé d'un cran : des aplats
-   très pâles en FOND, jamais de couleur en texte, le rouge reste majoritaire — sinon on
-   tombe dans le « carnaval de Rio » qu'elle refuse.
-   ⚠️ Il agissait sur TROIS endroits : les cartes « Pour qui ? », ces trois colonnes-ci, et
-   le bloc « Cycle création » des tarifs. Les deux autres en sont sortis — le réglage ne
-   doit plus rien changer ailleurs que dans cette section.
-   ⚠️ Il ne fait pas que colorer : il transforme aussi les colonnes en cartes (fond, arrondi,
-   padding). C'est un changement de structure autant que de couleur. */
-/* ⚠️ Aucun réglage de rembourrage ici : « Plus de touches » ne change QUE la couleur de
-   fond des colonnes. Il resserrait auparavant le padding, ce qui décalait les retours à
-   la ligne et les hauteurs de cartes entre les deux options. L'arrondi vient déjà de
-   .offre-col. */
-body.couleurs-plus .offre-col:nth-child(1) { background: rgba(242, 187, 22, 0.10); }
-body.couleurs-plus .offre-col:nth-child(2) { background: rgba(141, 160, 134, 0.17); }
-body.couleurs-plus .offre-col:nth-child(3) { background: rgba(222, 121, 11, 0.08); }
 /* Fonds plus variés en début de page — VALIDÉS par Ilies le 26/07, câblés en dur.
    ⚠️ C'est le PRÉFIXE de classe qui a été retiré, pas les règles : l'état sans cette
    classe valait « fonds actuels », donc la supprimer aurait annulé le choix au lieu de
@@ -630,39 +644,7 @@ body.couleurs-plus .offre-col:nth-child(3) { background: rgba(222, 121, 11, 0.08
    abandon sous seuil : 4,5 texte courant, 3 titres. Sur SAUGE, le sur-titre rouge
    passe sous 4,5 et bascule a l'encre ; l'accent rouge du titre reste (grand texte).
    ⚠️ Vert d'eau : un sauge eclairci peut tirer vers le gris (Lot 5B), a juger a l'oeil. */
-body.une-fond-papier .hero { --une-fond: var(--papier); }   /* corps 15,94 · sur-titre rouge 8,03 · accent 8,03 */
-body.une-fond-creme2 .hero { --une-fond: var(--creme-2); }   /* corps 13,24 · sur-titre rouge 6,67 · accent 6,67 */
-body.une-fond-jauned .hero { --une-fond: #F6E3AE; }   /* corps 13,51 · sur-titre rouge 6,80 · accent 6,80 */
-body.une-fond-vertdeau .hero { --une-fond: var(--vert-pale); }   /* corps 10,78 · sur-titre rouge 5,43 · accent 5,43 */
-body.une-fond-sauge .hero { --une-fond: var(--sauge); }   /* corps 6,14 · sur-titre ENCRE 6,14 (le rouge tombe a 3,09) · accent 3,09 */
-body.une-fond-sauge .hero .eyebrow { color: var(--encre); }
-/* --- 7e fond de la UNE : le ROUGE. Complement du lot 1, qui l'avait ecarte faute
-   d'avoir repris les textes ; les 4 autres sections ayant leur option rouge, la UNE
-   etait la seule a ne pas pouvoir passer en sombre.
-   ⚠️ .btn-primary est un aplat ROUGE : sur un fond rouge il DISPARAITRAIT. Il reprend
-   l'aplat JAUNE a texte encre du bouton « Séance découverte offerte » des tarifs —
-   meme offre, meme objet, rien d'invente. Son survol suit, sinon le texte encre se
-   retrouverait sur un fond encre.
-   ⚠️ L'accent du titre ne se lit PAS sur le fond mais sur le SURLIGNEUR (orange a 26 %
-   compose sur le rouge = #AC2807) : c'est cette teinte-la qui sert de reference, mesurer
-   sur le rouge aurait menti. Le surligneur orange est conserve, Myriam l'a nomme.
-   ⚠️ Le filet .rule-short est un aplat orange a 2,82 sur le rouge, sous le seuil de 3 des
-   composants non textuels : meme traitement que les pictos des autres sections.
-   Le fondu du bord de la photo et le voile suivent seuls (color-mix sur --une-fond).
-   Ratios calcules par tools/fond_une_rouge_v5.py, abandon sous seuil. */
-body.une-fond-rouge .hero { --une-fond: var(--rouge); }
-body.une-fond-rouge .hero .eyebrow { color: var(--jaune); }              /* 4,90 */
-body.une-fond-rouge .hero h1 { color: var(--papier); }                   /* 8,03 */
-body.une-fond-rouge .hero h1 .a { color: var(--jaune); }                 /* 3,89 sur le surligneur */
-body.une-fond-rouge .hero .hero-desc { color: var(--papier); }           /* 8,03 */
-body.une-fond-rouge .hero .rule-short { background: var(--peche); }      /* 5,08 */
-body.une-fond-rouge .hero .btn-primary { background: var(--jaune); color: var(--encre);
-                                        border-color: var(--jaune); }    /* 9,73 */
-body.une-fond-rouge .hero .btn-primary:hover { background: var(--encre); color: var(--papier);
-                                              border-color: var(--encre); }  /* 15,94 */
-body.une-fond-rouge .hero .btn-ghost { color: var(--papier);
-                                      border-color: rgba(251, 246, 236, 0.45); }  /* 8,03 */
-body.une-fond-rouge .hero .btn-ghost:hover { color: var(--jaune); border-color: var(--jaune); }  /* 4,90 */
+body.une-fond-papier .hero { --une-fond: var(--papier); }  /* 4,90 */
 /* PROPOSITIONS DE FOND pour les 4 sections restantes — demande d'Ilies (26/07),
    dans la continuite du fond de la UNE. Palette « charte + eclaircies ».
    Le defaut de chaque section est son etat de base : AUCUNE classe posee.
@@ -686,61 +668,14 @@ body.une-fond-rouge .hero .btn-ghost:hover { color: var(--jaune); border-color: 
    seuil : 4,5 en texte courant, 3 pour les titres et les pictos. */
 /* --- Fond de « Ce que je vous propose » (#propose) --- */
 body.propose-fond-creme #propose { background: var(--creme); }
-body.propose-fond-creme2 #propose { background: var(--creme-2); }
-body.propose-fond-sauge #propose { background: var(--sauge); }
-body.propose-fond-sauge #propose .eyebrow { color: var(--encre); }
-body.propose-fond-sauge #propose .offre-lead, body.propose-fond-sauge #propose .offre-foot { color: var(--encre); }
-body.propose-fond-sauge #propose .pedago-head p { color: var(--encre); }
-body.propose-fond-sauge #propose .pedago-list .ico { color: var(--rouge); }
-body.couleurs-plus.propose-fond-sauge #propose .offre-col:nth-child(1) { background: #FAF0D7; }
-body.couleurs-plus.propose-fond-sauge #propose .offre-col:nth-child(2) { background: #E8E7DB; }
-body.couleurs-plus.propose-fond-sauge #propose .offre-col:nth-child(3) { background: #F9ECDA; }
-body.propose-fond-rouge #propose { background: var(--rouge); }
-body.propose-fond-rouge #propose .eyebrow { color: var(--jaune); }
-body.propose-fond-rouge #propose .section-title { color: var(--papier); }
-body.propose-fond-rouge #propose .section-title .a { color: var(--jaune); }
-body.propose-fond-rouge #propose .offre-lead, body.propose-fond-rouge #propose .offre-foot { color: var(--papier); }
-body.propose-fond-rouge #propose .pedago-head h3 { color: var(--papier); }
-body.propose-fond-rouge #propose .pedago-list li { color: var(--papier); }
-body.propose-fond-rouge #propose .offre-foot b { color: var(--jaune); }
-body.propose-fond-rouge #propose .pedago-head p { color: var(--creme-2); }
-body.propose-fond-rouge #propose .pedago-list .ico { color: var(--peche); }
-body.propose-fond-rouge #propose .pedago-list, body.propose-fond-rouge #propose .pedago-list li { border-color: rgba(251, 246, 236, 0.26); }
-body.couleurs-plus.propose-fond-rouge #propose .offre-col:nth-child(1) { background: #FAF0D7; }
-body.couleurs-plus.propose-fond-rouge #propose .offre-col:nth-child(2) { background: #E8E7DB; }
-body.couleurs-plus.propose-fond-rouge #propose .offre-col:nth-child(3) { background: #F9ECDA; }
-/* --- Fond de « Pour qui ? » (#pourqui) --- */
-body.pourqui-fond-papier #pourqui { background: var(--papier); }
-body.pourqui-fond-creme2 #pourqui { background: var(--creme-2); }
-body.pourqui-fond-sauge #pourqui { background: var(--sauge); }
-body.pourqui-fond-sauge #pourqui .eyebrow { color: var(--encre); }
 body.pourqui-fond-rouge #pourqui { background: var(--rouge); }
 body.pourqui-fond-rouge #pourqui .eyebrow { color: var(--jaune); }
 body.pourqui-fond-rouge #pourqui .section-title { color: var(--papier); }
 body.pourqui-fond-rouge #pourqui .section-title .a { color: var(--jaune); }
-/* --- Fond de « Vos questions » (.faq-block) --- */
-body.faq-fond-creme2 .faq-block { background: var(--creme-2); }
-body.faq-fond-creme2 .faq-block .eyebrow { color: var(--rouge); }
-body.faq-fond-jauned .faq-block { background: #F6E3AE; }
-body.faq-fond-jauned .faq-block .eyebrow { color: var(--rouge); }
 body.faq-fond-vertdeau .faq-block { background: var(--vert-pale); }
 body.faq-fond-vertdeau .faq-block .eyebrow { color: var(--rouge); }
-body.faq-fond-rouge .faq-block { background: var(--rouge); }
-body.faq-fond-rouge .faq-block .eyebrow { color: var(--jaune); }
-body.faq-fond-rouge .faq-block .section-title { color: var(--papier); }
-body.faq-fond-rouge .faq-block .section-title .a { color: var(--jaune); }
 /* --- Fond de « Les tarifs » (#tarifs) --- */
 body.tarifs-fond-creme #tarifs { background: var(--creme); }
-body.tarifs-fond-creme2 #tarifs { background: var(--creme-2); }
-body.tarifs-fond-sauge #tarifs { background: var(--sauge); }
-body.tarifs-fond-sauge #tarifs .eyebrow { color: var(--encre); }
-body.tarifs-fond-sauge #tarifs .decouverte p { color: var(--encre); }
-body.tarifs-fond-rouge #tarifs { background: var(--rouge); }
-body.tarifs-fond-rouge #tarifs .eyebrow { color: var(--jaune); }
-body.tarifs-fond-rouge #tarifs .section-title { color: var(--papier); }
-body.tarifs-fond-rouge #tarifs .section-title .a { color: var(--jaune); }
-body.tarifs-fond-rouge #tarifs .decouverte p { color: var(--papier); }
-body.tarifs-fond-rouge #tarifs .decouverte p b { color: var(--jaune); }
 #apropos { background: var(--creme-2); }
 /* TROIS fonds rouges pour « Qui suis-je ? », chacun avec son jeu de couleurs de texte.
    Demande d'Ilies. ⚠️ L'ORANGE est écarté : 2,82:1 sur ce rouge, sous le seuil de 3 même
@@ -749,42 +684,12 @@ body.tarifs-fond-rouge #tarifs .decouverte p b { color: var(--jaune); }
    Tous les ratios sont calculés par le script qui écrit ces règles, avec abandon si l'un
    passe sous son seuil (4,5 en texte courant, 3 pour les titres). */
 body[class*="qsj-rouge"] #apropos { background: var(--rouge); }
-/* Rouge · touches jaunes — titre 8.03 · accent 4.90 · corps 8.03 · gras 4.90 */
-body.qsj-rouge-a #apropos .eyebrow { color: #F2BB16; }
-body.qsj-rouge-a #apropos .section-title { color: #FBF6EC; }
-body.qsj-rouge-a #apropos .section-title .a { color: #F2BB16; }
-body.qsj-rouge-a #apropos .about-body p { color: #FBF6EC; }
-body.qsj-rouge-a #apropos .about-body p strong { color: #F2BB16; }
 /* Rouge · monochrome crème — titre 8.03 · accent 6.67 · corps 6.67 · gras 8.03 */
 body.qsj-rouge-b #apropos .eyebrow { color: #EBE1CE; }
 body.qsj-rouge-b #apropos .section-title { color: #FBF6EC; }
 body.qsj-rouge-b #apropos .section-title .a { color: #EBE1CE; }
 body.qsj-rouge-b #apropos .about-body p { color: #EBE1CE; }
 body.qsj-rouge-b #apropos .about-body p strong { color: #FBF6EC; }
-/* Rouge · titre jaune — titre 4.90 · accent 8.03 · corps 6.67 · gras 4.90 */
-body.qsj-rouge-c #apropos .eyebrow { color: #FBF6EC; }
-body.qsj-rouge-c #apropos .section-title { color: #F2BB16; }
-body.qsj-rouge-c #apropos .section-title .a { color: #FBF6EC; }
-body.qsj-rouge-c #apropos .about-body p { color: #EBE1CE; }
-body.qsj-rouge-c #apropos .about-body p strong { color: #F2BB16; }
-/* Rouge · touches pêche — titre 8.03 · accent 5.08 · corps 8.03 · gras 5.08 */
-body.qsj-rouge-d #apropos .eyebrow { color: #EEBE87; }
-body.qsj-rouge-d #apropos .section-title { color: #FBF6EC; }
-body.qsj-rouge-d #apropos .section-title .a { color: #EEBE87; }
-body.qsj-rouge-d #apropos .about-body p { color: #FBF6EC; }
-body.qsj-rouge-d #apropos .about-body p strong { color: #EEBE87; }
-/* Rouge · touches vert pâle — titre 8.03 · accent 5.43 · corps 6.67 · gras 5.43 */
-body.qsj-rouge-e #apropos .eyebrow { color: #CACFBE; }
-body.qsj-rouge-e #apropos .section-title { color: #FBF6EC; }
-body.qsj-rouge-e #apropos .section-title .a { color: #CACFBE; }
-body.qsj-rouge-e #apropos .about-body p { color: #EBE1CE; }
-body.qsj-rouge-e #apropos .about-body p strong { color: #CACFBE; }
-/* Le fond de base, mais la dominante du titre s'inverse : titre en rouge,
-   accent en encre. La bichromie est conservee — l'accent n'est pas un mot
-   mais la ligne entiere, soit la moitie du titre. Titre 6,67 sur le fond
-   clair pour un seuil de 3 ; accent 13,24. Corps et gras inchanges. */
-body.qsj-creme-titre #apropos .section-title { color: var(--rouge); }
-body.qsj-creme-titre #apropos .section-title .a { color: var(--encre); }
 /* Photo en BANDEAU — validé par Ilies le 26/07, CÂBLÉ EN DUR.
    ⚠️ C'est le préfixe de classe qui a été retiré, pas les règles : l'état sans cette classe
    remettait la photo à côté du texte, en portrait.
@@ -821,11 +726,6 @@ body.qsj-creme-titre #apropos .section-title .a { color: var(--encre); }
 @supports (background-image: image-set(url("i.webp") type("image/webp"))) {
   .hero { --une-img: url(images/une/t2-retouch-e-11-finale.webp); }
 }
-/* Le voile est dense DU COTE DU TEXTE et transparent sur elle : c'est ce qui garde le
-   texte lisible quand des branches claires entrent dans le cadre. Le sens du dégradé
-   suit donc le côté du texte, fixé par le test choisi. */
-body.une-texte-gauche .hero { background-image: linear-gradient(to right, color-mix(in srgb, var(--une-fond) 95%, transparent) 0%, color-mix(in srgb, var(--une-fond) 88%, transparent) 34%, color-mix(in srgb, var(--une-fond) 12%, transparent) 66%, color-mix(in srgb, var(--une-fond) 0%, transparent) 100%), var(--une-fondu), var(--une-img); }
-body.une-texte-gauche .hero-text { margin-left: 0; margin-right: auto; }
 /* Source PORTRAIT (tests 1 et 2) : bandeau PLEINE LARGEUR, comme pour le paysage —
    « un peu comme tu as fait avec la photo paysage », écrit-elle. `cover` ne déforme
    jamais : il conserve les proportions et recadre.
@@ -866,13 +766,6 @@ body.une-src-portrait .hero::before { content: ""; position: absolute; top: 0; h
     color-mix(in srgb, var(--une-fond) 72%, transparent) 70%,
     var(--une-fond) 86%, var(--une-fond) 100%); }
 body.une-src-portrait .hero::before { left: 0; }
-body.une-src-portrait.une-texte-gauche .hero::before { left: auto; right: 0;
-  background: linear-gradient(to left, transparent 0%, transparent 24%,
-    color-mix(in srgb, var(--une-fond) 30%, transparent) 50%,
-    color-mix(in srgb, var(--une-fond) 72%, transparent) 70%,
-    var(--une-fond) 86%, var(--une-fond) 100%); }
-body.une-src-portrait.une-texte-gauche .hero { --une-pos: right top;
-                              --une-fondu: none;   /* le fondu est GRAVÉ dans l'image */ }
 .hero-grid { grid-template-columns: 1fr; }
 .hero-text { margin-left: auto; max-width: 34rem; }
 /* Bouton « ce que je vous propose » : CONTOUR, SANS COULEUR — mot de Myriam,
@@ -929,8 +822,8 @@ body.une-src-portrait.une-texte-gauche .hero { --une-pos: right top;
    du seuil AA. Le gras est conservé, elle le demande explicitement. */
 .contact-lead b { color: var(--jaune); font-weight: 700; }
 .contact-methods { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-.cmethod { display: flex; align-items: center; gap: 0.9rem; min-width: 0; background: rgba(253,250,245,0.08); border: var(--bw) solid rgba(253,250,245,0.28); border-radius: var(--r-md); padding: 0.9rem 1.2rem; text-align: left; transition: background 0.2s, border-color 0.2s, transform 0.15s; }
-.cmethod:hover { background: rgba(253,250,245,0.14); border-color: rgba(253,250,245,0.45); }
+.cmethod { display: flex; align-items: center; gap: 0.9rem; min-width: 0; background: rgba(253,250,245,0.04); border: var(--bw) solid rgba(253,250,245,0.28); border-radius: var(--r-md); padding: 0.9rem 1.2rem; text-align: left; transition: background 0.2s, border-color 0.2s, transform 0.15s; }
+.cmethod:hover { background: rgba(253,250,245,0.055); border-color: rgba(253,250,245,0.45); }
 .cm-text { min-width: 0; }
 .cmethod .ico { color: var(--jaune); }
 .cmethod .k { display: block; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--jaune); font-weight: 600; }
@@ -1024,14 +917,6 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
   .mobile-menu { display: grid; grid-template-rows: 0fr; overflow: hidden; transition: grid-template-rows 0.25s ease; }
   .mobile-menu.open { grid-template-rows: 1fr; border-bottom: var(--bw) solid var(--trait); }
 }
-
-/* ---- Lot 6 (retour Myriam 30/07) : essais de STRUCTURE ---------------------- */
-/* (a) « ca manque un peu de structure » — la liste encadree, façon .offre-col.   */
-body.appr-bloc .pedago-list {
-  background: var(--papier); border: var(--bw) solid var(--trait);
-  border-radius: var(--r-md); padding: 0.4rem 1.8rem; border-top: none;
-}
-body.appr-bloc .pedago-list li:last-child { border-bottom: none; }
 /* (b) meme idee, mais un bloc PAR concept : l'autre lecture de sa phrase.        */
 body.appr-cartes .pedago-list { border-top: none; display: grid; gap: 0.6rem; }
 body.appr-cartes .pedago-list li {
@@ -1049,61 +934,9 @@ body.faq-pleine .faq-block { border-radius: 0; padding: 5rem 2.4rem; }
 /* ---- Credits photo (Myriam, 30/07) : l'emplacement visible est un reglage. ---- */
 .footer-credit, .photo-credit { display: none; }
 body.credit-pied .footer-credit { display: block; }
-body.credit-photo .photo-credit { display: block; }
 .footer-credit { font-size: 0.72rem; opacity: 0.72; margin-top: 0.35rem; }
 .photo-credit { font-size: 0.68rem; opacity: 0.68; margin-top: 0.55rem; text-align: center; }
-
-/* Credit SUPERPOSE sur la photo. Possible depuis que la photo est unique (Ilies,
-   30/07) : le contraste se mesure une bonne fois. ⚠️ MESURE sur t2-retouch-e-11 :
-   la bande basse contient du rocher NOIR et du ciel CLAIR, donc aucun texte nu ne
-   passe (pire cas 1,09 a 2,47 pour un seuil de 4,5). D ou le voile encre a 55 % :
-   le texte papier y remonte a 5,75 au pire cas, calcule sur les pixels reels. */
-body.credit-sur .hero { position: relative; }
-body.credit-sur .hero-credit { display: block; position: absolute; left: 0; bottom: 0;
-  padding: .3rem .7rem; font-size: .62rem; letter-spacing: .02em;
-  background: rgba(64,1,1,.55); color: var(--papier); border-top-right-radius: 8px; }
 .hero-credit { display: none; }
-
-/* ---- Nuance du titre « Qui suis-je » (Myriam, 30/07) ------------------------
-   Elle trouve la 2e ligne trop proche de la 1re. Le sur-titre etant rouge lui
-   aussi, chaque nuance le traite en meme temps : c'est l'uniformite du rouge qui
-   empeche de distinguer les trois niveaux. */
-body.qsjt-douce #apropos .section-title .a { color: var(--encre-2); }
-body.qsjt-douce #apropos .eyebrow { color: var(--encre-2); }
-body.qsjt-legere #apropos .section-title .a { font-weight: 400; }
-body.qsjt-legere #apropos .eyebrow { font-weight: 500; letter-spacing: .22em; }
-body.qsjt-petite #apropos .section-title .a { font-size: 0.78em; }
-body.qsjt-petite #apropos .eyebrow { color: var(--encre-2); }
-
-/* ---- Structure de « Une approche globale » (Myriam : « ça manque un peu de
-   structure »). Reglage a part depuis le 30/07 : l'ALIGNEMENT est tranche
-   (centre, filets resserres), c'est la STRUCTURE qui reste a choisir. ---- */
-body.struct-nofilet .pedago-list { border-top: none; }
-body.struct-nofilet .pedago-list li { border-bottom: none; padding: .6rem .2rem; }
-body.struct-2col .pedago-list { display: grid; grid-template-columns: 1fr 1fr;
-  column-gap: 2.6rem; border-top: none; max-width: none; }
-body.struct-2col .pedago-list li { border-top: var(--bw) solid var(--trait); border-bottom: none; }
-body.struct-2colbloc .pedago-list { display: grid; grid-template-columns: 1fr 1fr;
-  column-gap: .7rem; row-gap: .7rem; border-top: none; max-width: none; }
-body.struct-2colbloc .pedago-list li { background: var(--papier); border: var(--bw) solid var(--trait);
-  border-radius: var(--r-md); padding: .8rem 1rem; }
-body.struct-alt .pedago-list { border-top: none; }
-body.struct-alt .pedago-list li { border-bottom: none; padding: .8rem 1.2rem; border-radius: var(--r-md); }
-body.struct-alt .pedago-list li:nth-child(odd) { background: var(--papier); }
-@media (max-width: 720px) {
-  body.struct-2col .pedago-list, body.struct-2colbloc .pedago-list { grid-template-columns: 1fr; }
-}
-
-/* ---- 4 nuances de titre en plus (Myriam : « ajoute d'autres propositions »).
-   Aucune nouvelle COULEUR : sur le creme-2 de la section, seuls encre, encre-2 et
-   rouge depassent le seuil de 3 (orange 2,37 · sauge 2,16 · jaune 1,36). ---- */
-body.qsjt-inverse #apropos .section-title { color: var(--encre-2); }
-body.qsjt-inverse #apropos .section-title .a { color: var(--rouge); }
-body.qsjt-grande #apropos .section-title .a { font-size: 1.12em; display: inline-block; }
-body.qsjt-espacee #apropos .section-title .a { letter-spacing: .04em; }
-body.qsjt-espacee #apropos .eyebrow { letter-spacing: .26em; }
-body.qsjt-douce2 #apropos .section-title .a { color: var(--encre-2); font-weight: 400; }
-body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
 @media (max-width: 980px) {
   .hero-grid { grid-template-columns: 1fr; gap: 2.8rem; }
   /* Bandeau : sous 980px le texte occupe toute la largeur et retomberait sur la falaise
@@ -1111,14 +944,6 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
   .hero {
     background-image: linear-gradient(rgba(251,246,236,0.90), rgba(251,246,236,0.90)), var(--une-img);
     --une-size: cover; --une-pos: center 38%;
-  }
-  /* Retour Myriam (30/07) : « qu'on voit quand meme la photo, meme si elle est seulement
-     en dessous du texte ». Deux alternatives au voile plein, a trancher par elle.
-     Contraste MESURE sur la photo servie, pixel le plus sombre (0) sous le texte encre :
-     voile 0,90 -> 12,73 · voile 0,65 -> 6,58 · voile 0,45 -> 3,41 (sous le seuil 4,5,
-     donc ecarte). */
-  body.une-mob-visible .hero {
-    background-image: linear-gradient(rgba(251,246,236,0.65), rgba(251,246,236,0.65)), var(--une-img);
   }
   body.une-mob-dessous .hero { background-image: none; padding-bottom: 0; }
   body.une-mob-dessous .hero::before { display: none; }
@@ -1147,12 +972,6 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
   /* La zone visible a l'arrivee = hauteur d'ecran - barre du haut - marge du haut.
      La photo commence donc exactement au bord bas. */
   body.une-mob-dessous .hero-grid { min-height: calc(100svh - 152px); }
-  /* Les deux etats a comparer avec la proposition ci-dessus.
-     ⚠️ La DESCENTE de la photo n'en fait pas partie : « pas qu'on la voit quand on
-     ouvre la page » est une demande ferme, elle vaut pour les trois. */
-  body.une-mob-bandeau .hero { padding-bottom: 3.5rem; }
-  body.une-mob-bandeau .hero::after { height: 300px;
-    -webkit-mask-image: none; mask-image: none; }
   body.une-mob-haute .hero::after { height: 460px; }
   .hero-text { margin-left: 0; margin-right: 0; max-width: none; }
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -1193,31 +1012,12 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
 
 <!-- ============ PICTOGRAMMES (sprite inline, recolorable par CSS) ============ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <!-- Ligne « Music'Alencon » du pied de page. C'etait une NOTE DE MUSIQUE, que Myriam
-       refuse ; le refus n'avait ete applique qu'a « Ce que je vous propose ». Deux jalons
-       relies disent « en collaboration avec » sans redoubler le pin de lieu de la ligne
-       du dessus, ni se faire passer pour un lien cliquable (la ligne ne l'est pas). -->
-  
   <!-- ===== Pictogrammes refaits (retour V4 de Myriam) =====
        « Changer la note de musique pour quelqu'un qui chante », « changer le métronome pour
        un micro », « retravailler la plume, on dirait une feuille », et les 3 de « Pour qui ? »
        « plus travaillés et plus créatifs ». -->
-  <!-- quelqu'un qui chante : buste + la voix qui sort (remplace la note de musique) -->
-  
-  <!-- micro sur pied, simplifié à partir de la marque (remplace le métronome) -->
-  
-  <!-- jeune pousse : apprendre en confiance, ça grandit (remplace le soleil) -->
-  
   <!-- bras levés : « osez votre voix » — écho direct à sa photo sur la falaise.
        Tracé en COURBES et non en segments : un bonhomme-bâton serait tout sauf « travaillé ». -->
-  <!-- « Adultes / Osez votre voix ». Les bras leves d'avant se lisaient comme deux
-       PARENTHESES a 24 px (constat d'Ilies) : une forme parfaitement symetrique sans
-       detail interieur devient un signe typographique. Ce bourgeon est diagonal, ouvert,
-       et sa densite de trait (25 %) est celle de ses voisins de rangee (36 % / 21 %). -->
-  
-  <!-- « commencez là où vous en êtes » : un chemin jalonné d'étapes, du point de départ vers
-       la suite. Les jalons évitent que la courbe seule ne se lise comme un simple trait. -->
-  
   <!-- plume : sa critique « on dirait une feuille » venait de la silhouette en ovale pointu.
        On change de registre — la plume au sens du BEC DE PORTE-PLUME (fente + évent + pointe) :
        reconnaissable d'emblée, impossible à confondre avec une feuille, et ça dit « écriture ». -->
@@ -1227,12 +1027,6 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
   <!-- Picto de la V3, recale au poids de la rangee et rattache a SA carte :
        depuis le 26/07 il n'y a plus de reglage « tous les pictos V3 d'un coup ». -->
   <symbol id="i-enf-soleil" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.105"/><path d="M12 4.703v1.708M12 17.589v1.708M6.023 6.023l1.242 1.242M16.735 16.735l1.242 1.242M4.703 12h1.708M17.589 12h1.708M6.023 17.977l1.242-1.242M16.735 7.265l1.242-1.242"/></symbol>
-  <!-- Picto de la V3, recale au poids de la rangee et rattache a SA carte :
-       depuis le 26/07 il n'y a plus de reglage « tous les pictos V3 d'un coup ». -->
-  
-  <!-- Picto de la V3, recale au poids de la rangee et rattache a SA carte :
-       depuis le 26/07 il n'y a plus de reglage « tous les pictos V3 d'un coup ». -->
-  
   <!-- INDEPENDANCE PAR SECTION : la plume servait a la fois dans la liste et dans la
        carte « Accompagnement a la creation ». Deux copies, une par emplacement, pour
        qu'un changement dans l'une ne touche plus l'autre.
@@ -1247,25 +1041,6 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
        une epaisseur en attribut, et le picto cesserait de suivre les regles CSS. -->
   <symbol id="i-plume-liste" viewBox="0 0 24 24"><path d="M12 3.714c2.432 3.152 3.873 6.484 4.233 9.907L12 20.286l-4.233-6.664c0.36-3.422 1.801-6.755 4.233-9.907z"/><path d="M12 12.54v7.745"/><circle cx="12" cy="10.559" r="1.351"/></symbol>
   <symbol id="i-plume-tarif" viewBox="0 0 24 24"><path d="M12 2.8c2.7 3.5 4.3 7.2 4.7 11L12 21.2l-4.7-7.4c.4-3.8 2-7.5 4.7-11z"/><path d="M12 12.6v8.6"/><circle cx="12" cy="10.4" r="1.5"/></symbol>
-  
-  <!-- Respiration : le souffle etait le seul picto de la liste a vraiment decrocher
-       (13,4 px contre une mediane de 18,2, soit -26 %). Il ne pouvait pas etre agrandi
-       — large et plat, il serait sorti du cadre en LARGEUR avant d'atteindre la bonne
-       hauteur. Redessine en TROIS vagues : meme motif, la hauteur en plus, et sans le
-       vide central que laissaient deux vagues simplement ecartees. -->
-  
-  <!-- « Posture & corps » — 3 pistes, toutes des OBJETS. Le bonhomme-baton d'origine a été
-       supprimé : Myriam le trouvait enfantin. ⚠️ Ne pas redessiner un corps ici — le Lot 5C
-       a buté 4 fois dessus, un corps entier dans 24 px redevient toujours un bonhomme. -->
-  
-  
-  
-  
-  
-  <!-- Meme dedoublement pour l'etoile : liste « Confiance & presence scenique » d'un
-       cote, bouton « Seance decouverte offerte » de l'autre. Le trace est inchange —
-       son poids est deja bon aux deux tailles (18,4 a 24 px, 15,3 a 20 px). -->
-  
   <!-- Lot 5A (30/07) : Justesse : diapason. Dessin repris et recale a 18.19 px d'encre
        (echelle 0.901) pour tenir la rangee de la liste. Id PROPRE : l'original
        reste independant dans « Ce que je vous propose ». -->
@@ -1283,47 +1058,12 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
   <!-- Lot 5B (30/07) : Adultes : personnage qui leve les bras. Dessine pour 24 px : 2 a 3 elements amples
        plutot que 5 fins — la premiere passe a echoue exactement la-dessus. -->
   <symbol id="i-adu-epanoui" viewBox="0 0 24 24"><circle cx="12" cy="6.584" r="2.051"/><path d="M5.107 7.241 12 11.508 18.893 5.928"/><path d="M12 11.508v7.549"/></symbol>
-  <!-- Lot 5B (30/07) : Adultes : arbre. Dessine pour 24 px : 2 a 3 elements amples
-       plutot que 5 fins — la premiere passe a echoue exactement la-dessus. -->
-  
-  <!-- Improvisation : volute libre. Redessinee plus HAUTE plutot que mise a
-       l echelle — l agrandir la sortait du cadre en largeur (cas du souffle, lot C2a). -->
-  
-  <!-- Picto chant « plus expressif » : tete relevee, ondes en diagonale montante
-       au lieu d arcs concentriques. C est le mouvement qui porte l expressivite. -->
-  
-  <!-- Picto « cours de chant », proposition du 30/07 : Deux presences : le cours comme echange. -->
-  
-  <!-- Picto « cours de chant », proposition du 30/07 : Ondes en diagonale montante. -->
-  
-  <!-- Picto « cours de chant », proposition du 30/07 : Eventail croissant : la voix se deploie. -->
-  
   <!-- Picto « cours de chant », proposition du 30/07 : Souffle en volute. -->
   <symbol id="i-chant-volute" viewBox="0 0 24 24"><circle cx="8.6" cy="8.4" r="3.1"/><path d="M2.8 20.8a5.8 5.8 0 0 1 11.6 0"/><path d="M15.2 11.4c4.2-.6 5.6-3.4 4.4-5.6-.8-1.4-2.8-1.2-3 .6"/></symbol>
-  <!-- Picto « cours de chant », proposition du 30/07 : Tete relevee, onde ample. -->
-  
-  <!-- Lot C (30/07) : Respiration : s evase puis se rapproche. -->
-  
-  <!-- Lot C (30/07) : Respiration : vent qui tourne. -->
-  
-  <!-- Lot C (30/07) : Posture : ancrage au sol. -->
-  
-  <!-- Lot C (30/07) : Posture : corps elance. -->
-  
-  <!-- Lot C (30/07) : Improvisation : meandre. -->
-  
-  <!-- Lot C (30/07) : Improvisation : rebond. -->
-  
-  <!-- Lot C (30/07) : Improvisation : la ligne se libere. -->
-  
   <!-- Lot C (30/07) : Improvisation : boucle libre. -->
   <symbol id="i-impro-noeud" viewBox="0 0 24 24"><path d="M3.4 20.8c6.4-1.6 8.2-6 6.4-10.2C8.6 7.6 5.8 8.4 6.2 11c.4 2.6 4 3.6 7.4 2.2 3.4-1.4 5-4.8 4-9"/></symbol>
-  <!-- Lot C (30/07) : Adultes : personnage complet. -->
-  
   <!-- Lot C (30/07) : Adultes : arbre a couronne asymetrique. -->
-  
   <symbol id="i-etoile-decouverte" viewBox="0 0 24 24"><path d="M12 3.2l2.6 5.6 6 .8-4.4 4.2 1.1 6.1-5.3-3-5.3 3 1.1-6.1L3.4 9.6l6-.8z"/></symbol>
-  
   <symbol id="i-horloge" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.8"/><path d="M12 6.6V12l3.6 2.2"/></symbol>
   <symbol id="i-calendrier" viewBox="0 0 24 24"><rect x="3.4" y="5.2" width="17.2" height="15.4" rx="2.2"/><path d="M3.4 10h17.2M8.2 3.4v3.6M15.8 3.4v3.6"/></symbol>
   <!-- ⚠️ Recalee sur le telephone. Defaut trouve en mesurant, jamais signale :
@@ -1331,83 +1071,32 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
        Coordonnees remises a l'echelle, aucun transform. -->
   <symbol id="i-enveloppe" viewBox="0 0 24 24"><rect x="1.678" y="4.43" width="20.645" height="15.139" rx="2.523"/><path d="M2.366 6.495 12 13.147l9.634-6.652"/></symbol>
   <symbol id="i-tel" viewBox="0 0 24 24"><path d="M6.2 3.4h3.2l1.9 4.7-2.4 1.4a12.4 12.4 0 0 0 5.6 5.6l1.4-2.4 4.7 1.9v3.2a2 2 0 0 1-2.1 2A17.2 17.2 0 0 1 4.2 5.5a2 2 0 0 1 2-2.1z"/></symbol>
-  <!-- technique vocale : onde modulee issue d'une source -->
-  
-  <!-- respiration : souffle en volutes (boucles), pas des vagues -->
-  
-  <!-- posture : un fil a plomb (l'aplomb), pas un personnage -->
-  
-  <!-- justesse : un diapason (et non une note) -->
-  
-  <!-- interpretation : coeur plein + aplat decale + battement -->
-  
-  <!-- presence scenique : projecteur suspendu, boitier trapezoidal -->
-  
   <!-- improvisation : on part d'un point et on ouvre -->
-  
   <symbol id="i-lieu" viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></symbol>
   <!-- LOT C · tranche 1 — variantes de « Ce que je vous propose », proposees au
        panneau. Le defaut reste le picto en place : ces trois-la sont valides.
        ⚠️ Pas de plume d'oie : a 34 px elle se lit comme une FEUILLE, l'objection
        exacte de Myriam qui avait fait abandonner la plume d'origine au Lot 5B. -->
-  
-  
-  
   <symbol id="i-micro-main" viewBox="0 0 24 24"><rect x="8.8" y="3" width="6.4" height="8.2" rx="3.2"/><rect x="10.4" y="11.2" width="3.2" height="5.4" rx="1.2"/><path d="M12 16.6c0 2.6-3.8 2-3.8 4.6"/></symbol>
-  
-  
-  
-  
   <!-- LOT C · tranche 2b — variantes de la liste « Une approche globale ». Toutes
        RECALEES a 18,2 px : sans cela, en choisir une ferait repartir l'homogeneite
        de la rangee. Ecartees : Volutes et Nuage (ne tiennent pas dans le cadre),
        Echelle (densite 56 %, pate a 24 px), les trois etincelles de « Confiance »
        (ce sont les icones « IA »), la plume d'oie, et « Colonne » (deja au panneau). -->
-  
   <symbol id="i-onde-curseurs" viewBox="0 0 24 24"><path d="M6.07 3.699v16.603M12 3.699v16.603M17.93 3.699v16.603"/><path d="M4.489 7.652h3.162v2.174H4.489z"/><path d="M10.419 13.977h3.162v2.174h-3.162z"/><path d="M16.348 5.675h3.162v2.174h-3.162z"/></symbol>
-  
-  
-  
-  
-  
-  
   <symbol id="i-coeur-battement" viewBox="0 0 24 24"><path d="M12 20.412C6.327 16.108 3.392 13.076 3.392 9.457A4.206 4.206 0 0 1 12 7.207a4.206 4.206 0 0 1 8.608 2.25c0 3.619-2.935 6.652-8.608 10.956z"/><path d="M6.718 11.609h2.543l1.369-2.543 1.956 4.891 1.174-2.348h2.543"/></symbol>
-  
-  
-  
-  
-  
-  
-  
   <!-- LOT C · tranche 3 — « Pour qui ? ». « Route en perspective » devient le DEFAUT
        de « Tous les niveaux » : elle casse la ressemblance de silhouette avec le
        bourgeon (deux diagonales fines) ET solde la reserve du Lot 5B jamais arbitree,
        « les jalons se lisent comme des perles sur un fil plutot que comme un parcours ».
        #i-chemin n'est pas supprime : il devient une variante du panneau. -->
-  
-  
-  
-  
-  
   <symbol id="i-tous-poteau" viewBox="0 0 24 24"><path d="M10.132 4.698v14.604"/><path d="M10.132 6.906h7.132l1.868 1.868-1.868 1.868H10.132z"/><path d="M10.132 12.509H5.208l-1.698-1.868 1.698-1.868h4.924"/><path d="M7.415 19.302h5.434"/></symbol>
   <!-- LOT C · tranches 4 et 5 — variantes des tarifs et du pied de page. Ecartees :
        les 3 de « Forfaits » (cousines du calendrier, 44 a 49 %% de densite), « Deux
        jalons relies » (c'est deja le picto en page), le jeton, le chronometre et
        la lettre ecrite. -->
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <symbol id="i-collab-ecole" viewBox="0 0 24 24"><path d="M2.909 9.463 12 3.12l9.091 6.343"/><path d="M5.234 10.731v10.36h13.531v-10.36"/><path d="M10.309 21.091v-4.651h3.383v4.651"/><path d="M7.349 13.269h2.326M14.326 13.269h2.326"/></symbol>
-  
-</svg>
+  </svg>
 
 <nav>
   <div class="wrap nav-inner">
@@ -1817,6 +1506,6 @@ PT[j].classList.toggle("on",j===cur);}}
 PT.forEach(function(p,i){p.addEventListener("click",function(){montre(i);});});
 bn.addEventListener("click",function(){montre(cur+1);});
 })();</script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ac00be4cdb484f2e95ca89d2b1752c1e"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ac00be4cdb484f2e95ca89d2b1752c1e"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
