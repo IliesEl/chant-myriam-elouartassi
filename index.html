@@ -17,7 +17,7 @@
 <!-- La photo de la une est un fond CSS : le navigateur ne la decouvre qu'apres
      avoir lu la feuille. On la demande tout de suite. Le type= fait sauter le
      prechargement chez qui ne lit pas le WebP. -->
-<link rel="preload" as="image" href="images/une/t2-retouch-e-11.webp" type="image/webp">
+<link rel="preload" as="image" href="images/une/t2-retouch-e-11-finale.webp" type="image/webp">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Myriam El Ouartassi">
@@ -26,11 +26,11 @@
 <meta property="og:description" content="Je vous accompagne avec sensibilité dans la découverte de votre voix et de votre personnalité artistique.">
 <!-- ⚠️ URL ABSOLUE OBLIGATOIRE : en chemin relatif (l'etat precedent),
      aucune messagerie n'affiche d'image. -->
-<meta property="og:image" content="https://myriam-elouartassi-chant.fr/images/og-partage.jpg">
+<meta property="og:image" content="https://myriam-elouartassi-chant.fr/images/og-carre-qsj6.jpg">
 <meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Myriam El Ouartassi en concert, au chant et au clavier">
-<meta name="twitter:image" content="https://myriam-elouartassi-chant.fr/images/og-partage.jpg">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="Myriam El Ouartassi, professeure de chant, dans son studio">
+<meta name="twitter:image" content="https://myriam-elouartassi-chant.fr/images/og-carre-qsj6.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <!-- Donnees structurees : dit a Google qui est Myriam et ce qu'elle propose.
      ⚠️ Ni adresse postale ni prix, deliberement — voir
@@ -56,7 +56,7 @@
    "jobTitle": "Professeure de chant et coach vocale",
    "description": "Auteure-compositrice-interprète formée en chant jazz au Conservatoire de Lille et diplômée d'un master recherche en musicologie.",
    "url": "https://myriam-elouartassi-chant.fr/",
-   "image": "https://myriam-elouartassi-chant.fr/images/og-partage.jpg",
+   "image": "https://myriam-elouartassi-chant.fr/images/og-carre-qsj6.jpg",
    "telephone": "+33695458619",
    "email": "myriam.eo.chant@gmail.com",
    "knowsLanguage": "fr",
@@ -384,6 +384,35 @@ body.une-capitale .hero h1 { text-transform: none; }
 .about-body p strong { color: var(--rouge); font-weight: 600; }
 /* Idem « Qui suis-je » : liseré jaune retiré (elle ne l'aime pas), même intégration douce. */
 .about-photo { position: relative; }
+/* Le defile de la section, cable apres son choix du 02/08 : deux vues, une
+   seule fleche a droite, des ronds evides dessous. Il etait jusqu'ici bati
+   par le JavaScript du panneau ; il vit desormais dans la page.
+   ⚠️ La fleche n'a PAS de pastille, c'est son choix. Sous elle le fond est la
+   photo : sur la vue de concert le feuillage est sombre (mediane 16,2:1),
+   sur sa vue n°1 il alterne (mediane 4,9:1, et 29,7 % de la surface sous
+   4,5:1). C'est l'ombre portee qui rattrape ce second cas — ne pas la
+   retirer en la prenant pour une coquetterie. */
+.qd { position: relative; }
+.qd-sc { position: relative; }
+.qd-sc .qd-i { opacity: 0; transition: opacity .55s ease; }
+.qd-sc .qd-i.on { opacity: 1; }
+.qd-sc .qd-i + .qd-i { position: absolute; left: 0; top: 0; }
+@media (prefers-reduced-motion: reduce) { .qd-sc .qd-i { transition: none; } }
+.qd-f { position: absolute; top: 50%; right: .35rem; transform: translateY(-50%);
+  z-index: 3; width: 44px; height: 44px; padding: 0; cursor: pointer;
+  display: grid; place-items: center; font: inherit; line-height: 1;
+  background: none; border: none; box-shadow: none; }
+.qd-f svg { width: 30px; height: 30px; color: #EBE1CE;
+  filter: drop-shadow(0 1px 2px rgba(64,1,1,.55)); }
+.qd-bar { margin-top: .75rem; }
+/* ⚠️ Hauteur plancher : un rond fait 12 px avec son lisere. Sans plancher, la
+   rangee changerait la hauteur de toute la section. */
+.qd-pts { display: flex; gap: .45rem; justify-content: center;
+  align-items: center; min-height: 12px; }
+.qd-pts button { width: 10px; height: 10px; padding: 0; border-radius: 50%;
+  cursor: pointer; border: 1px solid var(--papier); background: transparent;
+  box-shadow: 0 0 0 1px rgba(64,1,1,.45); transition: all .2s; }
+.qd-pts button.on { background: var(--papier); }
 .about-photo img { position: relative; z-index: 1; width: 100%; height: auto; border-radius: var(--r-md);
   box-shadow: 0 18px 42px rgba(64, 1, 1, 0.12); }
 
@@ -409,6 +438,10 @@ body.une-capitale .hero h1 { text-transform: none; }
 .offre-col h3 { font-size: 1.28rem; line-height: 1.3; margin-bottom: 0.8rem; }
 .offre-col p { font-size: 0.92rem; font-weight: 300; line-height: 1.75; }
 .offre-foot { margin-top: 2.2rem; text-align: center; font-size: 1.05rem; font-weight: 300; line-height: 1.7; }
+/* Le renvoi de « Cours de chant », demande le 02/08. Meme taille que la note
+   des tarifs, la seule autre de la page. */
+.offre-note { margin-top: 1.6rem; text-align: center; font-size: 0.78rem;
+  font-weight: 300; line-height: 1.55; color: var(--encre-2); }
 .offre-foot b { color: var(--encre); font-weight: 600; }
 
 /* ---------- Une approche globale de la voix (liste éditoriale, sans numéros) ---------- */
@@ -506,7 +539,9 @@ body.tnote-deux .tnote .tn-b { display: block; } /* équivalent /séance, discre
 .trow-creation .lbl small { display: block; font-size: 0.78rem; font-weight: 400; color: var(--encre-2); margin-top: 0.15rem; }
 .trow-creation .price { color: var(--rouge); }
 /* Précision « 36 séances/an » : justifie le calcul du prix/séance des forfaits (÷ 3,6). */
-.tnote { margin-top: 1rem; font-size: 0.78rem; font-weight: 300; line-height: 1.55; color: var(--encre-2); }
+/* Centree a sa demande du 02/08. Elle n'y est plus qu'une ligne : le second
+   membre est masque depuis qu'elle a retenu « la phrase seule ».           */
+.tnote { margin-top: 1rem; font-size: 0.78rem; font-weight: 300; line-height: 1.55; color: var(--encre-2); text-align: center; }
 .decouverte { margin-top: 2.2rem; text-align: center; }
 .decouverte .pill {
   display: inline-flex; align-items: center; gap: 0.55rem; background: var(--jaune); color: var(--encre);
@@ -543,7 +578,21 @@ body.center-offre .offre-col .ico-lg { display: block; margin-left: auto; margin
 /* Alignement des 3 cartes : centré par défaut (Myriam l'écrivait à l'impératif), la
    variante à gauche est proposée au panneau à la demande d'Ilies. */
 body.pourqui-gauche .qcard { text-align: left; }
-body.pourqui-gauche .qcard .ico { margin-left: 0; }
+
+/* --- Mise en page du 02/08 : pictos et titres centres, textes a gauche --- */
+/* ⚠️ Elle demande les DEUX moitiés : « laisser les textes alignes a gauche ET
+   centrer les pictos et les titres ». Centrer la carte entiere emporterait
+   les paragraphes avec, ce qu'elle ne demande pas.                          */
+/* Le picto etait en `inline` ici : ses marges automatiques ne centraient rien. */
+.offre-col .ico-lg { display: block; margin-left: auto; margin-right: auto; }
+.offre-col .offre-kicker, .offre-col h3 { text-align: center; }
+body.pourqui-gauche .qcard .tag, body.pourqui-gauche .qcard h3 { text-align: center; }
+/* Les lignes de l'approche sont en `flex` : un alignement suffit, et il garde
+   les blocs par ligne qu'elle a valides au tour precedent.                    */
+body.appr-cartes .pedago-list li { justify-content: center; }
+/* Le picto suivait le texte a gauche ; elle demande le 02/08 de le centrer
+   tout en laissant les textes alignes a gauche.                             */
+body.pourqui-gauche .qcard .ico { margin-left: auto; margin-right: auto; }
 
 /* NIVEAU « PLUS DE TOUCHES » — RECADRÉ le 26/07 sur la seule section « Ce que je vous
    propose » (demande d'Ilies). Même principe qu'au-dessus poussé d'un cran : des aplats
@@ -743,7 +792,7 @@ body.qsj-creme-titre #apropos .section-title .a { color: var(--encre); }
    pose à droite et le voile crème est dense de ce côté, transparent sur elle. Nécessaire : le
    ciel est clair (texte encre à 9,6:1) mais les branches y entrent par endroits (1,7:1). */
 .hero {
-  --une-img: url(images/une/t2-retouch-e-11.jpg);
+  --une-img: url(images/une/t2-retouch-e-11-finale.jpg);
   --une-size: cover;
   --une-pos: center 38%;
   --une-fondu: linear-gradient(rgba(251,246,236,0), rgba(251,246,236,0));   /* neutre : paysage plein cadre */
@@ -770,7 +819,7 @@ body.qsj-creme-titre #apropos .section-title .a { color: var(--encre); }
    il s'affiche quel que soit l'en-tete. Le @supports suffit a ecarter les vieux
    navigateurs — tous ceux qui connaissent image-set()+type() lisent le WebP. */
 @supports (background-image: image-set(url("i.webp") type("image/webp"))) {
-  .hero { --une-img: url(images/une/t2-retouch-e-11.webp); }
+  .hero { --une-img: url(images/une/t2-retouch-e-11-finale.webp); }
 }
 /* Le voile est dense DU COTE DU TEXTE et transparent sur elle : c'est ce qui garde le
    texte lisible quand des branches claires entrent dans le cadre. Le sens du dégradé
@@ -1138,7 +1187,7 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
 }
 </style>
 </head>
-<body class="une-mob-dessous une-src-portrait credit-pied une-fond-papier propose-fond-creme pourqui-fond-rouge tarifs-fond-creme qsj-rouge-b appr-cartes pourqui-gauche faq-pleine faq-fond-vertdeau">
+<body class="une-mob-dessous une-src-portrait credit-pied une-fond-papier propose-fond-creme pourqui-fond-rouge tarifs-fond-creme qsj-rouge-b appr-cartes pourqui-gauche faq-pleine faq-fond-vertdeau une-capitale une-esp-v une-mob-haute">
 
 <a href="#main" class="skip-link">Aller au contenu</a>
 
@@ -1405,7 +1454,7 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
       <span class="eyebrow hero-eyebrow reveal" id="heroEyebrow">Cours de chant et coaching vocal à Alençon (61)<br>+ Accompagnement à la création</span>
       <h1 class="reveal d1" id="heroTitle">Trouver <span class="a">sa voix</span></h1>
       <div class="rule-short reveal d1"></div>
-      <p class="hero-desc reveal d2">Je vous accompagne avec sensibilité dans la découverte de votre voix et de votre personnalité artistique</p>
+      <p class="hero-desc reveal d2">Je vous accompagne avec sensibilité dans la découverte de votre voix et de votre personnalité artistique&nbsp;!</p>
       <div class="hero-actions reveal d3">
         <a href="#contact" class="btn btn-primary cta-label">Votre séance découverte offerte</a>
         <a href="#propose" class="btn btn-ghost propose-label">Ce que je vous propose</a>
@@ -1431,8 +1480,21 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
         </div>
       </div>
       <div class="about-photo reveal d1">
-        <img class="qsj-photo" loading="lazy" decoding="async" src="images/qsj-2.jpg" alt="Myriam El Ouartassi en concert, au chant et au clavier" width="900" height="1350"
-             onerror="this.parentElement.style.display='none'">
+        <div class="qd">
+        <div class="qd-sc">
+          <img class="qsj-photo qd-i on" decoding="async" src="images/qsj-6.jpg"
+               alt="Myriam El Ouartassi dans son studio, en train d'enseigner" width="900" height="1350">
+          <img class="qsj-photo qd-i" loading="lazy" decoding="async" src="images/qsj-2.jpg"
+               alt="Myriam El Ouartassi en concert, au chant et au clavier" width="900" height="1350">
+          <div class="qd-bar">
+            <div class="qd-pts">
+              <button type="button" class="on" aria-label="vue 1"></button>
+              <button type="button" aria-label="vue 2"></button>
+            </div>
+            <button type="button" class="qd-f qd-next" aria-label="vue suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+          </div>
+        </div>
+      </div>
         <p class="photo-credit">Photos&nbsp;: © Vannamalie Phongsouvanh</p>
     </div>
     </div>
@@ -1451,7 +1513,7 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
         <svg class="ico ico-lg" aria-hidden="true"><use href="#i-chant-volute"></use></svg>
         <p class="offre-kicker">Cours de chant</p>
         <h3>Découvrez votre voix, approfondissez votre pratique</h3>
-        <p>Dans l'écoute, le plaisir et la confiance, nous allierons technique vocale et savoir-faire de l'interprétation pour dépasser vos blocages et faire éclore votre voix. Je vous accompagne au piano sur des chansons choisies ensemble ou vos propres créations, dans l'univers des musiques actuelles&nbsp;: chanson, variété, pop, jazz, rock, musiques du monde, entre autres. Vous vous réapproprierez les chansons que vous aimez d'une manière qui vous ressemble. Nous pourrons aussi explorer le terrain de jeu de l'improvisation, chemin possible vers votre liberté vocale&nbsp;!</p>
+        <p>Dans l'écoute, le plaisir et la confiance, nous allierons technique vocale et savoir-faire de l'interprétation pour dépasser vos blocages et faire éclore votre voix. Vous vous réapproprierez les chansons que vous aimez* d'une manière qui vous ressemble. Nous pourrons aussi explorer le terrain de jeu de l'improvisation, chemin possible vers votre liberté vocale&nbsp;!</p>
       </article>
       <article class="offre-col">
         <svg class="ico ico-lg" aria-hidden="true"><use href="#i-micro-main"></use></svg>
@@ -1467,6 +1529,7 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
         <p>Je vous accompagne dans l'écriture et la composition de vos chansons. Nous donnerons de l'importance aux mots, à leur sens et à leur sonorité, ainsi qu'à leur mise en musique&nbsp;: structure, accords, mélodies. Venez avec ce que vous avez&nbsp;: un fragment, une idée, un couplet qui attend depuis des mois, une mélodie sans texte, un texte sans mélodie… Nous partirons de ce que vous avez&nbsp;!</p>
       </article>
     </div>
+    <p class="offre-note reveal d2">* dans l'univers des musiques actuelles&nbsp;: chanson, variété, pop, jazz, rock, musiques du monde, entre autres.</p>
     <p class="offre-foot reveal d2">Lors de notre premier échange, nous parlerons de vos envies, et nous trouverons ensemble <b>un chemin de progression qui vous correspond</b>&nbsp;!</p>
 
     <div class="pedago" id="approche">
@@ -1500,22 +1563,19 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
         <svg class="ico pq-ico" aria-hidden="true"><use href="#i-enf-soleil"></use></svg>
         <span class="tag">Enfants &amp; ados</span>
         <h3>Apprenez en confiance</h3>
-        <p>Des cours au rythme de l'enfant ou de l'ado. On avance pas à pas, sans pression, pour que le chant reste avant tout un plaisir et une source de confiance en soi&nbsp;!</p>
+        <p>Des cours ludiques au rythme de l'enfant ou de l'ado. On avance pas à pas, sans pression, pour que le chant reste avant tout un plaisir et une source de confiance en soi&nbsp;!</p>
       </div>
       <div class="qcard reveal d2">
         <svg class="ico pq-ico" aria-hidden="true"><use href="#i-adu-epanoui"></use></svg>
         <span class="tag">Adultes</span>
         <h3>Osez votre voix</h3>
-        <p id="pqAduTxt">Vous n'osez pas encore chanter&nbsp;? Vous n'aimez pas votre voix&nbsp;? Je vous accompagne avec douceur pour la découvrir&nbsp;!</p>
-        <p>Vous êtes plus à l'aise et souhaitez libérer votre voix, aller plus loin&nbsp;? Nous explorerons ensemble de nouveaux chemins, à votre rythme et selon vos envies&nbsp;!</p>
+        <p id="pqAduTxt">Vous n'osez pas encore chanter&nbsp;? Vous n'aimez pas votre voix&nbsp;? Je vous accompagne avec douceur pour la découvrir. Vous êtes plus à l'aise et souhaitez libérer votre voix, aller plus loin&nbsp;? Nous explorerons ensemble de nouveaux chemins, à votre rythme et selon vos envies. Un seul mot d'ordre&nbsp;: prendre du plaisir&nbsp;!</p>
       </div>
       <div class="qcard reveal d3">
         <svg class="ico pq-ico" aria-hidden="true"><use href="#i-tous-poteau"></use></svg>
         <span class="tag" id="pqTousTag">Tous les niveaux</span>
         <h3 id="pourquiTitle">Quel que soit votre parcours</h3>
-        <p>Chaque séance est pensée pour vous&nbsp;: votre parcours, votre rythme, vos envies — que vous soyez débutant·e, amateur·e ou confirmé·e.</p>
-        <p>Nous partirons de là où vous en êtes pour aller là où vous avez envie d'aller&nbsp;: apprivoiser votre voix, affiner votre technique, explorer un nouveau répertoire, préparer un concert, donner vie à vos propres chansons…</p>
-        <p>Un seul mot d'ordre&nbsp;: prendre du plaisir&nbsp;!</p>
+        <p>Chaque séance est pensée pour vous&nbsp;: votre parcours, votre rythme et vos envies, que vous soyez débutant·e, amateur·e ou confirmé·e&nbsp;! Nous partirons de là où vous en êtes pour aller là où vous avez envie d'aller&nbsp;: apprivoiser votre voix, affiner votre technique, explorer un nouveau répertoire, préparer un concert, donner vie à vos propres chansons…</p>
       </div>
     </div>
   </div>
@@ -1544,11 +1604,11 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
              note du bas, là où elle sert vraiment (elle justifie le prix à la séance).
              « Forfait » non plus : le titre de la carte le porte déjà juste au-dessus, et le
              sous-titre tient ainsi sur une ligne comme ses deux voisins. -->
-        <p class="tsub">Engagement à l'année · chant et coaching</p>
+        <p class="tsub">Chant et coaching<br>Engagement à l'année</p>
         <div class="trow"><span class="lbl">30 min / semaine <small class="eq">soit 16,67 € la séance</small></span><span class="price">60 €<small> /mois</small></span></div>
         <div class="trow"><span class="lbl">45 min / semaine <small class="eq">soit 23,61 € la séance</small></span><span class="price">85 €<small> /mois</small></span></div>
-        <div class="trow"><span class="lbl">1 h / semaine <small class="eq">soit 30,56 € la séance</small></span><span class="price">110 €<small> /mois</small></span></div>
-        <p class="tnote"><span class="tn-a">1 séance / semaine hors vacances scolaires</span><span class="tn-b">Soit 36 séances par an, réparties sur 10 mois.</span></p>
+        <div class="trow"><span class="lbl">1 h / semaine <small class="eq">soit 29,17 € la séance</small></span><span class="price">105 €<small> /mois</small></span></div>
+        <p class="tnote"><span class="tn-a">1 séance / semaine *hors vacances scolaires</span><span class="tn-b">Soit 36 séances par an, réparties sur 10 mois.</span></p>
       </div>
       <!-- Carte création DÉDIÉE (demande ferme de Myriam, répétée 2× dans son retour).
            Tous les tarifs de création vivent ici, nulle part ailleurs. -->
@@ -1562,8 +1622,8 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
                libellé ne dispose que de ~118 px alors que ce texte en demande ~155 — même
                raccourci, il repassait à la ligne entre 981 et 1150 px. La durée descend donc
                sur la ligne de détail, où le retour à la ligne est normal. Rien n'est perdu. -->
-          <span class="lbl"><span>Cycle création <small>5 séances de 1 h 30</small><small class="eq">soit 58 € la séance</small></span></span>
-          <span class="price">290 €</span>
+          <span class="lbl"><span>Cycle création <small>5 séances de 1 h 30</small><small class="eq">soit 60 € la séance</small></span></span>
+          <span class="price">300 €</span>
         </div>
       </div>
     </div>
@@ -1745,6 +1805,18 @@ body.qsjt-douce2 #apropos .eyebrow { color: var(--encre-2); }
 })();
 </script>
 
+<script>(function(){
+var IM=[].slice.call(document.querySelectorAll(".qd-i"));
+var PT=[].slice.call(document.querySelectorAll(".qd-pts button"));
+var bn=document.querySelector(".qd-next");
+if(IM.length<2||!bn||PT.length!==IM.length)return;
+var cur=0;
+function montre(n){cur=(n+IM.length)%IM.length;
+for(var j=0;j<IM.length;j++){IM[j].classList.toggle("on",j===cur);
+PT[j].classList.toggle("on",j===cur);}}
+PT.forEach(function(p,i){p.addEventListener("click",function(){montre(i);});});
+bn.addEventListener("click",function(){montre(cur+1);});
+})();</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ac00be4cdb484f2e95ca89d2b1752c1e"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
