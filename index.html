@@ -284,7 +284,7 @@ body {
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 section { position: relative; }
-a:focus-visible, button:focus-visible, summary:focus-visible {
+a:focus-visible, button:focus-visible {
   outline: 2.5px solid var(--rouge); outline-offset: 3px; border-radius: 4px;
 }
 .skip-link {
@@ -302,7 +302,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 
 /* ---------- Typo commune ---------- */
 .eyebrow { font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rouge); }
-h1, h2, h3, .display { font-family: var(--display); text-transform: lowercase; font-weight: 600; color: var(--encre); letter-spacing: -0.005em; text-wrap: balance; font-size-adjust: none; /* Lora garde son rendu, l'ajustement ne vise que Satoshi */ }
+h1, h2, h3 { font-family: var(--display); text-transform: lowercase; font-weight: 600; color: var(--encre); letter-spacing: -0.005em; text-wrap: balance; font-size-adjust: none; /* Lora garde son rendu, l'ajustement ne vise que Satoshi */ }
 .section-title { font-size: clamp(2rem, 3.9vw, 3rem); line-height: 1.1; letter-spacing: -0.01em; }
 .section-title .a { color: var(--rouge); }
 /* Demande de Myriam (30/07) : « approche globale » en rouge dans le titre
@@ -311,7 +311,6 @@ h1, h2, h3, .display { font-family: var(--display); text-transform: lowercase; f
 .section-head { margin-bottom: 3rem; max-width: 680px; }
 .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
 .section-head .eyebrow { display: block; margin-bottom: 0.85rem; }
-.section-intro { font-size: 1.02rem; font-weight: 300; line-height: 1.75; margin-top: 1rem; }
 .section { padding: 6.5rem 0; }
 .bg-creme { background: var(--creme); }
 .rule-short { width: 46px; height: 2px; background: var(--orange); margin: 1.4rem 0; }
@@ -470,10 +469,8 @@ body.une-capitale .hero h1 { text-transform: none; }
 /* Myriam demande d'aller a la ligne dans « Adultes » et « Tous les niveaux ».
    Deux paragraphes voisins n'ont aucun ecart par defaut : sans cette regle,
    la coupure ne se verrait pas. */
-.qcard p + p { margin-top: 0.85rem; }
 
 /* ---------- Ce que je propose ---------- */
-.offre-lead { font-size: 1rem; font-weight: 300; line-height: 1.75; max-width: 62ch; margin: 0 auto 2.6rem; text-align: center; }
 .offre { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
 .offre-col { background: var(--papier); border: var(--bw) solid var(--trait); border-radius: var(--r-md); padding: 2.6rem 2rem; }
 .offre-col .ico-lg { color: var(--rouge); margin-bottom: 1.2rem; }
@@ -549,7 +546,6 @@ body.une-capitale .hero h1 { text-transform: none; }
 .trow-creation { margin-top: 0.9rem; padding: 1rem 1.1rem; border: none; background: var(--creme); border-radius: var(--r-sm); }
 .tcard.on-creme .trow-creation { background: var(--creme-2); }
 .trow-creation .lbl { display: flex; align-items: center; gap: 0.75rem; }
-.trow-creation .lbl .ico { width: 20px; height: 20px; color: var(--orange); }
 .trow-creation .lbl small { display: block; font-size: 0.78rem; font-weight: 400; color: var(--encre-2); margin-top: 0.15rem; }
 .trow-creation .price { color: var(--rouge); }
 /* Précision « 36 séances/an » : justifie le calcul du prix/séance des forfaits (÷ 3,6). */
@@ -1085,7 +1081,7 @@ body.credit-pied .footer-credit { display: block; }
     </a>
     <ul class="nav-links">
       <li><a href="#apropos">Qui suis-je&nbsp;?</a></li>
-      <li><a href="#propose" class="propose-label">Ce que je vous propose</a></li>
+      <li><a href="#propose">Ce que je vous propose</a></li>
       <li><a href="#pourqui">Pour qui&nbsp;?</a></li>
       <li><a href="#tarifs">Les tarifs</a></li>
       <li><a href="#faq">Vos questions</a></li>
@@ -1099,7 +1095,7 @@ body.credit-pied .footer-credit { display: block; }
 <div class="mobile-menu" id="mobileMenu">
   <ul>
     <li><a href="#apropos">Qui suis-je&nbsp;?</a></li>
-    <li><a href="#propose" class="propose-label">Ce que je vous propose</a></li>
+    <li><a href="#propose">Ce que je vous propose</a></li>
     <li><a href="#pourqui">Pour qui&nbsp;?</a></li>
     <li><a href="#tarifs">Les tarifs</a></li>
     <li><a href="#faq">Vos questions</a></li>
@@ -1122,8 +1118,8 @@ body.credit-pied .footer-credit { display: block; }
       <div class="rule-short reveal d1"></div>
       <p class="hero-desc reveal d2">Je vous accompagne avec sensibilité dans la découverte de votre voix et de votre personnalité artistique&nbsp;!</p>
       <div class="hero-actions reveal d3">
-        <a href="#contact" class="btn btn-primary cta-label">Votre séance découverte offerte</a>
-        <a href="#propose" class="btn btn-ghost propose-label">Ce que je vous propose</a>
+        <a href="#contact" class="btn btn-primary">Votre séance découverte offerte</a>
+        <a href="#propose" class="btn btn-ghost">Ce que je vous propose</a>
       </div>
     </div>
   </div>
@@ -1145,7 +1141,7 @@ body.credit-pied .footer-credit { display: block; }
         </div>
       </div>
       <div class="about-photo reveal d1">
-        <img class="qsj-photo" decoding="async" src="images/qsj-6.jpg"
+        <img decoding="async" src="images/qsj-6.jpg"
              alt="Myriam El Ouartassi dans son studio, en train d'enseigner"
              width="900" height="1350">
     </div>
@@ -1157,7 +1153,7 @@ body.credit-pied .footer-credit { display: block; }
 <section class="section" id="propose">
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="eyebrow propose-label">Ce que je vous propose</span>
+      <span class="eyebrow">Ce que je vous propose</span>
       <h2 class="section-title">Un accompagnement <span class="a">adapté à vos envies</span></h2>
     </div>
     <div class="offre reveal d1">
@@ -1192,7 +1188,7 @@ body.credit-pied .footer-credit { display: block; }
       <ul class="pedago-list reveal d1">
         <li><svg class="ico" aria-hidden="true"><use href="#i-onde-curseurs"></use></svg> Technique vocale</li>
         <li><svg class="ico" aria-hidden="true"><use href="#i-resp-vent"></use></svg> Respiration &amp; souffle</li>
-        <li><svg class="ico posture-ico" aria-hidden="true"><use href="#i-posture-personne"></use></svg> Posture &amp; corps</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-posture-personne"></use></svg> Posture &amp; corps</li>
         <li><svg class="ico" aria-hidden="true"><use href="#i-juste-diapason"></use></svg> Justesse &amp; tessiture</li>
         <li><svg class="ico" aria-hidden="true"><use href="#i-coeur-battement"></use></svg> Interprétation &amp; émotion</li>
         <li><svg class="ico" aria-hidden="true"><use href="#i-conf-micro"></use></svg> Confiance &amp; présence scénique</li>
@@ -1240,7 +1236,7 @@ body.credit-pied .footer-credit { display: block; }
   <div class="wrap">
     <div class="section-head center reveal">
       <span class="eyebrow">Les tarifs</span>
-      <h2 class="section-title tarif-title">Choisissez <span class="a">votre rythme</span></h2>
+      <h2 class="section-title">Choisissez <span class="a">votre rythme</span></h2>
     </div>
     <div class="tarifs-grid">
       <div class="tcard reveal d1" id="card-seance">
@@ -1251,7 +1247,7 @@ body.credit-pied .footer-credit { display: block; }
         <div class="trow"><span class="lbl">1 heure</span><span class="price">35 €</span></div>
       </div>
       <div class="tcard on-creme reveal d2" id="card-forfait">
-        <h3><svg class="ico" aria-hidden="true"><use href="#i-calendrier"></use></svg> <span class="card2-title">Forfaits à l'année</span></h3>
+        <h3><svg class="ico" aria-hidden="true"><use href="#i-calendrier"></use></svg> <span>Forfaits à l'année</span></h3>
         <!-- « 10 mois » ne figure plus ici : l'information est donnée une seule fois, dans la
              note du bas, là où elle sert vraiment (elle justifie le prix à la séance).
              « Forfait » non plus : le titre de la carte le porte déjà juste au-dessus, et le
@@ -1264,7 +1260,7 @@ body.credit-pied .footer-credit { display: block; }
       </div>
       <!-- Carte création DÉDIÉE (demande ferme de Myriam, répétée 2× dans son retour).
            Tous les tarifs de création vivent ici, nulle part ailleurs. -->
-      <div class="tcard crea-card reveal d3" id="crea-card">
+      <div class="tcard reveal d3" id="crea-card">
         <h3><svg class="ico" aria-hidden="true"><use href="#i-plume-tarif"></use></svg> Accompagnement à la création</h3>
         <p class="tsub">Écriture et composition</p>
         <div class="trow"><span class="lbl">1 heure</span><span class="price">45 €</span></div>
@@ -1365,7 +1361,7 @@ body.credit-pied .footer-credit { display: block; }
   <div class="wrap">
     <ul class="footer-links">
       <li><a href="#apropos">Qui suis-je&nbsp;?</a></li>
-      <li><a href="#propose" class="propose-label">Ce que je vous propose</a></li>
+      <li><a href="#propose">Ce que je vous propose</a></li>
       <li><a href="#pourqui">Pour qui&nbsp;?</a></li>
       <li><a href="#tarifs">Les tarifs</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -1457,6 +1453,20 @@ body.credit-pied .footer-credit { display: block; }
 })();
 </script>
 
+
+<script>(function(){
+// Le titre de la barre pointe la page courante : on remonte en haut plutot que
+// de tout recharger. Sans JavaScript, le lien reste un vrai lien et recharge,
+// comme avant — on n'a rien enleve, on a seulement evite un aller-retour.
+var b = document.querySelector('.brand');
+if (!b) return;
+b.addEventListener('click', function (e) {
+  if (b.pathname !== location.pathname || b.host !== location.host) return;
+  e.preventDefault();
+  var doux = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  scrollTo({ top: 0, behavior: doux ? 'smooth' : 'auto' });
+});
+})();</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ac00be4cdb484f2e95ca89d2b1752c1e"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
