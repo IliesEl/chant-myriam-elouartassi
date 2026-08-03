@@ -621,6 +621,10 @@ b.addEventListener('click', function (e) {
   e.preventDefault();
   var doux = !matchMedia('(prefers-reduced-motion: reduce)').matches;
   scrollTo({ top: 0, behavior: doux ? 'smooth' : 'auto' });
+
+if (location.hash) {
+    history.replaceState(null, '', location.pathname + location.search);
+  }
 });
 })();</script>
 <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ac00be4cdb484f2e95ca89d2b1752c1e"}'></script>
